@@ -1,0 +1,66 @@
+.navbar{
+    @apply
+
+    p-4
+    flex
+    text-white
+    items-center
+    gap-4
+}
+
+
+.navbar__title {
+    @apply
+
+    flex
+    items-center
+    mr-4
+}
+.navbar__title span{
+    @apply
+    
+    text-lg
+}
+.navbar__title i {
+    @apply
+
+    text-sky-400
+    text-4xl
+}
+
+.Menu__button
+{
+    @apply
+    
+    flex
+    items-center
+    gap-1
+    font-light
+}
+
+.Menu__item{
+    @apply
+
+    flex
+    items-center
+    gap-2
+    text-base
+
+    hover:text-sky-200
+}
+.Menu__item.disabled{
+    @apply
+
+    opacity-75
+}
+
+.Menu__dropdown{
+    @apply
+    
+    flex
+    flex-col
+    w-max
+    p-1
+
+    absolute
+}
