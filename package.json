@@ -10,7 +10,11 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.11",
+    "@radix-ui/colors": "^0.1.8",
+    "@radix-ui/react-icons": "^1.2.0",
+    "@radix-ui/react-navigation-menu": "^1.1.2",
     "boxicons": "^2.1.4",
+    "classnames": "^2.3.2",
     "next": "13.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"

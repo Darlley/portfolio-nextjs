@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import "./navbar.css";
+@import "./radix-menu.css";
 
 body, html{
   width: 100%;
