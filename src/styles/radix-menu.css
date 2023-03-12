@@ -15,7 +15,7 @@ p {
   position: relative;
   display: flex;
   justify-content: center;
-  width: max-content;
+  width: 100%;
   z-index: 1;
 }
 
@@ -41,8 +41,7 @@ p {
 }
 .NavigationMenuTrigger:hover,
 .NavigationMenuLink:hover {
-  background-color: white;
-  color: black;
+  background-color: rgba(255, 255, 255, 0.057);
 }
 
 .NavigationMenuTrigger {

@@ -35,54 +35,54 @@ header {
 .profileCard_container{
   @apply
 
-  relative p-10 border-2 border-dashed rounded-full border-spacing-4 border-primary-100
+  relative p-6 border-2 border-dashed rounded-full border-spacing-4 border-primary-100
 }
 
 .profile_card{
   @apply
 
-  w-64 h-64 p-1 border-8 rounded-full hover:border-secundary-500 cursor-pointer transition-all duration-500
+  w-[200px] h-[200px] p-1 border-8 rounded-full hover:border-secundary-500 cursor-pointer transition-all duration-500
 }
 
 .profile_item{
   @apply
 
-  absolute rounded-full h-16 w-16 bg-cover cursor-pointer border-2 hover:border-secundary-500
+  absolute rounded-full bg-cover cursor-pointer border-2 hover:border-secundary-500
 }
 .profile_item:nth-child(1){
   @apply
   
-  left-16 -top-4 bg-[url('/habilities/React.png')]
+  left-[94px] -top-4
 }
 .profile_item:nth-child(2){
   @apply
   
-  right-16 -top-4 bg-[url('/habilities/Laravel.png')]
+  right-[80px] -top-4
 }
 .profile_item:nth-child(3){
   @apply
   
-  -left-6 top-20 bg-[url('/habilities/Figma.png')]
+  -left-6 top-20
 }
 .profile_item:nth-child(4){
   @apply
   
-  -right-6 top-20 bg-[url('/habilities/AWS.png')]
+  -right-6 top-20
 }
 .profile_item:nth-child(5){
   @apply
   
-  bottom-14 -left-2 bg-[url('/habilities/MySQL.png')]
+  bottom-14 -left-2
 }
 .profile_item:nth-child(6){
   @apply
   
-  bottom-14 -right-2 bg-[url('/habilities/Tailwind.png')]
+  bottom-14 -right-2
 }
 .profile_item:nth-child(7){
   @apply
   
-  right-[40%] -bottom-8 bg-[url('/habilities/WordPress.png')]
+  right-[40%] -bottom-8
 }
 
 .profileCard_container{

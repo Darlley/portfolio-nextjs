@@ -3,6 +3,7 @@ import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import { CaretDownIcon } from '@radix-ui/react-icons';
 import classNames from 'classnames';
 import Link from 'next/link';
+import Image from 'next/image';
 
 function Navbar() {
     return (
@@ -24,22 +25,40 @@ function Navbar() {
                                     <li style={{ gridRow: 'span 3' }}>
                                         <NavigationMenu.Link asChild>
                                         <a className="Callout" href="/">
-                                            <svg aria-hidden width="38" height="38" viewBox="0 0 25 25" fill="white">
-                                            <path d="M12 25C7.58173 25 4 21.4183 4 17C4 12.5817 7.58173 9 12 9V25Z"></path>
-                                            <path d="M12 0H4V8H12V0Z"></path>
-                                            <path d="M17 8C19.2091 8 21 6.20914 21 4C21 1.79086 19.2091 0 17 0C14.7909 0 13 1.79086 13 4C13 6.20914 14.7909 8 17 8Z"></path>
-                                            </svg>
-                                            <div className="CalloutHeading">Radix Primitives</div>
-                                            <p className="CalloutText">Unstyled, accessible components for React.</p>
+                                            <Image 
+                                                src="/habilities/React.png"
+                                                width={50}
+                                                height={50}
+                                            />
+                                            <div className="CalloutHeading">Full Stack</div>
+                                            <p className="CalloutText">TALL Stack + Reactjs + Figma.</p>
                                         </a>
                                         </NavigationMenu.Link>
                                     </li>
 
                                     <li>
                                         <NavigationMenu.Link>
-                                            <a className={classNames('ListItemLink')} href="https://stitches.dev/">
-                                                <div className="ListItemHeading">Stitches</div>
-                                                <p className="ListItemText">CSS-in-JS with best-in-class developer experience.</p>
+                                            <a className={classNames('ListItemLink')} href="/about">
+                                                <div className="ListItemHeading">About</div>
+                                                <p className="ListItemText">Saiba mais sobre mim, minhas crenças e meus hobbies.</p>
+                                            </a>
+                                        </NavigationMenu.Link>
+                                    </li>
+
+                                    <li>
+                                        <NavigationMenu.Link>
+                                            <a className={classNames('ListItemLink')} href="/certifications">
+                                                <div className="ListItemHeading">Certifications</div>
+                                                <p className="ListItemText">Conheça meus conhecimentos, minhas certificações e minhas experiências profissionais</p>
+                                            </a>
+                                        </NavigationMenu.Link>
+                                    </li>
+
+                                    <li>
+                                        <NavigationMenu.Link>
+                                            <a className={classNames('ListItemLink')} href="/contact">
+                                                <div className="ListItemHeading">Contact</div>
+                                                <p className="ListItemText">Fale comigo</p>
                                             </a>
                                         </NavigationMenu.Link>
                                     </li>
@@ -49,7 +68,7 @@ function Navbar() {
 
                         <NavigationMenu.Item>
                             <NavigationMenu.Trigger className="NavigationMenuTrigger">
-                                External Links <CaretDownIcon className="CaretDown" aria-hidden />
+                                Projects <CaretDownIcon className="CaretDown" aria-hidden />
                             </NavigationMenu.Trigger>
                             <NavigationMenu.Content className="NavigationMenuContent">
                                 <ul className="List two">
@@ -74,7 +93,7 @@ function Navbar() {
                         </NavigationMenu.Item>
 
                         <NavigationMenu.Item>
-                            <NavigationMenu.Link className="NavigationMenuLink" href="https://github.com/radix-ui">
+                            <NavigationMenu.Link className="NavigationMenuLink" href="/blog">
                                 Blog
                             </NavigationMenu.Link>
                         </NavigationMenu.Item>

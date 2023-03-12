@@ -1,13 +1,17 @@
 import Image from 'next/image'
 import Link from 'next/link';
 import { useState } from 'react';
-import CardFigma from './cards/CardFigma';
-import CardReact from './cards/CardReact';
-
+import CardModal from './cards/CardModal';
 import Navbar from "./Navbar";
 
 function Header () {
-    const [modal, setModalState] = useState(0);
+    const [modalOpen, setModalOpen] = useState(false);
+    const [modalComponent, setModalComponent] = useState(null);
+
+    function handleClick(content){
+        setModalOpen(true)
+        setModalComponent(content)
+    }
     
     return (
         <header className="relative">
@@ -19,14 +23,21 @@ function Header () {
                     <div className="relative p-8">
                         
                         <div className="profileCard_container ">
-                            <button className="profile_item" onClick={() => setModalState(1)} />
-                            <button className="profile_item" onClick={() => setModalState(2)} />
-                            
-                            <button className="profile_item" onClick={() => setModalState(3)} />
-                            <button className="profile_item" onClick={() => setModalState(4)} />
-                            <button className="profile_item" onClick={() => setModalState(5)} />
-                            <button className="profile_item" onClick={() => setModalState(6)} />
-                            <button className="profile_item" onClick={() => setModalState(7)} />
+                            <button className="profile_item" onClick={() => handleClick(0)}>
+                                <Image 
+                                    src="/habilities/React.png"
+                                    width={40}
+                                    height={40}
+                                />
+                            </button>
+
+                            <button className="profile_item" onClick={() => handleClick(1)}>
+                                <Image 
+                                    src="/habilities/Figma.png"
+                                    width={40}
+                                    height={40}
+                                />
+                            </button>
 
                             <button className="profile_card">
                                 <div className="w-full h-full rounded-full bg-[url('/profile.jpg')] bg-cover" />
@@ -57,9 +68,7 @@ function Header () {
 
             </div>
 
-            { modal === 1 && <CardReact setModalState={setModalState} /> }
-            { modal === 2 && <CardFigma setModalState={setModalState} /> }
-            { modal === 3 && <CardReact setModalState={setModalState} /> }
+            <CardModal isOpen={modalOpen} setModalOpen={setModalOpen} content={modalComponent} />
             
             
         </header>
