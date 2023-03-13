@@ -24,14 +24,13 @@ function Navbar() {
                                 <ul className="List one">
                                     <li style={{ gridRow: 'span 3' }}>
                                         <NavigationMenu.Link asChild>
-                                        <a className="Callout" href="/">
+                                        <a href="https://www.udemy.com/certificate/UC-3c8c6d6e-4c1d-4388-ab88-228cda80ed44/" target="_blank">
                                             <Image 
-                                                src="/habilities/React.png"
-                                                width={50}
-                                                height={50}
+                                                src="/card.png"
+                                                width={400}
+                                                height={400}
+                                                className="Callout"
                                             />
-                                            <div className="CalloutHeading">Full Stack</div>
-                                            <p className="CalloutText">TALL Stack + Reactjs + Figma.</p>
                                         </a>
                                         </NavigationMenu.Link>
                                     </li>
@@ -49,7 +48,7 @@ function Navbar() {
                                         <NavigationMenu.Link>
                                             <a className={classNames('ListItemLink')} href="/certifications">
                                                 <div className="ListItemHeading">Certifications</div>
-                                                <p className="ListItemText">Conheça meus conhecimentos, minhas certificações e minhas experiências profissionais</p>
+                                                <p className="ListItemText">Conheça meus minhas habilidades, certificações e experiências profissionais.</p>
                                             </a>
                                         </NavigationMenu.Link>
                                     </li>
@@ -74,17 +73,53 @@ function Navbar() {
                                 <ul className="List two">
                                     <li>
                                         <NavigationMenu.Link>
+                                            <a className={classNames('ListItemLink')} >
+                                                <div className="ListItemHeading">Philosophy & Theology</div>
+                                                <p className="ListItemText">Tenho uma página sobre filsofia onde compartilho minhas leituras de livros e artigos.</p>
+                                            </a>
+                                        </NavigationMenu.Link>
+                                    </li>
+                                    
+                                    <li>
+                                        <NavigationMenu.Link>
                                             <a className={classNames('ListItemLink')} href="/docs/primitives/overview/introduction">
-                                                <div className="ListItemHeading">Getting started</div>
-                                                <p className="ListItemText">A quick tutorial to get you up and running with Radix Primitives.</p>
+                                                <div className="ListItemHeading">Diálogos Platônicos</div>
+                                                <p className="ListItemText">Fiz alguns resumos e estudos sobre alguns dos livros de Platão.</p>
                                             </a>
                                         </NavigationMenu.Link>
                                     </li>
                                     <li>
                                         <NavigationMenu.Link>
                                             <a className={classNames('ListItemLink')} >
-                                                <div className="ListItemHeading">Introduction</div>
-                                                <p className="ListItemText">Build high-quality, accessible design systems and web apps.</p>
+                                                <div className="ListItemHeading">Cursos de Desenvolvimento Web</div>
+                                                <p className="ListItemText">No decorrer do meu aprendizado compilei alguns cursos de desenvolvimento de forma ordenada.</p>
+                                            </a>
+                                        </NavigationMenu.Link>
+                                    </li>
+
+                                    <li>
+                                        <NavigationMenu.Link>
+                                            <a className={classNames('ListItemLink')} >
+                                                <div className="ListItemHeading">Leitura ordenada</div>
+                                                <p className="ListItemText">Lista de livros sobre filosofia ordenada com link de afiliado.</p>
+                                            </a>
+                                        </NavigationMenu.Link>
+                                    </li>
+
+                                    <li>
+                                        <NavigationMenu.Link>
+                                            <a className={classNames('ListItemLink')} >
+                                                <div className="ListItemHeading">Podcast</div>
+                                                <p className="ListItemText">Ja tentei criar um podcast, mas a oratória e outros fatores me fizeram ver que não isto que eu queria.</p>
+                                            </a>
+                                        </NavigationMenu.Link>
+                                    </li>
+
+                                    <li>
+                                        <NavigationMenu.Link>
+                                            <a className={classNames('ListItemLink')} >
+                                                <div className="ListItemHeading">Código do portfólio</div>
+                                                <p className="ListItemText">Quem quiser o código deste portfólio ele pode ser encontrado no meu Github.</p>
                                             </a>
                                         </NavigationMenu.Link>
                                     </li>

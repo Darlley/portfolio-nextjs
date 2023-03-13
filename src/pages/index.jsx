@@ -1,4 +1,4 @@
-import Header from 'components/Home'
+import Header from '@/components/organisms/Home'
 import Head from 'next/head'
 
 export default function Home() {

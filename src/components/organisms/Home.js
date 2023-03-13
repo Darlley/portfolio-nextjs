@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link';
 import { useState } from 'react';
-import CardModal from './cards/CardModal';
-import Navbar from "./Navbar";
+import CardModal from '../molecules/CardModal';
+import Navbar from "../molecules/Navbar";
 
 function Header () {
     const [modalOpen, setModalOpen] = useState(false);
