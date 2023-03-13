@@ -11,26 +11,31 @@ body, html{
   margin: 0;
 }
 
-body{
-  background: url("https://darlley.github.io/images/header.jpg");
-  background-attachment: fixed;
-  background-size: cover;
+.header__background {
+  @apply
+
+  bg-[url("https://darlley.github.io/images/header.jpg")]
+  bg-fixed
+  bg-cover
+}
+.header__opacity{
+  @apply
+
+  bg-primary-500
+  bg-opacity-50
+  w-full
+  h-full
 }
 
-.header {
+.header__content {
   @apply
 
   h-screen
   m-auto
   max-w-6xl
+  relative
 }
 
-header {
-  @apply
-
-  bg-primary-500
-  bg-opacity-50
-}
 
 .profileCard_container{
   @apply
@@ -47,55 +52,71 @@ header {
 .profile_item{
   @apply
 
-  absolute rounded-full bg-cover cursor-pointer border-2 hover:border-secundary-500
+  absolute rounded-full bg-cover cursor-pointer border-2 border-secundary-500
+
+  active:scale-95
+  hover:scale-95
+  transition-all
+  duration-500
+}
+.profile_item img{
+  @apply
+
+  border
+
+  hover:border-secundary-500
+  transition-all
+  duration-500
+  rounded-full
+  p-[1px]
 }
 .profile_item:nth-child(1){
   @apply
   
-  left-[94px] -top-4
+  left-10 -top-[4px]
 }
 .profile_item:nth-child(2){
   @apply
   
-  right-[80px] -top-4
+  right-10 -top-[4px]
 }
 .profile_item:nth-child(3){
   @apply
   
-  -left-6 top-20
+  -left-4 top-20
 }
 .profile_item:nth-child(4){
   @apply
   
-  -right-6 top-20
+  -right-4 top-20
 }
 .profile_item:nth-child(5){
   @apply
   
-  bottom-14 -left-2
+  bottom-8 -left-0
 }
 .profile_item:nth-child(6){
   @apply
   
-  bottom-14 -right-2
+  bottom-8 -right-0
 }
 .profile_item:nth-child(7){
   @apply
   
-  right-[40%] -bottom-8
+  right-[40%] -bottom-4
 }
 
-.profileCard_container{
-  animation: spin_reverse 40s linear infinite;
+/* .profileCard_container{
+  animation: spin_reverse 80s linear infinite;
 }
 
 .profile_item{
-  animation: spin 40s linear infinite;
+  animation: spin 80s linear infinite;
 }
 
 .profile_card{
-  animation: spin 40s linear infinite;
-}
+  animation: spin 80s linear infinite;
+} */
 
 
 @keyframes spin{
@@ -113,4 +134,122 @@ header {
   from{
     transform: rotate(360deg);
   }
+}
+
+.header__page{
+  @apply
+
+  bg-black
+  bg-[url('/lotr-1440x522.png')]
+  bg-cover
+  
+  relative
+  flex
+  flex-col
+  gap-8
+}
+.page__title{
+  @apply
+
+  h-[40vh]
+
+  flex
+  w-full
+  items-center
+  justify-center
+
+  relative
+}
+.page__title h1{
+  @apply
+
+  text-4xl
+  text-white
+  font-bold
+}
+.citation{
+  @apply
+
+  w-11/12
+  md:w-6/12
+  text-center
+  absolute
+  bottom-4
+  flex
+  text-white
+  text-xs
+  italic
+}
+
+.app__content{
+  @apply
+
+  flex
+  flex-col
+}
+.content__about{
+  @apply
+
+  m-auto
+  max-w-6xl
+  w-full
+
+  flex
+  justify-between
+  items-center
+  py-8
+  px-4
+  2xl:px-0
+}
+.content__about h3{
+  @apply
+
+  text-xl
+}
+.content__about button{
+  @apply
+
+  text-sky-400
+  hover:bg-slate-100
+  p-2
+  rounded-full
+}
+
+.articles__container{
+  @apply
+
+  m-auto
+  max-w-6xl
+  w-full
+
+  flex
+  flex-col
+
+  px-4
+}
+.articles{
+  @apply
+
+  flex
+  flex-col
+
+  justify-between
+  box-content
+}
+.article{
+  @apply
+
+  relative
+  box-content
+
+  before:w-full
+
+  before:h-[2px]
+  before:bg-opacity-25
+  before:bg-gray-200
+  before:absolute
+  before:top-0
+  before:box-content
+
+  py-8
 }

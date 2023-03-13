@@ -7,13 +7,15 @@ import Image from 'next/image';
 
 function Navbar() {
     return (
-        <nav class="flex items-center justify-center md:justify-start md:w-full h-[10%] text-white gap-8 px-4 lg:md-0">
-            <div class="flex items-center flex-shrink-0">
-                <i className="text-4xl bx bxl-react text-secundary-500 animate-[spin_25s_linear_infinite]" />
-                <h1 class="font-semibold text-xl tracking-tight">Darlley</h1>
+        <nav className="flex items-center justify-center md:justify-start md:w-full h-[10%] text-white gap-8 px-4 lg:md-0">
+            <div className="">
+                <a href="/" className="flex items-center flex-shrink-0 gap-2">
+                    <i className="text-4xl bx bxl-react text-secundary-500 animate-[spin_25s_linear_infinite]" />
+                    <h1 className="text-xl font-semibold tracking-tight">Darlley</h1>
+                </a>
             </div>
             
-            <div class="flex items-center md:justify-between md:w-full flex-col md:flex-row">
+            <div className="flex flex-col items-center md:justify-between md:w-full md:flex-row">
                 <NavigationMenu.Root className="NavigationMenuRoot">
                     <NavigationMenu.List className="NavigationMenuList">
                         <NavigationMenu.Item>
@@ -37,7 +39,7 @@ function Navbar() {
 
                                     <li>
                                         <NavigationMenu.Link>
-                                            <a className={classNames('ListItemLink')} href="/about">
+                                            <a className={classNames('ListItemLink')} href="/">
                                                 <div className="ListItemHeading">About</div>
                                                 <p className="ListItemText">Saiba mais sobre mim, minhas crenças e meus hobbies.</p>
                                             </a>
@@ -46,7 +48,7 @@ function Navbar() {
 
                                     <li>
                                         <NavigationMenu.Link>
-                                            <a className={classNames('ListItemLink')} href="/certifications">
+                                            <a className={classNames('ListItemLink')} href="/">
                                                 <div className="ListItemHeading">Certifications</div>
                                                 <p className="ListItemText">Conheça meus minhas habilidades, certificações e experiências profissionais.</p>
                                             </a>
@@ -55,7 +57,7 @@ function Navbar() {
 
                                     <li>
                                         <NavigationMenu.Link>
-                                            <a className={classNames('ListItemLink')} href="/contact">
+                                            <a className={classNames('ListItemLink')} href="/">
                                                 <div className="ListItemHeading">Contact</div>
                                                 <p className="ListItemText">Fale comigo</p>
                                             </a>
@@ -82,7 +84,7 @@ function Navbar() {
                                     
                                     <li>
                                         <NavigationMenu.Link>
-                                            <a className={classNames('ListItemLink')} href="/docs/primitives/overview/introduction">
+                                            <a className={classNames('ListItemLink')} href="/">
                                                 <div className="ListItemHeading">Diálogos Platônicos</div>
                                                 <p className="ListItemText">Fiz alguns resumos e estudos sobre alguns dos livros de Platão.</p>
                                             </a>
@@ -90,7 +92,7 @@ function Navbar() {
                                     </li>
                                     <li>
                                         <NavigationMenu.Link>
-                                            <a className={classNames('ListItemLink')} >
+                                            <a className={classNames('ListItemLink')} href="/">
                                                 <div className="ListItemHeading">Cursos de Desenvolvimento Web</div>
                                                 <p className="ListItemText">No decorrer do meu aprendizado compilei alguns cursos de desenvolvimento de forma ordenada.</p>
                                             </a>
@@ -99,7 +101,7 @@ function Navbar() {
 
                                     <li>
                                         <NavigationMenu.Link>
-                                            <a className={classNames('ListItemLink')} >
+                                            <a className={classNames('ListItemLink')} href="/">
                                                 <div className="ListItemHeading">Leitura ordenada</div>
                                                 <p className="ListItemText">Lista de livros sobre filosofia ordenada com link de afiliado.</p>
                                             </a>
@@ -108,7 +110,7 @@ function Navbar() {
 
                                     <li>
                                         <NavigationMenu.Link>
-                                            <a className={classNames('ListItemLink')} >
+                                            <a className={classNames('ListItemLink')} href="/">
                                                 <div className="ListItemHeading">Podcast</div>
                                                 <p className="ListItemText">Ja tentei criar um podcast, mas a oratória e outros fatores me fizeram ver que não isto que eu queria.</p>
                                             </a>
@@ -117,7 +119,7 @@ function Navbar() {
 
                                     <li>
                                         <NavigationMenu.Link>
-                                            <a className={classNames('ListItemLink')} >
+                                            <a className={classNames('ListItemLink')} href="/">
                                                 <div className="ListItemHeading">Código do portfólio</div>
                                                 <p className="ListItemText">Quem quiser o código deste portfólio ele pode ser encontrado no meu Github.</p>
                                             </a>
