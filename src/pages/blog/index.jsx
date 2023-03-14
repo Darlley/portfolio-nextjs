@@ -1,44 +1,12 @@
 import HeaderPage from "@/components/molecules/HeaderPage";
 
-import { notion } from '../../../lib/notion';
-
-export async function getStaticProps() {
-  const response = await notion.databases.query({
-    database_id: process.env.NOTION_DATABASE_ID,
-    sorts: [
-      {
-        property: 'Date',
-        direction: 'descending',
-      },
-    ],
-    page_size: 10,
-  });
-  
-  const posts = response.results.map((post) => ({
-    id: post.id,
-    title: post.properties.Page.title[0].text.content,
-    slug: post.properties.Slug.rich_text[0].text.content,
-    published: post.properties.Published.checkbox,
-    date: post.properties.Date.date.start,
-  }));
-
-  return {
-    props: {
-      posts,
-    },
-  }
-}
-
-function Blog ({posts}) {
-  console.log("posts", posts)
-  
+function Blog () {
   const frases = [
     'O problema do mundo de hoje é que as pessoas inteligentes estão cheias de dúvidas, e as pessoas idiotas estão cheias de certezas. — Bertrand Russell',
     'O que eu conheço é uma gota, o que ignoro é um oceano. — Sr. Isaac Newton'
   ]
 
-  const articles = posts
-  console.log(articles)
+  const articles = []
 
   return (
     <>
