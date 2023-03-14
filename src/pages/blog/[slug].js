@@ -1,6 +1,5 @@
 
 import HeaderPage from '@/components/molecules/HeaderPage';
-import Fade  from 'react-reveal/Fade';
 import { useRouter } from 'next/router'
 
 
@@ -16,11 +15,9 @@ function Article() {
       <main className="app__content">
         <div className="articles__container">
           <div className="articles">
-            <Fade bottom>
-              <div className="article">
-                <h2>{slug}</h2>
-              </div>
-            </Fade>
+            <div className="article">
+              <h2>{slug}</h2>
+            </div>
           </div>
         </div>
       </main>

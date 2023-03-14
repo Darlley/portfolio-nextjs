@@ -1,5 +1,4 @@
 import HeaderPage from "@/components/molecules/HeaderPage";
-import Fade  from 'react-reveal/Fade';
 
 import { notion } from '../../../lib/notion';
 
@@ -63,11 +62,9 @@ function Blog ({posts}) {
         <div className="articles__container">
           <ul className="articles">
             {articles.map((article) => 
-              <Fade bottom cascade>
-                <li className="article" key={article.id}>
-                  <a href={'/blog/'+article.slug}>{article.title}</a>
-                </li>
-              </Fade >
+              <li className="article" key={article.id}>
+                <a href={'/blog/'+article.slug}>{article.title}</a>
+              </li>
             )}
         </ul>
           {articles.length <= 0 &&
