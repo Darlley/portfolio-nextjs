@@ -28,5 +28,10 @@ module.exports = {
       },
     },
   },
+  variants: {
+    extend: {
+      transform: ['active'],
+    }
+},
   plugins: [],
 }

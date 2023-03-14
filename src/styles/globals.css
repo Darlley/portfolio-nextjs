@@ -68,6 +68,7 @@ body, html{
 
   active:scale-95
   hover:scale-95
+
   transition-all
   duration-500
 }
@@ -79,6 +80,7 @@ body, html{
   hover:border-secundary-500
   transition-all
   duration-500
+
   rounded-full
   p-[1px]
 }
