@@ -3,7 +3,6 @@ import { useRef } from "react";
 import Fade  from 'react-reveal/Fade';
 
 function Blog () {
-  const articleRef = useRef(null);
   
   const frases = [
     'O problema do mundo de hoje é que as pessoas inteligentes estão cheias de dúvidas, e as pessoas idiotas estão cheias de certezas. — Bertrand Russell',

@@ -4,7 +4,9 @@ function HeaderPage({children}) {
     return (
         <header className="header__page">
             <div className="header__opacity">
-                <Navbar />
+                <div className="header__container">
+                    <Navbar />
+                </div>
 
                 <div className="page__title">            
                     {children}

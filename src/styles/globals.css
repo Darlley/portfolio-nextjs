@@ -35,6 +35,13 @@ body, html{
   max-w-6xl
   relative
 }
+.header__container{
+  @apply
+
+  m-auto
+  max-w-6xl
+  py-4
+}
 
 
 .profileCard_container{
@@ -52,7 +59,12 @@ body, html{
 .profile_item{
   @apply
 
-  absolute rounded-full bg-cover cursor-pointer border-2 border-secundary-500
+  absolute 
+  rounded-full 
+  bg-cover 
+  cursor-pointer 
+  border-2 
+  border-secundary-500
 
   active:scale-95
   hover:scale-95
@@ -73,12 +85,12 @@ body, html{
 .profile_item:nth-child(1){
   @apply
   
-  left-10 -top-[4px]
+  left-[45px] -top-[4px]
 }
 .profile_item:nth-child(2){
   @apply
   
-  right-10 -top-[4px]
+  right-[45px] -top-[4px]
 }
 .profile_item:nth-child(3){
   @apply
@@ -106,7 +118,7 @@ body, html{
   right-[40%] -bottom-4
 }
 
-/* .profileCard_container{
+.profileCard_container{
   animation: spin_reverse 80s linear infinite;
 }
 
@@ -116,7 +128,7 @@ body, html{
 
 .profile_card{
   animation: spin 80s linear infinite;
-} */
+}
 
 
 @keyframes spin{
