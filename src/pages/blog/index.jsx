@@ -1,15 +1,45 @@
 import HeaderPage from "@/components/molecules/HeaderPage";
-import { useRef } from "react";
 import Fade  from 'react-reveal/Fade';
 
-function Blog () {
+import { notion } from '../../../lib/notion';
+
+export async function getStaticProps() {
+  const response = await notion.databases.query({
+    database_id: process.env.NOTION_DATABASE_ID,
+    sorts: [
+      {
+        property: 'Date',
+        direction: 'descending',
+      },
+    ],
+    page_size: 10,
+  });
+  
+  const posts = response.results.map((post) => ({
+    id: post.id,
+    title: post.properties.Page.title[0].text.content,
+    slug: post.properties.Slug.rich_text[0].text.content,
+    published: post.properties.Published.checkbox,
+    date: post.properties.Date.date.start,
+  }));
+
+  return {
+    props: {
+      posts,
+    },
+  }
+}
+
+function Blog ({posts}) {
+  console.log("posts", posts)
   
   const frases = [
     'O problema do mundo de hoje é que as pessoas inteligentes estão cheias de dúvidas, e as pessoas idiotas estão cheias de certezas. — Bertrand Russell',
     'O que eu conheço é uma gota, o que ignoro é um oceano. — Sr. Isaac Newton'
   ]
 
-  const articles = []
+  const articles = posts
+  console.log(articles)
 
   return (
     <>
@@ -31,12 +61,16 @@ function Blog () {
         </div>
 
         <div className="articles__container">
-          {articles.length > 0 ?
-            <ul className="articles">
+          <ul className="articles">
+            {articles.map((article) => 
               <Fade bottom cascade>
-                <li className="article">artigo 1</li>
+                <li className="article" key={article.id}>
+                  <a href={'/blog/'+article.slug}>{article.title}</a>
+                </li>
               </Fade >
-            </ul> :
+            )}
+        </ul>
+          {articles.length <= 0 &&
             <div className="w-full text-center">
               <h4 className="text-lg text-slate-500">Artigos em breve 🔥</h4>
             </div>

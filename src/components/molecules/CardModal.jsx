@@ -67,7 +67,7 @@ const cards = [
         list: [
             {
                 title: "WordPress Como CMS",
-                ul: "https://www.origamid.com/curso/wordpress-como-cms/"
+                url: "https://www.origamid.com/curso/wordpress-como-cms/"
             }
         ],
         externalUrl: ""
@@ -89,8 +89,25 @@ const cards = [
     {
         imageUrl: "/habilities/AWS.png",
         title: "AWS Cloud Practitioner",
-        description: "Em andamento 🚧 pretendo tirar as certificações de Cloud Practitioner em Junho e provavelmente a Developer Associate até o final deste ano (2023).",
-        list: [],
+        description: "Certificação em andamento 🚧 Este portfólio foi hospedado com AWS Amplify e utilizo os serviço de S3 para armazenar as imagens das bases de conhecimento do LeadsZapp e Growp.",
+        list: [
+            {
+                title: "CURSO - PRIMEIROS PASSOS EM CLOUD",
+                url: "https://www.youtube.com/playlist?list=PLwlq4XZ8aTmfHJTNreRyqCmXVWhyF5LHo",
+            },
+            {
+                title: "Treinamento preparatório para a certificação da AWS e 600 vouchers!",
+                url: "https://youtu.be/VrQVDbgwFDs?t=12598"
+            },
+            {
+                title: "Certificação Amazon AWS Cloud Practitioner Foundational 2023",
+                url: "https://www.udemy.com/course/certificacao-aws-cloud-practitioner/"
+            },
+            {
+                title: "Bootcamp Cloud AWS",
+                url: "https://web.dio.me/track/bootcamp-cloud-aws"
+            },
+        ],
         externalUrl: ""
     },
 ]
@@ -108,33 +125,34 @@ function CardModal ({isOpen, setModalOpen, content}) {
     }
 
     return (
-        <div id="modal" className="absolute top-0 left-0 flex items-center justify-center w-full h-full transition-all duration-500 bg-opacity-50 bg-primary-500 "  onClick={closeModal} >
-            <div className="flex flex-col items-center gap-4 bg-white w-[90%] px-4 py-10 rounded-2xl max-w-[400px]">
+        <div id="modal" className="absolute top-0 left-0 flex items-center justify-center w-full h-full transition-all duration-500 bg-opacity-80 bg-primary-500"  onClick={closeModal} >
+            <div className="flex flex-col items-center gap-4 bg-gradient-to-t to-white from-secundary-200 w-[90%] px-4 py-10 rounded-2xl max-w-[400px] shadow-lg">
                 <Image
                     src={card.imageUrl}
                     alt="Icone"
-                    width={60}
-                    height={60}
+                    width={40}
+                    height={40}
                     className="rounded-full shadow-lg"
                 />
-                <h2 className="text-2xl font-bold text-primary-500 animate-pulse">{card.title}</h2>
+                <h2 className="text-2xl font-bold text-secundary-500">{card.title}</h2>
 
-                <p classList="animate-pulse">{card.description}</p>
+                <p>{card.description}</p>
 
-                {card.list.length > 0 && <ul className="w-full">
-                    {card.list.map((item) => (
-                        <li key={item.url} className="hover:text-secundary-500 cursor-pointer font-mono">
-                            <a href={item.url} target="_blank"> {item.title}</a>
+                {card.list.length > 0 && <ul className="flex flex-col w-full gap-2">
+                    {card.list.map((item, key) => (
+                        <li key={item.url} className="flex items-center gap-2 font-mono cursor-pointer hover:text-secundary-900">
+                            <span className="flex items-center justify-center min-h-[20px] max-h-[20px] text-white rounded-full min-w-[20px] max-w-[20px] bg-secundary-500">{key+1}</span>
+                            <a href={item.url} target="_blank" className="flex gap-4">
+                                {item.title}
+                            </a>
                         </li>
                     ))}
                 </ul>
                 }
                 
-                {
-                    card.externalUrl != "" && <p>
-                        <a href={card.externalUrl} className="inline-block mt-4 font-bold transition-colors text-secundary-500 hover:text-secundary-900">Saber mais</a>
-                    </p>
-                }
+                {card.externalUrl != "" && <p>
+                    <a href={card.externalUrl} className="inline-block mt-4 font-bold transition-colors cursor-pointer text-secundary-500 hover:text-secundary-900">Saber mais</a>
+                </p>}
                 
             </div>
         </div>
