@@ -16,34 +16,36 @@ const cards = [
         description: "Tenho experiência no desenvolvimento front-end utilizando o framework.",
         list: [
             {
-                title: "[PRÉ-WORK] Bootcamp React.js",
-                url: "https://www.youtube.com/playlist?list=PLF7Mi9HNzvVk05NdZnB44rccbg_dnWuMh"
-            },
-            {
                 title: "Curso React.js Ninja: Módulo React + Webpack",
                 url: "https://www.udemy.com/course/reactjs-ninja-modulo-react-webpack/"
-            },
-            {
-                title: "Bootcamp React.js Brainn Co.",
-                url: "https://site-leadszapp.vercel.app"
             },
             {
                 title: "Next Level Week 6 da Rocketseat",
                 url: "https://github.com/Darlley/letmeask-vite"
             },
+            {
+                title: "(Desafio vaga) Privatecode",
+                url: "https://github.com/Darlley/desafio-privatecode"
+            },
+            {
+                title: "(Desafio vaga) Sorteio.com",
+                url: "https://sorteio-woad.vercel.app/"
+            },
+            
         ],
         externalUrl: ""
     },
     {
         imageUrl: "/habilities/Figma.png",
         title: "Figma",
-        description: "Além deste repositório em particular, também criei o Design System da empresa LeadsZapp (onde estou empregado no momento).",
+        description: "Esta em andamento as certificações dos cursos UI Start e UI Expert.",
         list: [
             {
                 title: "PRO FIGMA | Design de interface do Iniciante ao especialista",
                 url: "https://www.udemy.com/certificate/UC-3c8c6d6e-4c1d-4388-ab88-228cda80ed44/"
             }
         ],
+        externalUrl: ""
     },
     {
         imageUrl: "/habilities/Tailwind.png",
