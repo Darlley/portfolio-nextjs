@@ -42,22 +42,27 @@ const cards = [
             {
                 title: "PRO FIGMA | Design de interface do Iniciante ao especialista",
                 url: "https://www.udemy.com/certificate/UC-3c8c6d6e-4c1d-4388-ab88-228cda80ed44/"
-            },
-            {
-                title: "Curso Online UI Start",
-                url: ""
-            },
-            {
-                title: "Curso Online UI Expert",
-                url: ""
-            },
+            }
         ],
     },
     {
         imageUrl: "/habilities/Tailwind.png",
         title: "CSS",
         description: "Sei utilizar e estruturar as tags semânticas do HTML5. Tenho conhecimentos intermediários em CSS (tenho mais facilidade para construir layouts com Flexbox). Sei iniciar um projeto com NPM, compilar SASS proprietário e de frameworks CSS com node-sass e gulp-sass e automatizar as tarefas com Gulp.\nDas ferramentas front-end que tenho mais familiaridade: HTML5, CSS3, Git/GitHub, NPM, SCSS/Sass, Bootstrap, TailwindCSS, Vite.js, Webpack.lém deste repositório em particular, também criei o Design System da empresa LeadsZapp (onde estou empregado no momento).",
-        list: [],
+        list: [
+            {
+                title: "HTML Web Developer",
+                url: "https://www.dio.me/certificate/93688C17/share"
+            },
+            {
+                title: "CSS Flexbox",
+                url: "https://www.origamid.com/certificate/b8a51b7f"
+            },
+            {
+                title: "Curso Ferramentas Front-end: GIT, NPM, Webpack, Gulp e Sass",
+                url: "https://www.udemy.com/certificate/UC-7371743e-804d-441e-b12f-fb61350c2a7d/"
+            },
+        ],
         externalUrl: ""
     },
     {
@@ -76,7 +81,28 @@ const cards = [
         imageUrl: "/habilities/Laravel.png",
         title: "Laravel",
         description: "Atualmente atuo utilizando a TALL Stack (Tailwind, Alpine.js, Laravel e Livewire). \n \n Criei duas bases de conhecimentos utilizando multi-tenant com esta stack, e alguns projetos avulsos. Tenho acompanhado o Laravel desde sua oitava versão.",
-        list: [],
+        list: [
+            {
+                title: "Curso de Laravel",
+                url: "https://github.com/Darlley/projeto"
+            },
+            {
+                title: "Laravel para iniciantes",
+                url: "https://www.udemy.com/certificate/UC-30a1c71c-2b63-4e16-93e2-6197164612be/"
+            },
+            {
+                title: "(Em andamento) Formação de Laravel Básico",
+                url: "https://hotmart.com/pt-br/marketplace/produtos/formacao-laravel-basico/K69708135M"
+            },
+            {
+                title: "(Em andamento) TDD com TALL Stack",
+                url: "https://github.com/Darlley/artlover"
+            },
+            {
+                title: "(Em andamento) Laravel na vida real - TALL STACK",
+                url: "https://github.com/Darlley/adoteumdev"
+            }
+        ],
         externalUrl: ""
     },
     {
