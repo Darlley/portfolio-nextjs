@@ -2,7 +2,14 @@ import Image from 'next/image'
 import Link from 'next/link';
 import { useState } from 'react';
 import CardModal from '../molecules/CardModal';
+import Metadata from '../molecules/Metadata';
 import Navbar from "../molecules/Navbar";
+
+const metadata = {
+    title: "Darlley Brito - Portfólio",
+    description: "Desenvolvedor Web Full Stack, UI Designer, AWS Cloud Practitioner e SEO",
+    image: "/assets/perfil.jpg"
+}
 
 function Header () {
     const [modalOpen, setModalOpen] = useState(false);
@@ -14,6 +21,8 @@ function Header () {
     }
     
     return (
+        <>
+        <Metadata metadata={metadata} />
         <header>
             <div className='header__background'>    
                 <div className='header__opacity'>
@@ -125,6 +134,7 @@ function Header () {
                 </div>
             </div>
         </header>
+        </>
     )
 }
 

@@ -1,4 +1,11 @@
 import HeaderPage from "@/components/molecules/HeaderPage";
+import Metadata from "@/components/molecules/Metadata";
+
+const metadata = {
+    title: "Darlley - Blog",
+    description: "Um blog de pensamentos sobre tecnologia e filosofia.",
+    image: "/lotr-1440x522.png"
+}
 
 function Blog () {
   const frases = [
@@ -10,6 +17,7 @@ function Blog () {
 
   return (
     <>
+      <Metadata metadata={metadata} />
       <HeaderPage>
         <h1>Artigos</h1>
 
