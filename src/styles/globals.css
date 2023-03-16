@@ -249,6 +249,8 @@ body, html{
 
   justify-between
   box-content
+
+  gap-2
 }
 .article{
   @apply
@@ -258,12 +260,12 @@ body, html{
 
   before:w-full
 
-  before:h-[2px]
+  before:h-[1px]
   before:bg-opacity-25
-  before:bg-gray-200
+  before:bg-gray-500
   before:absolute
   before:top-0
   before:box-content
 
-  py-8
+  py-4
 }

@@ -1,19 +1,30 @@
 import HeaderPage from "@/components/molecules/HeaderPage";
 import Metadata from "@/components/molecules/Metadata";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const metadata = {
-    title: "Darlley - Blog",
-    description: "Um blog de pensamentos sobre tecnologia e filosofia.",
-    image: "/lotr-1440x522.png"
+  title: "Darlley - Blog",
+  description: "Um blog de pensamentos sobre tecnologia e filosofia.",
+  image: "/lotr-1440x522.png"
 }
 
 function Blog () {
+
+  const [articles, setArticles] = useState([])
+
+  useEffect(() => {
+    fetch('/api/notion')
+    .then(response => response.json())
+    .then(data => {
+      setArticles(data)
+    })
+  }, [])
+
   const frases = [
     'O problema do mundo de hoje é que as pessoas inteligentes estão cheias de dúvidas, e as pessoas idiotas estão cheias de certezas. — Bertrand Russell',
     'O que eu conheço é uma gota, o que ignoro é um oceano. — Sr. Isaac Newton'
   ]
-
-  const articles = []
 
   return (
     <>
@@ -39,7 +50,26 @@ function Blog () {
           <ul className="articles">
             {articles.map((article) => 
               <li className="article" key={article.id}>
-                <a href={'/blog/'+article.slug}>{article.title}</a>
+                <div className="flex flex-col w-full ">
+                  <span className="font-mono text-xs text-slate-500">{article.date}</span>
+                  <div className="flex items-start justify-between w-full">
+                    <h3 className="w-full">
+                      <Link href={`/blog/${article.slug}`} className="flex py-2 text-lg font-bold text-slate-800 hover:text-primary-500">
+                        {article.title}
+                      </Link>
+                    </h3>
+                    {article.thumbnail && 
+                    <div className="flex flex-col items-end justify-end gap-4 w-max">
+                      <div className="w-[60px] h-[60px]">
+                        <img src={article.thumbnail} alt="thumbnail" />
+                      </div>
+                      <span className="font-mono text-xs text-right text-slate-500 w-max"><a href={article.url} target="_blank">Read in Notion</a></span>
+                    </div>
+                    }
+                  </div>
+                  
+                </div>
+                
               </li>
             )}
         </ul>
