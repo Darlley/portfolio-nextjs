@@ -29,7 +29,7 @@ function Blog () {
   return (
     <>
       <Metadata metadata={metadata} />
-      <HeaderPage>
+      <HeaderPage thumbnail="/lotr-1440x522.png">
         <h1>Artigos</h1>
 
         <div className="citation">

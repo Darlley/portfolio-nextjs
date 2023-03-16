@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 const ArticlePage = () => {
   const router = useRouter()
   const [articleData, setArticleData] = useState(null)
+  const [thumbnail, setThumbnail] = useState(null)
 
   const {slug} = router.query
 
@@ -13,6 +14,7 @@ const ArticlePage = () => {
       const res = await fetch(`/api/notion/${slug}`)
       const data = await res.json()
       setArticleData(data)
+      setThumbnail(data.thumbnail)
     }
     fetchArticleData()
   }, [slug])
@@ -35,15 +37,15 @@ const ArticlePage = () => {
       </>
     )
   }
-
+  
   return (
     <>
-      <HeaderPage>
+      <HeaderPage thumbnail={thumbnail}>
         <h1>{articleData.title}</h1>
       </HeaderPage>
       <main className="app__content">
         <div className="articles__container">
-          <div className="articles"> 
+          <div className="articles">
             <div className="article">
               <p>{articleData.content}</p>
             </div>

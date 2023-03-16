@@ -154,8 +154,8 @@ body, html{
   @apply
 
   bg-black
-  bg-[url('/lotr-1440x522.png')]
   bg-cover
+  bg-center
   
   relative
   flex
