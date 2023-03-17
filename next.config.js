@@ -4,6 +4,7 @@ const nextConfig = {
 }
 
 module.exports = { 
+  nextConfig,
   async rewrites() {
     return [
       {
