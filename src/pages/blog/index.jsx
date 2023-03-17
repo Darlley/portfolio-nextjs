@@ -1,7 +1,6 @@
 import HeaderPage from "@/components/molecules/HeaderPage";
 import Metadata from "@/components/molecules/Metadata";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 const metadata = {
   title: "Darlley - Blog",
@@ -9,17 +8,18 @@ const metadata = {
   image: "/lotr-1440x522.png"
 }
 
-function Blog () {
+export async function getStaticProps(){
+  const data = await fetch('https://www.darlley.dev/api/notion')
+  const articles = await data.json()
+  
+  return {
+    props: {
+      articles
+    }
+  }
+}
 
-  const [articles, setArticles] = useState([])
-
-  useEffect(() => {
-    fetch('/api/notion')
-    .then(response => response.json())
-    .then(data => {
-      setArticles(data)
-    })
-  }, [])
+function Blog ({articles}) {
 
   const frases = [
     'O problema do mundo de hoje é que as pessoas inteligentes estão cheias de dúvidas, e as pessoas idiotas estão cheias de certezas. — Bertrand Russell',
