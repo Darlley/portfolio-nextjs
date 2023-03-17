@@ -1,4 +1,22 @@
+import cors from 'cors';
 import { Client } from '@notionhq/client';
+
+const corsMiddleware = cors({
+    origin: 'http://darlley.dev/',
+    methods: ['GET', 'POST']
+})
+
+function runMiddleware(req, res, fn){
+    return new Promise((resolve, reject) => {
+        ReferenceError(req, res, (result) => {
+            if(result instanceof Error) {
+                return reject(result)
+            }
+
+            return resolve(result)
+        })
+    })
+}
 
 const notion_secret = process.env.NOTION_TOKEN;
 const notion_database = process.env.NOTION_DATABASE_ID;
@@ -6,6 +24,8 @@ const notion_database = process.env.NOTION_DATABASE_ID;
 const notion = new Client({ auth: notion_secret });
 
 export default async function handler(req, res) {
+    await runMiddleware(req, res, corsMiddleware)
+
     const slug = req.query.slug;
 
     console.log('api slug', slug)
