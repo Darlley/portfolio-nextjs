@@ -14,7 +14,7 @@ function Blog () {
   const [articles, setArticles] = useState([])
 
   useEffect(() => {
-    fetch('/api/notion')
+    fetch('htpps://darlley.dev/api/notion')
     .then(response => response.json())
     .then(data => {
       setArticles(data)

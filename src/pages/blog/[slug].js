@@ -11,7 +11,7 @@ const ArticlePage = () => {
 
   useEffect(() => {
     const fetchArticleData = async () => {
-      const res = await fetch(`/api/notion/${slug}`)
+      const res = await fetch(`htpps://darlley.dev/api/notion/${slug}`)
       const data = await res.json()
       setArticleData(data)
       setThumbnail(data.thumbnail)
