@@ -1,5 +1,23 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import cors from 'cors';
 import { Client } from "@notionhq/client"
+
+const corsMiddleware = cors({
+  origin: 'http://darlley.dev/',
+  methods: ['GET', 'POST']
+})
+
+function runMiddleware(req, res, fn){
+  return new Promise((resolve, reject) => {
+      ReferenceError(req, res, (result) => {
+          if(result instanceof Error) {
+              return reject(result)
+          }
+
+          return resolve(result)
+      })
+  })
+}
 
 const notion_secret = process.env.NOTION_TOKEN
 const notion_database = process.env.NOTION_DATABASE_ID
@@ -10,6 +28,8 @@ const notion = new Client({
 })
 
 export default async function handler(req, res) {
+  await runMiddleware(req, res, corsMiddleware)
+
   if(!notion_secret || !notion_database) throw new Error('Sem Token do Notion ou ID do Banco de Dados.')
 
   const query = await notion.databases.query({
