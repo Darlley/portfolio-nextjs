@@ -1,36 +1,38 @@
 import HeaderPage from '@/components/molecules/HeaderPage'
 import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 
-const ArticlePage = ({article}) => {
-  // const router = useRouter()
-  // const slug = router.query.slug
+const ArticlePage = () => {
+  const router = useRouter()
+  const slug = router.query.slug
+
   
   const [loading, setLoading] = useState(false)
   const [article, setArticle] = useState([])
 
-  // const fetchArticle = async () => {
-  //   try {
-  //     setLoading(true)
+  const fetchArticle = async () => {
+    try {
+      setLoading(true)
 
-  //     const res = await fetch(`http://localhost:3000/api/notion/${slug}`, {
-  //       mode: 'no-cors'
-  //     })
-  //     const data = await res.json()
+      const res = await fetch(`https://darlley.dev/api/notion/${slug}`, {
+        mode: 'no-cors'
+      })
+      const data = await res.json()
 
-  //     if(!data) throw "Missing data..."
+      if(!data) throw "Missing data..."
 
-  //     setArticle(data)
+      setArticle(data)
 
-  //   } catch(error){
-  //     console.log(error)
-  //   } finally {
-  //     setLoading(false)
-  //   }
-  // }
+    } catch(error){
+      console.log(error)
+    } finally {
+      setLoading(false)
+    }
+  }
 
-  // useEffect(() => {
-  //   fetchArticle()
-  // }, [])
+  useEffect(() => {
+    fetchArticle()
+  }, [])
 
   if (!loading) {
     return (
@@ -53,7 +55,7 @@ const ArticlePage = ({article}) => {
   
   return (
     <>
-      <HeaderPage thumbnail={article.thumbnail}>
+      <HeaderPage thumbnail={article.thumbnail || ""}>
         <h1>{article.title}</h1>
       </HeaderPage>
       <main className="app__content">
