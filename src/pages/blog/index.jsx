@@ -9,7 +9,7 @@ const metadata = {
   image: "/lotr-1440x522.png"
 }
 
-const URL_API = 'https://www.darlley.dev/api/notion'
+const URL_API = '/api/notion'
 
 function Blog () {
   const [loading, setLoading] = useState(false)

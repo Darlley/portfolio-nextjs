@@ -14,7 +14,7 @@ const ArticlePage = () => {
     try {
       setLoading(true)
 
-      const res = await fetch(`https://www.darlley.dev/api/notion/${slug}`, {
+      const res = await fetch(`/api/notion/${slug}`, {
         mode: 'no-cors'
       })
       const data = await res.json()
