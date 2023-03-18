@@ -2,8 +2,8 @@ import HeaderPage from '@/components/molecules/HeaderPage'
 import { useRouter } from 'next/router'
 
 const ArticlePage = ({article}) => {
-  const router = useRouter()
-  const slug = router.query.slug
+  // const router = useRouter()
+  // const slug = router.query.slug
   
   const [loading, setLoading] = useState(false)
   const [article, setArticle] = useState([])
@@ -32,7 +32,7 @@ const ArticlePage = ({article}) => {
   //   fetchArticle()
   // }, [])
 
-  if (loading) {
+  if (!loading) {
     return (
       <>
       <HeaderPage>
