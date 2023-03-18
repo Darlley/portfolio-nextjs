@@ -4,14 +4,6 @@ const nextConfig = {
 }
 
 module.exports = {
-  async rewrites() {
-    return [
-      {
-        source: '/:path*',
-        destination: 'https://www.darlley.dev/:path*',
-      },
-    ]
-  },
   async headers() {
     return [
       {
