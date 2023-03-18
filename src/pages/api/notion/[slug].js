@@ -6,6 +6,8 @@ const notion_database = process.env.NOTION_DATABASE_ID;
 const notion = new Client({ auth: notion_secret });
 
 export default async function handler(req, res) {
+    req.header("Access-Control-Allow-Origin", "*")
+
     const slug = req.query.slug;
 
     if (!slug) {

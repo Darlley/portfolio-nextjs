@@ -1,29 +1,38 @@
 import HeaderPage from '@/components/molecules/HeaderPage'
 import { useRouter } from 'next/router'
 
-export async function getStaticPaths(ctx) {
-  return {
-    paths: [], //indicates that no page needs be created at build time
-    fallback: 'blocking' //indicates the type of fallback
-  }
-}
-
-export async function getStaticProps(){
+const ArticlePage = ({article}) => {
   const router = useRouter()
   const slug = router.query.slug
-  const data = await fetch(`https://www.darlley.dev/api/notion/${slug}`)
-  const article = await data.json()
   
-  return {
-    props: {
-      article
+  const [loading, setLoading] = useState(false)
+  const [article, setArticle] = useState([])
+
+  const fetchArticle = async () => {
+    try {
+      setLoading(true)
+
+      const res = await fetch(`https://www.darlley.dev/api/notion/${slug}`, {
+        mode: 'no-cors'
+      })
+      const data = await res.json()
+
+      if(!data) throw "Missing data..."
+
+      setArticle(data)
+
+    } catch(error){
+      console.log(error)
+    } finally {
+      setLoading(false)
     }
   }
-}
 
-const ArticlePage = ({article}) => {
+  useEffect(() => {
+    fetchArticle()
+  }, [])
 
-  if (!article) {
+  if (loading) {
     return (
       <>
       <HeaderPage>

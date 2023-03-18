@@ -7,7 +7,7 @@ const notion_database = process.env.NOTION_DATABASE_ID
 const notion = new Client({ auth: notion_secret })
 
 export default async function handler(req, res) {
-  res.header("Access-Control-Allow-Origin", "*")
+  req.header("Access-Control-Allow-Origin", "*")
   if(!notion_secret || !notion_database) throw new Error('Sem Token do Notion ou ID do Banco de Dados.')
 
   const query = await notion.databases.query({

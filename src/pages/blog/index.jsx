@@ -19,7 +19,9 @@ function Blog () {
     try {
       setLoading(true)
 
-      const res = await fetch(URL_API)
+      const res = await fetch(URL_API, {
+        mode: 'no-cors'
+      })
       const data = await res.json()
 
       if(!data) throw "Missing data..."
