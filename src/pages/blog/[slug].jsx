@@ -8,29 +8,29 @@ const ArticlePage = ({article}) => {
   const [loading, setLoading] = useState(false)
   const [article, setArticle] = useState([])
 
-  const fetchArticle = async () => {
-    try {
-      setLoading(true)
+  // const fetchArticle = async () => {
+  //   try {
+  //     setLoading(true)
 
-      const res = await fetch(`https://www.darlley.dev/api/notion/${slug}`, {
-        mode: 'no-cors'
-      })
-      const data = await res.json()
+  //     const res = await fetch(`http://localhost:3000/api/notion/${slug}`, {
+  //       mode: 'no-cors'
+  //     })
+  //     const data = await res.json()
 
-      if(!data) throw "Missing data..."
+  //     if(!data) throw "Missing data..."
 
-      setArticle(data)
+  //     setArticle(data)
 
-    } catch(error){
-      console.log(error)
-    } finally {
-      setLoading(false)
-    }
-  }
+  //   } catch(error){
+  //     console.log(error)
+  //   } finally {
+  //     setLoading(false)
+  //   }
+  // }
 
-  useEffect(() => {
-    fetchArticle()
-  }, [])
+  // useEffect(() => {
+  //   fetchArticle()
+  // }, [])
 
   if (loading) {
     return (
