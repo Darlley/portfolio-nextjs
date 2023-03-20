@@ -117,24 +117,20 @@ const cards = [
     {
         imageUrl: "/habilities/AWS.png",
         title: "AWS Cloud Practitioner",
-        description: "Certificação em andamento 🚧 Este portfólio foi hospedado com AWS Amplify e utilizo os serviço de S3 para armazenar as imagens das bases de conhecimento do LeadsZapp e Growp.",
+        description: "Certificação em andamento 🚧 Fiz o deploy deste portfólio feito em Next.js com a Amplify + Route53 e já utilizei os serviço de S3 junto com Laravel para armazenar imagens de uma base de conhecimento.",
         list: [
+            {
+                title: "Primeiros Passos com AWS",
+                url: "https://www.dio.me/certificate/1431E9AF/share"
+            },
             {
                 title: "CURSO - PRIMEIROS PASSOS EM CLOUD",
                 url: "https://www.youtube.com/playlist?list=PLwlq4XZ8aTmfHJTNreRyqCmXVWhyF5LHo",
             },
             {
-                title: "Treinamento preparatório para a certificação da AWS e 600 vouchers!",
+                title: "Treinamento preparatório para a certificação da AWS",
                 url: "https://youtu.be/VrQVDbgwFDs?t=12598"
-            },
-            {
-                title: "Certificação Amazon AWS Cloud Practitioner Foundational 2023",
-                url: "https://www.udemy.com/course/certificacao-aws-cloud-practitioner/"
-            },
-            {
-                title: "Bootcamp Cloud AWS",
-                url: "https://web.dio.me/track/bootcamp-cloud-aws"
-            },
+            }
         ],
         externalUrl: ""
     },
