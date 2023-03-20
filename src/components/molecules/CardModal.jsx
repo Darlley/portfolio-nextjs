@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useState } from "react";
 
 const { default: Image } = require("next/image");
@@ -6,9 +7,9 @@ const cards = [
     {
         imageUrl: "/profile.jpg",
         title: "Darlley Brasil de Brito Furtado",
-        description: "Cursei somente até o 5° semestre em Análise e Desenvolvimento de Sistemas na Universidade Católica Dom Bosco (UCDB), e pretendo continuar/terminar o curso a distância pela Descomplica (além de explorar outras áreas como Cloud, Design, Automação de Marketing, e finanças ou alguma das áreas que envolva manipulação de dados). Tenho 2 anos de experiência em Desenvolvimento Web atuando em duas empresas no ramo de Marketing Digital.\n\nAlém do computador, alguns dos meus hobbies incluem: skate, musculação, estética automotiva, filosofia e cerveja artesanal.",
+        description: "Cursei somente até o 5° semestre (2022) em Análise e Desenvolvimento de Sistemas na Universidade Católica Dom Bosco (UCDB). Pretendo concluir (2024) o curso a distância e tenho interesse pelas areas de UI Design, Cloud Computing e Machine Learning. Tenho 2 anos de experiência em Desenvolvimento Web atuando em duas empresas no ramo de Marketing Digital.\n\nAlém do computador, alguns dos meus hobbies incluem: skate, musculação, estética automotiva, filosofia e cerveja artesanal.",
         list: [],
-        externalUrl: "https://github.com/Darlley"
+        externalUrl: "https://www.linkedin.com/in/darlleybrito/"
     },
     {
         imageUrl: "/habilities/React.png",
@@ -164,19 +165,15 @@ function CardModal ({isOpen, setModalOpen, content}) {
 
                 {card.list.length > 0 && <ul className="flex flex-col w-full gap-2">
                     {card.list.map((item, key) => (
-                        <li key={item.url} className="flex items-center gap-2 font-mono cursor-pointer hover:text-secundary-900">
+                        <li key={item.url+key} className="flex items-center gap-2 font-mono cursor-pointer hover:text-secundary-900">
                             <span className="flex items-center justify-center min-h-[20px] max-h-[20px] text-white rounded-full min-w-[20px] max-w-[20px] bg-secundary-500">{key+1}</span>
-                            <a href={item.url} target="_blank" className="flex gap-4">
-                                {item.title}
-                            </a>
+                            <Link href={item.url} target="_blank">{item.title}</Link> 
                         </li>
                     ))}
                 </ul>
                 }
                 
-                {card.externalUrl != "" && <p>
-                    <a href={card.externalUrl} className="inline-block mt-4 font-bold transition-colors cursor-pointer text-secundary-500 hover:text-secundary-900">Saber mais</a>
-                </p>}
+                {!!card.externalUrl ? <Link href={card.externalUrl} className="inline-block mt-4 font-bold transition-colors cursor-pointer text-secundary-500 hover:text-secundary-900" target="_blank">Saber mais</Link> : null}
                 
             </div>
         </div>

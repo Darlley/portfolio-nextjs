@@ -53,7 +53,7 @@ body, html{
 .profile_card{
   @apply
 
-  w-[200px] h-[200px] p-1 border-8 rounded-full hover:border-secundary-500 cursor-pointer transition-all duration-500
+  w-[200px] h-[200px] p-1 border-8 rounded-full hover:border-secundary-500 cursor-pointer transition-all duration-500 z-0
 }
 
 .profile_item{
@@ -71,6 +71,7 @@ body, html{
 
   transition-all
   duration-500
+  z-[2]
 }
 .profile_item img{
   @apply
@@ -83,6 +84,7 @@ body, html{
 
   rounded-full
   p-[1px]
+  z-[2]
 }
 .profile_item:nth-child(1){
   @apply
