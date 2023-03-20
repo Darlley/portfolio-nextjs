@@ -6,14 +6,14 @@ const cards = [
     {
         imageUrl: "/profile.jpg",
         title: "Darlley Brasil de Brito Furtado",
-        description: "Cursei somente até o 5° semestre em Análise e Desenvolvimento de Sistemas na Universidade Católica Dom Bosco (UCDB), mas tenho 2 anos de experiência em Desenvolvimento Web atuando em duas empresas no ramo de Marketing Digital. Além do computador, alguns dos meus hobbies incluem: skate, musculação, estética automotiva, filosofia e cerveja artesanal.",
+        description: "Cursei somente até o 5° semestre em Análise e Desenvolvimento de Sistemas na Universidade Católica Dom Bosco (UCDB), e pretendo continuar/terminar o curso a distância pela Descomplica (além de explorar outras áreas como Cloud, Design, Automação de Marketing, e finanças ou alguma das áreas que envolva manipulação de dados). Tenho 2 anos de experiência em Desenvolvimento Web atuando em duas empresas no ramo de Marketing Digital.\n\nAlém do computador, alguns dos meus hobbies incluem: skate, musculação, estética automotiva, filosofia e cerveja artesanal.",
         list: [],
         externalUrl: "https://github.com/Darlley"
     },
     {
         imageUrl: "/habilities/React.png",
         title: "ReactJS",
-        description: "Tenho experiência no desenvolvimento front-end utilizando o framework.",
+        description: "Tenho experiência no desenvolvimento front-end utilizando o framework e seu ecossistema (Webpack, CRA, Vite.js e Next.js).",
         list: [
             {
                 title: "Curso React.js Ninja: Módulo React + Webpack",
@@ -37,8 +37,8 @@ const cards = [
     },
     {
         imageUrl: "/habilities/Figma.png",
-        title: "Figma",
-        description: "Esta em andamento as certificações dos cursos UI Start e UI Expert.",
+        title: "UI Design",
+        description: "Tenho conhecimentos básicos das teorias e do Workflow do UI Design e tenho conhecimentos intermediários em Figma para criação de Design de Interface e prototipação. Esta em andamento a certificação do Curso Online de UI Start.",
         list: [
             {
                 title: "PRO FIGMA | Design de interface do Iniciante ao especialista",
@@ -50,10 +50,10 @@ const cards = [
     {
         imageUrl: "/habilities/Tailwind.png",
         title: "CSS",
-        description: "Sei utilizar e estruturar as tags semânticas do HTML5. Tenho conhecimentos intermediários em CSS (tenho mais facilidade para construir layouts com Flexbox). Sei iniciar um projeto com NPM, compilar SASS proprietário e de frameworks CSS com node-sass e gulp-sass e automatizar as tarefas com Gulp.\nDas ferramentas front-end que tenho mais familiaridade: HTML5, CSS3, Git/GitHub, NPM, SCSS/Sass, Bootstrap, TailwindCSS, Vite.js, Webpack.lém deste repositório em particular, também criei o Design System da empresa LeadsZapp (onde estou empregado no momento).",
+        description: "Tenho conhecimentos intermediários em CSS3 (tenho mais facilidade para construir layouts com Flexbox). Sei iniciar um projeto com NPM ou Yarn, compilar SASS proprietário/personalizado e de frameworks CSS com node-sass e gulp-sass e automatizar as tarefas com Gulp.\n\nDentre ferramentas front-end que tenho mais familiaridade: HTML5, CSS3, Git/GitHub, NPM/Yarn, SCSS/Sass, Bootstrap, TailwindCSS, Vite.js, Webpack.",
         list: [
             {
-                title: "HTML Web Developer",
+                title: "Bootcamp HTML Web Developer",
                 url: "https://www.dio.me/certificate/93688C17/share"
             },
             {
@@ -70,7 +70,7 @@ const cards = [
     {
         imageUrl: "/habilities/WordPress.png",
         title: "WordPress",
-        description: "Estagiei em 2020 em uma empresa de Marketing Jurídiro onde eu era responsavel por converter os arquivos do site que um desenvolvedor front-end criou e converter para um tema WordPress/PHP.",
+        description: "Entre Novembro de 2019 até Dezembro de 2020 estagiei em uma empresa de Marketing Jurídiro onde eu era responsavel por converter os arquivos estáticos (HTML, CSS e JavaScript) do site que um desenvolvedor criava em um tema WordPress/PHP usado como CSM para sites institucionais de advogados. Também fazia o deploy com Hostgator.",
         list: [
             {
                 title: "WordPress Como CMS",
@@ -82,7 +82,7 @@ const cards = [
     {
         imageUrl: "/habilities/Laravel.png",
         title: "Laravel",
-        description: "Atualmente atuo utilizando a TALL Stack (Tailwind, Alpine.js, Laravel e Livewire). \n \n Criei duas bases de conhecimentos utilizando multi-tenant com esta stack, e alguns projetos avulsos. Tenho acompanhado o Laravel desde sua oitava versão.",
+        description: "Atualmente atuo utilizando a TALL Stack (Tailwind, Alpine.js, Laravel e Livewire).\n\nCriei duas bases de conhecimentos com esta stack, e alguns projetos avulsos. Tenho acompanhado o Laravel desde sua oitava versão.",
         list: [
             {
                 title: "Curso de Laravel",
@@ -109,7 +109,7 @@ const cards = [
     },
     {
         imageUrl: "/habilities/MySQL.png",
-        title: "MySQL",
+        title: "Banco de Dados Relacionais",
         description: "Embora tenha aprendido PostgreSQL na faculdade tenho mais facilidade e mais experiência de uso com MySQL.",
         list: [],
         externalUrl: ""
@@ -117,7 +117,7 @@ const cards = [
     {
         imageUrl: "/habilities/AWS.png",
         title: "AWS Cloud Practitioner",
-        description: "Certificação em andamento 🚧 Fiz o deploy deste portfólio feito em Next.js com a Amplify + Route53 e já utilizei os serviço de S3 junto com Laravel para armazenar imagens de uma base de conhecimento.",
+        description: "Certificação em andamento 🚧\n\nFiz o deploy deste portfólio feito em Next.js com a Amplify + Route53 e já utilizei os serviço de S3 junto com Laravel para armazenar imagens de uma base de conhecimento.",
         list: [
             {
                 title: "Primeiros Passos com AWS",
@@ -160,7 +160,7 @@ function CardModal ({isOpen, setModalOpen, content}) {
                 />
                 <h2 className="text-2xl font-bold text-secundary-500">{card.title}</h2>
 
-                <p>{card.description}</p>
+                <p className="whitespace-pre-wrap">{card.description}</p>
 
                 {card.list.length > 0 && <ul className="flex flex-col w-full gap-2">
                     {card.list.map((item, key) => (
