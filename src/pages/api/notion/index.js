@@ -6,7 +6,7 @@ const notion_database = process.env.NOTION_DATABASE_ID
 // Initializing a client
 const notion = new Client({ auth: notion_secret })
 
-export default async function handler() {
+export default async function handler(req,res) {
 
   if(!notion_secret || !notion_database) throw new Error('Sem Token do Notion ou ID do Banco de Dados.')
 
