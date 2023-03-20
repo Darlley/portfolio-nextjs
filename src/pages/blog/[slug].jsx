@@ -15,6 +15,7 @@ const ArticlePage = () => {
       setLoading(true)
 
       const res = await fetch(`/api/notion/${slug}`, {
+        method: 'GET',
         mode: 'no-cors'
       })
       const data = await res.json()
