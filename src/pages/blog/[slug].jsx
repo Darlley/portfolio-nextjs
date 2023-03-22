@@ -75,40 +75,40 @@ export default ArticlePage
 
 export async function getStaticProps({ params }) {
   const BASE_FETCH_URL = process.env.BASE_FETCH_URL
-  // Buscar os dados do artigo usando o valor de slug
+  
   const res = await fetch(`${BASE_FETCH_URL}/api/notion/${params.slug}`)
   const article = await res.json()
 
-  // Retornar os dados do artigo como props
   return {
     props: {
       article,
     },
-    // Revalidar os dados a cada hora para atualizar o conteúdo estático
-    // revalidate: 3600,
   }
 }
 
 export async function getStaticPaths() {
+  const BASE_FETCH_URL = process.env.BASE_FETCH_URL
   try {
-    // Buscar todos os slugs dos artigos disponíveis
-    const slugs = await fetch('/api/notion').then((articles) => articles.json())
+    const res = await fetch(`${BASE_FETCH_URL}/api/notion`)
+    const articles = await res.json()
 
-    // Retornar os paths com os valores de slug e o fallback como true
+    // console.log(articles[0].slug)
+
     return {
-      paths: slugs.map((slug) => ({
-        params: { slug },
+      paths: articles.map((article) => ({
+        params: { 
+          slug: article.slug,
+        },
       })),
       fallback: true,
     }
   } catch(error){
-    console.log(error)
+    console.log('error 2')
   } 
   
-  console.log('error')
   // Retornar os paths com os valores de slug e o fallback como true
   return {
     paths: [],
-    fallback: 'blocking',
+    fallback: false,
   }
 }
