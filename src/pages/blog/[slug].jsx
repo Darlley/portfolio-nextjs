@@ -98,19 +98,13 @@ export async function getStaticPaths() {
     const res = await fetch(`${BASE_FETCH_URL}/api/notion`)
     const articles = await res.json()
 
-    console.log('esta aqui: ' + articles[0].slug)
-
     return {
-      paths: articles.map((article) => ({
-        params: { 
-          slug: article.slug,
-        },
-      })),
+      paths: articles.map((article) => `/blog/${article.slug}`),
       fallback: true,
     }
   } catch(error){
-    console.log('error 2')
-  } 
+    console.error('error: ' + error)
+  }
   
   // Retornar os paths com os valores de slug e o fallback como true
   return {

@@ -27,7 +27,7 @@ export default async function handler(req, res) {
             filter: {
                 property: 'Slug',
                 title: {
-                equals: slug,
+                    equals: slug,
                 },
             },
         });
