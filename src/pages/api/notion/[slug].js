@@ -8,6 +8,7 @@ const notion = new Client({ auth: notion_secret });
 
 export default async function handler(req, res) {
 
+    console.log(req)
     const slug = req.query.slug;
 
     if (!slug) {
