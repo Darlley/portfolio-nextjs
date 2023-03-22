@@ -1,3 +1,4 @@
+import NextCors from 'nextjs-cors';
 import { Client } from "@notionhq/client"
 
 const notion_secret = process.env.NOTION_TOKEN
@@ -7,6 +8,12 @@ const notion_database = process.env.NOTION_DATABASE_ID
 const notion = new Client({ auth: notion_secret })
 
 export default async function handler(req,res) {
+  await NextCors(req, res, {
+      // Options
+      methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+      origin: '*',
+      optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  });
 
   if(!notion_secret || !notion_database) throw new Error('Sem Token do Notion ou ID do Banco de Dados.')
 

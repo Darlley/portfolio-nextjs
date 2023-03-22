@@ -79,6 +79,12 @@ export async function getStaticProps({ params }) {
   const res = await fetch(`${BASE_FETCH_URL}/api/notion/${params.slug}`)
   const article = await res.json()
 
+  if (!article) {
+    return {
+      notFound: true,
+    }
+  }
+  
   return {
     props: {
       article,
@@ -92,7 +98,7 @@ export async function getStaticPaths() {
     const res = await fetch(`${BASE_FETCH_URL}/api/notion`)
     const articles = await res.json()
 
-    // console.log(articles[0].slug)
+    console.log('esta aqui: ' + articles[0].slug)
 
     return {
       paths: articles.map((article) => ({
@@ -109,6 +115,6 @@ export async function getStaticPaths() {
   // Retornar os paths com os valores de slug e o fallback como true
   return {
     paths: [],
-    fallback: false,
+    fallback: "blocking"
   }
 }
