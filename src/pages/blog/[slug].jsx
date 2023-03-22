@@ -92,8 +92,7 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
   try {
     // Buscar todos os slugs dos artigos disponíveis
-    const res = await fetch('/api/notion').then((articles) => articles.json())
-    const slugs = await res.slug
+    const slugs = await fetch('/api/notion').then((articles) => articles.json())
 
     // Retornar os paths com os valores de slug e o fallback como true
     return {
