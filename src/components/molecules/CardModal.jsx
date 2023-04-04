@@ -39,11 +39,15 @@ const cards = [
     {
         imageUrl: "/habilities/Figma.png",
         title: "UI Design",
-        description: "Tenho conhecimentos básicos das teorias e do Workflow do UI Design e tenho conhecimentos intermediários em Figma para criação de Design de Interface e prototipação. Esta em andamento a certificação do Curso Online de UI Start.",
+        description: "Tenho conhecimentos básicos das teorias e do Workflow do UI Design e tenho conhecimentos intermediários em Figma para criação de Design de Interface e prototipação. Próxima meta é concluir o Curso Online UI Expert.",
         list: [
             {
-                title: "PRO FIGMA | Design de interface do Iniciante ao especialista",
+                title: "PRO FIGMA | Design de interface do Iniciante ao especialista (Udemy)",
                 url: "https://www.udemy.com/certificate/UC-3c8c6d6e-4c1d-4388-ab88-228cda80ed44/"
+            },
+            {
+                title: "UI Design para Iniciantes (Origamid)",
+                url: "https://www.origamid.com/certificate/f6676778"
             }
         ],
         externalUrl: ""
