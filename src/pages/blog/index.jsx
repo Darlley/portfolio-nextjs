@@ -37,12 +37,10 @@ function Blog () {
     fetchArticles()
   }, [])
 
-  const frases = [
-    'O problema do mundo de hoje é que as pessoas inteligentes estão cheias de dúvidas, e as pessoas idiotas estão cheias de certezas. — Bertrand Russell',
-    'O que eu conheço é uma gota, o que ignoro é um oceano. — Sr. Isaac Newton'
-  ]
-
-  console.log(loading, articles)
+  // const frases = [
+  //   'O problema do mundo de hoje é que as pessoas inteligentes estão cheias de dúvidas, e as pessoas idiotas estão cheias de certezas. — Bertrand Russell',
+  //   'O que eu conheço é uma gota, o que ignoro é um oceano. — Sr. Isaac Newton'
+  // ]
 
   return (
     <>

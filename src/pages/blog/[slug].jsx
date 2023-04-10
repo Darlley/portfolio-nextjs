@@ -1,6 +1,4 @@
 import HeaderPage from '@/components/molecules/HeaderPage'
-import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
 
 const ArticlePage = ({article}) => {
   if (!article) {
@@ -43,9 +41,8 @@ const ArticlePage = ({article}) => {
 export default ArticlePage
 
 export async function getStaticProps({ params }) {
-  const BASE_FETCH_URL = process.env.BASE_FETCH_URL
   
-  const res = await fetch(`${BASE_FETCH_URL}/api/notion/${params.slug}`)
+  const res = await fetch(`/api/notion/${params.slug}`)
   const article = await res.json()
 
   if (!article) {
