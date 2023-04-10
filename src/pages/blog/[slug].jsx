@@ -3,37 +3,6 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 
 const ArticlePage = ({article}) => {
-  // const router = useRouter()
-  // const slug = router.query.slug
-
-  // const [loading, setLoading] = useState(false)
-  // const [article, setArticle] = useState([])
-
-  // const fetchArticle = async () => {
-  //   try {
-  //     setLoading(true)
-
-  //     const res = await fetch(`/api/notion/${slug}`, {
-  //       method: 'GET',
-  //       mode: 'no-cors'
-  //     })
-  //     const data = await res.json()
-
-  //     if(!data) throw "Missing data..."
-
-  //     setArticle(data)
-
-  //   } catch(error){
-  //     console.log(error)
-  //   } finally {
-  //     setLoading(false)
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   fetchArticle()
-  // }, [])
-
   if (!article) {
     return (
       <>

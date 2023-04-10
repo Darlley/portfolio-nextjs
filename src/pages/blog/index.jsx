@@ -15,25 +15,25 @@ function Blog () {
   const [loading, setLoading] = useState(false)
   const [articles, setArticles] = useState([])
 
-  const fetchArticles = async () => {
-    try {
-      setLoading(true)
-
-      const res = await fetch(URL_API)
-      const data = await res.json()
-
-      if(!data) throw "Missing data..."
-
-      setArticles(data)
-
-    } catch(error){
-      console.log(error)
-    } finally {
-      setLoading(false)
-    }
-  }
-
+  
   useEffect(() => {
+    const fetchArticles = async () => {
+      try {
+        setLoading(true)
+  
+        const res = await fetch(URL_API)
+        const data = await res.json()
+  
+        if(!data) throw "Missing data..."
+  
+        setArticles(data)
+  
+      } catch(error){
+        console.log(error)
+      } finally {
+        setLoading(false)
+      }
+    }
     fetchArticles()
   }, [])
 

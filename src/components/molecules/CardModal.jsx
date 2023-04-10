@@ -39,7 +39,7 @@ const cards = [
     {
         imageUrl: "/habilities/Figma.png",
         title: "UI Design",
-        description: "Tenho conhecimentos básicos das teorias e do Workflow do UI Design e tenho conhecimentos intermediários em Figma para criação de Design de Interface e prototipação. Próxima meta é concluir o Curso Online UI Expert.",
+        description: "Tenho conhecimentos básicos das teorias e do Workflow do UI Design e tenho conhecimentos intermediários em Figma para criação de Design de Interface e prototipação. Próximas metas é concluir os cursos: \nUI Expert do Lucas Assis, e UI Design Avançado da Origamid.",
         list: [
             {
                 title: "PRO FIGMA | Design de interface do Iniciante ao especialista (Udemy)",
