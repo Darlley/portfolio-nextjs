@@ -10,7 +10,7 @@ function Metadata ({metadata}) {
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content="Front-end, Back-end, ui design, JavaScript, ReactJS, AWS, Cloud Computing, SEO, Marketing" />
 
-        <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
         <meta name="application-name" content="Darlley Brito - Portfólio" />
         <meta name="apple-mobile-web-app-title" content={metadata.description} />

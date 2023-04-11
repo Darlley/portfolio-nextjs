@@ -8,7 +8,7 @@ import Navbar from "../molecules/Navbar";
 const metadata = {
     title: "Darlley Brito - Portfólio",
     description: "Desenvolvedor Web Full Stack, UI Designer, AWS Cloud Practitioner e SEO",
-    image: "/assets/perfil.jpg"
+    image: "/perfil.jpg"
 }
 
 function Header () {
