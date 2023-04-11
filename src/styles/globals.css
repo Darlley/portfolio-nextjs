@@ -271,3 +271,11 @@ body, html{
 
   py-4
 }
+
+.notion{
+  @apply
+
+  flex
+  flex-col
+  gap-2
+}
