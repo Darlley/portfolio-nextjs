@@ -19,6 +19,12 @@ export default async function handler(req,res) {
 
   const query = await notion.databases.query({
     database_id: notion_database,
+    filter: {
+      property: 'Published',
+      checkbox: {
+        equals: Boolean(true),
+      },
+    }
   })
   
   const rowsStructured = query.results.map((row) => ({
