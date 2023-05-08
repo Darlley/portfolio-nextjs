@@ -18,7 +18,7 @@ export default function About() {
         <>
             <Metadata metadata={metadata} />
             <HeaderPage >
-                <h1>Artigos</h1>
+                <h1>Sobre mim</h1>
             </HeaderPage>
             <div className="bg-white py-24 sm:py-32">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
