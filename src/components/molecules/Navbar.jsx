@@ -39,7 +39,7 @@ function Navbar() {
 
                                     <li>
                                         <NavigationMenu.Link>
-                                            <a className={classNames('ListItemLink')}>
+                                            <a className={classNames('ListItemLink')} href="/about">
                                                 <div className="ListItemHeading">About</div>
                                                 <p className="ListItemText">Saiba mais sobre mim, minhas crenças e meus hobbies.</p>
                                             </a>
