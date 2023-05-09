@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const metadata = {
   title: "Darlley - Blog",
   description: "Um blog de pensamentos sobre tecnologia e filosofia.",
-  image: "/lotr-1440x522.png"
+  image: "https://www.darlley.dev/lotr-1440x522.png"
 }
 
 const URL_API = '/api/notion'

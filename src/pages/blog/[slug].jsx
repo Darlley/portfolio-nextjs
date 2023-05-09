@@ -3,13 +3,12 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import "react-notion/src/styles.css";
 import "prismjs/themes/prism-tomorrow.css";
-
 import { NotionRenderer } from "react-notion"
-// import { blocksToReactComponents } from 'notion-blocks-react-renderer'
-// import { NotionRenderer } from 'react-notion-x'
+import Metadata from '@/components/molecules/Metadata';
 
 const ArticlePage = () => {
   const [article, setArticle] = useState()
+  const [metadata, setMetadata] = useState({})
   const router = useRouter()
   const { slug } = router.query
   
@@ -18,13 +17,21 @@ const ArticlePage = () => {
       const req = await fetch(`/api/notion/${slug}`)
       const res = await req.json()
       setArticle(res)
+      const resmetadata = {
+        title: "Darlley Brito - " + res.title,
+        description: "",
+        image: res.thumbnail
+      }
+      setMetadata(resmetadata)
     }
     postArticle()
   }, [])
+
   
   if (!article) {
     return (
       <>
+      <Metadata metadata={metadata} />
       <HeaderPage>
         <h1>Calma ai 🦄</h1>
       </HeaderPage>
@@ -51,8 +58,6 @@ const ArticlePage = () => {
           <div className="articles">
             <div className="article">
               <NotionRenderer blockMap={article.blocks} />
-              {/* {blocksToReactComponents(article.content)} */}
-              {/* <NotionRenderer recordMap={article.content} /> */}
             </div>
           </div>
         </div>
