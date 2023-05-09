@@ -167,7 +167,7 @@ body, html{
 .page__title{
   @apply
 
-  h-[40vh]
+  h-[15vh]
 
   flex
   w-full
@@ -175,6 +175,11 @@ body, html{
   justify-center
 
   relative
+}
+.page__title.thumbnail{
+  @apply
+
+  h-[40vh]
 }
 .page__title h1{
   @apply

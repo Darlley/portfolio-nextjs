@@ -5,8 +5,6 @@ function HeaderPage({children, thumbnail}) {
     const style = {
         backgroundImage: `url(${thumbnail})`
     }
-
-    console.log('thumbnail', thumbnail)
     
     return (
         <header className='header__page' style={style}>
@@ -15,7 +13,7 @@ function HeaderPage({children, thumbnail}) {
                     <Navbar />
                 </div>
 
-                <div className="page__title">            
+                <div className={!!thumbnail ? "page__title thumbnail" : "page__title" }>            
                     {children}
                 </div>
             </div>
