@@ -3,9 +3,9 @@ import Metadata from "@/components/molecules/Metadata"
 
 const stats = [
     { label: 'Developer since', value: '2019' },
+    { label: 'Years of XP', value: '2' },
     { label: 'Companies', value: '2' },
     { label: 'Home Office', value: '1' },
-    { label: 'Last salary', value: 'R$3k' },
 ]
 
 const metadata = {
@@ -87,7 +87,7 @@ export default function About() {
                                                 <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
                                             </svg>
                                         </div>
-                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Faculdade</span> Análise e Des. de Sistemas.</p>
+                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Faculdade</span> Análise e Desenvolvimento de Sistemas.</p>
                                         <time datetime="2023-01-24T09:20" class="flex-none py-0.5 text-xs leading-5 text-gray-500">Mar 2018</time>
                                     </li>
 
@@ -109,11 +109,14 @@ export default function About() {
                                         <div class="absolute left-0 top-0 flex w-6 justify-center -bottom-6">
                                             <div class="w-px bg-gray-200"></div>
                                         </div>
-                                        <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
-                                            <div class="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300"></div>
+                                        <img src="https://yt3.ggpht.com/a/AATXAJyTdVU1t8QdU53fkQWwr6QwAVxL0KfqBhIPTA=s900-c-k-c0xffffffff-no-rj-mo" alt="" class="relative mt-3 h-6 w-6 flex-none rounded-full bg-gray-50" />
+                                        <div class="flex-auto rounded-md p-3 ring-1 ring-inset ring-gray-200">
+                                            <div class="flex justify-between gap-x-4">
+                                                <div class="py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900"><a href="https://rino3.com.br/novo/" target="_blank">Estagiário na Rino3 (Marketing Jurídico Digital)</a></span></div>
+                                                <time datetime="2023-01-23T15:56" class="flex-none py-0.5 text-xs leading-5 text-gray-500">Nov 2019</time>
+                                            </div>
+                                            <p class="text-sm leading-6 text-gray-500">Este foi meu primeiro estagio como Programador Back-end PHP. Minha primeira experiência foi converter códigos estáticos (HTML, CSS, JS) em códigos dinâmicos usando PHP e WordPress como CMS. Além disso, eu realizava o deploy e as manutenções necessárias.</p>
                                         </div>
-                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Primeira experiência</span> Estágio na Rino3</p>
-                                        <time datetime="2023-01-23T10:32" class="flex-none py-0.5 text-xs leading-5 text-gray-500">Dez 2019</time>
                                     </li>
 
                                     <li class="relative flex gap-x-4">
@@ -127,6 +130,8 @@ export default function About() {
                                         <time datetime="2023-01-23T10:32" class="flex-none py-0.5 text-xs leading-5 text-gray-500">Dez 2020</time>
                                     </li>
 
+                                    
+                                    
                                     <li class="relative flex gap-x-4">
                                         <div class="absolute left-0 top-0 flex w-6 justify-center -bottom-6">
                                             <div class="w-px bg-gray-200"></div>
@@ -159,7 +164,7 @@ export default function About() {
                                         <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
                                             <div class="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300"></div>
                                         </div>
-                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900"><a href="https://darlley.github.io/" target="_blank">Curso</a></span> <a href="https://www.dio.me/certificate/27EA0735/share" target="_blank">Lógica de programação Essencial (DIO)</a></p>
+                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Curso</span> <a href="https://www.dio.me/certificate/27EA0735/share" target="_blank">Lógica de programação Essencial (DIO)</a></p>
                                         <time datetime="2023-01-24T09:12" class="flex-none py-0.5 text-xs leading-5 text-gray-500">Jun 2021</time>
                                     </li>
 
@@ -170,7 +175,7 @@ export default function About() {
                                         <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
                                             <div class="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300"></div>
                                         </div>
-                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900"><a href="https://darlley.github.io/" target="_blank">Curso</a></span> <a href="https://darlley.github.io/images/conhecimentos/certificacao-guanabara-javascript.jpg" target="_blank">JavaScript com EcmaScript (Curso em Vídeo)</a></p>
+                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Curso</span> <a href="https://darlley.github.io/images/conhecimentos/certificacao-guanabara-javascript.jpg" target="_blank">JavaScript com EcmaScript (Curso em Vídeo)</a></p>
                                         <time datetime="2023-01-24T09:12" class="flex-none py-0.5 text-xs leading-5 text-gray-500">Jun 2021</time>
                                     </li>
                                     
@@ -181,7 +186,7 @@ export default function About() {
                                         <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
                                             <div class="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300"></div>
                                         </div>
-                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900"><a href="https://darlley.github.io/" target="_blank">Curso</a></span> <a href="https://www.udemy.com/certificate/UC-7371743e-804d-441e-b12f-fb61350c2a7d/" target="_blank">Ferramentas Front-end (Udemy)</a></p>
+                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Curso</span> <a href="https://www.udemy.com/certificate/UC-7371743e-804d-441e-b12f-fb61350c2a7d/" target="_blank">Ferramentas Front-end (Udemy)</a></p>
                                         <time datetime="2023-01-24T09:12" class="flex-none py-0.5 text-xs leading-5 text-gray-500">Jun 2021</time>
                                     </li>
 
@@ -192,7 +197,7 @@ export default function About() {
                                         <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
                                             <div class="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300"></div>
                                         </div>
-                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900"><a href="https://darlley.github.io/" target="_blank">Curso</a></span> <a href="https://www.dio.me/certificate/AADD2875/share" target="_blank">Introdução ao Git e ao GitHub (DIO)</a></p>
+                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Curso</span> <a href="https://www.dio.me/certificate/AADD2875/share" target="_blank">Introdução ao Git e ao GitHub (DIO)</a></p>
                                         <time datetime="2023-01-24T09:12" class="flex-none py-0.5 text-xs leading-5 text-gray-500">Ago 2021</time>
                                     </li>
 
@@ -203,7 +208,7 @@ export default function About() {
                                         <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
                                             <div class="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300"></div>
                                         </div>
-                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900"><a href="https://darlley.github.io/" target="_blank">Curso</a></span> <a href="https://www.dio.me/certificate/425D0009/share" target="_blank">Introdução a Criação de Websites com HTML5 e CSS3 (DIO)</a></p>
+                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Curso</span> <a href="https://www.dio.me/certificate/425D0009/share" target="_blank">Introdução a Criação de Websites com HTML5 e CSS3 (DIO)</a></p>
                                         <time datetime="2023-01-24T09:12" class="flex-none py-0.5 text-xs leading-5 text-gray-500">Ago 2021</time>
                                     </li>
 
@@ -214,7 +219,7 @@ export default function About() {
                                         <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
                                             <div class="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300"></div>
                                         </div>
-                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900"><a href="https://darlley.github.io/" target="_blank">Curso</a></span> <a href="https://www.dio.me/certificate/93688C17/share" target="_blank">HTML Web Developer (DIO)</a></p>
+                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Curso</span> <a href="https://www.dio.me/certificate/93688C17/share" target="_blank">HTML Web Developer (DIO)</a></p>
                                         <time datetime="2023-01-24T09:12" class="flex-none py-0.5 text-xs leading-5 text-gray-500">Ago 2021</time>
                                     </li>
                                     
@@ -225,7 +230,7 @@ export default function About() {
                                         <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
                                             <div class="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300"></div>
                                         </div>
-                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900"><a href="https://darlley.github.io/" target="_blank">Curso</a></span> <a href="https://www.dio.me/certificate/E5C0A92F/share" target="_blank">CSS Flexbox (Origamid)</a></p>
+                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Curso</span> <a href="https://www.dio.me/certificate/E5C0A92F/share" target="_blank">CSS Flexbox (Origamid)</a></p>
                                         <time datetime="2023-01-24T09:12" class="flex-none py-0.5 text-xs leading-5 text-gray-500">Ago 2021</time>
                                     </li>
                                     
@@ -236,7 +241,7 @@ export default function About() {
                                         <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
                                             <div class="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300"></div>
                                         </div>
-                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900"><a href="https://darlley.github.io/" target="_blank">Curso</a></span> <a href="https://www.origamid.com/certificate/b8a51b7f" target="_blank">Primeiros passos para desenvolvimento web (DIO)</a></p>
+                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Curso</span> <a href="https://www.origamid.com/certificate/b8a51b7f" target="_blank">Primeiros passos para desenvolvimento web (DIO)</a></p>
                                         <time datetime="2023-01-24T09:12" class="flex-none py-0.5 text-xs leading-5 text-gray-500">Ago 2021</time>
                                     </li>
                                     
@@ -247,7 +252,7 @@ export default function About() {
                                         <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
                                             <div class="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300"></div>
                                         </div>
-                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900"><a href="https://darlley.github.io/" target="_blank">Curso</a></span> <a href="https://www.dio.me/certificate/559F2BA3/share" target="_blank">Projetos ágeis com SCRUM (DIO)</a></p>
+                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Curso</span> <a href="https://www.dio.me/certificate/559F2BA3/share" target="_blank">Projetos ágeis com SCRUM (DIO)</a></p>
                                         <time datetime="2023-01-24T09:12" class="flex-none py-0.5 text-xs leading-5 text-gray-500">Set 2021</time>
                                     </li>
 
@@ -258,7 +263,7 @@ export default function About() {
                                         <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
                                             <div class="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300"></div>
                                         </div>
-                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900"><a href="https://darlley.github.io/" target="_blank">Curso</a></span> <a href="https://www.dio.me/certificate/F7328D65/share" target="_blank">JavaScript ES6 essencial (DIO)</a></p>
+                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Curso</span> <a href="https://www.dio.me/certificate/F7328D65/share" target="_blank">JavaScript ES6 essencial (DIO)</a></p>
                                         <time datetime="2023-01-24T09:12" class="flex-none py-0.5 text-xs leading-5 text-gray-500">Set 2021</time>
                                     </li>
 
@@ -269,7 +274,7 @@ export default function About() {
                                         <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
                                             <div class="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300"></div>
                                         </div>
-                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900"><a href="https://darlley.github.io/" target="_blank">Curso</a></span> <a href="https://www.dio.me/certificate/63E1EBBA/share" target="_blank">Desenvolvimento avançado com JavaScript ES6 (DIO)</a></p>
+                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Curso</span> <a href="https://www.dio.me/certificate/63E1EBBA/share" target="_blank">Desenvolvimento avançado com JavaScript ES6 (DIO)</a></p>
                                         <time datetime="2023-01-24T09:12" class="flex-none py-0.5 text-xs leading-5 text-gray-500">Set 2021</time>
                                     </li>
                                     
@@ -280,7 +285,7 @@ export default function About() {
                                         <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
                                             <div class="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300"></div>
                                         </div>
-                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900"><a href="https://darlley.github.io/" target="_blank">Curso</a></span> <a href="https://www.dio.me/certificate/3FB132E1/share" target="_blank">Introdução ao TypeScript (DIO)</a></p>
+                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Curso</span> <a href="https://www.dio.me/certificate/3FB132E1/share" target="_blank">Introdução ao TypeScript (DIO)</a></p>
                                         <time datetime="2023-01-24T09:12" class="flex-none py-0.5 text-xs leading-5 text-gray-500">Set 2021</time>
                                     </li>
                                     
@@ -291,7 +296,7 @@ export default function About() {
                                         <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
                                             <div class="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300"></div>
                                         </div>
-                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900"><a href="https://darlley.github.io/" target="_blank">Curso</a></span> <a href="https://www.dio.me/certificate/FCF99A3D/share" target="_blank">Introdução ao ReactJS (DIO)</a></p>
+                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Curso</span> <a href="https://www.dio.me/certificate/FCF99A3D/share" target="_blank">Introdução ao ReactJS (DIO)</a></p>
                                         <time datetime="2023-01-24T09:12" class="flex-none py-0.5 text-xs leading-5 text-gray-500">Out 2021</time>
                                     </li>
                                     
@@ -302,7 +307,7 @@ export default function About() {
                                         <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
                                             <div class="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300"></div>
                                         </div>
-                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900"><a href="https://darlley.github.io/" target="_blank">Curso</a></span> <a href="https://www.dio.me/certificate/8A1A50E0/share" target="_blank">Trabalhando com Componentes em React (DIO)</a></p>
+                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Curso</span> <a href="https://www.dio.me/certificate/8A1A50E0/share" target="_blank">Trabalhando com Componentes em React (DIO)</a></p>
                                         <time datetime="2023-01-24T09:12" class="flex-none py-0.5 text-xs leading-5 text-gray-500">Out 2021</time>
                                     </li>
                                     
@@ -313,18 +318,7 @@ export default function About() {
                                         <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
                                             <div class="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300"></div>
                                         </div>
-                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900"><a href="https://darlley.github.io/" target="_blank">Curso</a></span> <a href="https://www.dio.me/certificate/8A1A50E0/share" target="_blank">Trabalhando com Componentes em React (DIO)</a></p>
-                                        <time datetime="2023-01-24T09:12" class="flex-none py-0.5 text-xs leading-5 text-gray-500">Out 2021</time>
-                                    </li>
-
-                                    <li class="relative flex gap-x-4">
-                                        <div class="absolute left-0 top-0 flex w-6 justify-center -bottom-6">
-                                            <div class="w-px bg-gray-200"></div>
-                                        </div>
-                                        <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
-                                            <div class="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300"></div>
-                                        </div>
-                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900"><a href="https://darlley.github.io/" target="_blank">Projeto</a></span> <a href="https://letmeask-c49ed.web.app/" target="_blank">Evento Next Level Week 6 (Rocketseat) </a></p>
+                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Projeto</span> <a href="https://letmeask-c49ed.web.app/" target="_blank">Evento Next Level Week 6 (Rocketseat) </a></p>
                                         <time datetime="2023-01-24T09:12" class="flex-none py-0.5 text-xs leading-5 text-gray-500">Nov 2021</time>
                                     </li>
                                     <li class="relative flex gap-x-4">
@@ -334,7 +328,7 @@ export default function About() {
                                         <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
                                             <div class="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300"></div>
                                         </div>
-                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900"><a href="https://darlley.github.io/" target="_blank">Projeto</a></span> <a href="https://darlley.github.io/Frontend/Rocketseat/DevFinances/" target="_blank">Maratona Discover (Rocketseat) </a></p>
+                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Projeto</span> <a href="https://darlley.github.io/Frontend/Rocketseat/DevFinances/" target="_blank">Maratona Discover (Rocketseat) </a></p>
                                         <time datetime="2023-01-24T09:12" class="flex-none py-0.5 text-xs leading-5 text-gray-500">Nov 2021</time>
                                     </li>
 
@@ -345,7 +339,7 @@ export default function About() {
                                         <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
                                             <div class="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300"></div>
                                         </div>
-                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900"><a href="https://darlley.github.io/" target="_blank">Desafio</a></span> <a href="https://privatecode.vercel.app/" target="_blank">Vaga para a empresa PrivateCode</a></p>
+                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Desafio</span> <a href="https://privatecode.vercel.app/" target="_blank">Vaga para a empresa PrivateCode</a></p>
                                         <time datetime="2023-01-24T09:12" class="flex-none py-0.5 text-xs leading-5 text-gray-500">Nov 2021</time>
                                     </li>
                                     
@@ -356,7 +350,7 @@ export default function About() {
                                         <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
                                             <div class="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300"></div>
                                         </div>
-                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900"><a href="https://darlley.github.io/" target="_blank">Desafio</a></span> <a href="https://sorteio-woad.vercel.app/" target="_blank">Vaga para a empresa Sorteio.com</a></p>
+                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Desafio</span> <a href="https://sorteio-woad.vercel.app/" target="_blank">Vaga para a empresa Sorteio.com</a></p>
                                         <time datetime="2023-01-24T09:12" class="flex-none py-0.5 text-xs leading-5 text-gray-500">Nov 2021</time>
                                     </li>
 
@@ -364,13 +358,13 @@ export default function About() {
                                         <div class="absolute left-0 top-0 flex w-6 justify-center -bottom-6">
                                             <div class="w-px bg-gray-200"></div>
                                         </div>
-                                        <img src="/profile.jpg" alt="" class="relative mt-3 h-6 w-6 flex-none rounded-full bg-gray-50" />
+                                        <img src="https://knowledge.leadszapp.com/img/leadszapp.png" alt="" class="relative mt-3 p-[2px] h-6 w-6 flex-none rounded-full bg-gray-50" />
                                         <div class="flex-auto rounded-md p-3 ring-1 ring-inset ring-gray-200">
                                             <div class="flex justify-between gap-x-4">
-                                                <div class="py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Desenvolvedor Full-Stack Júnior</span></div>
+                                                <div class="py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900"><a href="https://site-leadszapp.vercel.app/" target="_blank">Des. Web Full-Stack na LeadsZapp (Automação de Marketing)</a></span></div>
                                                 <time datetime="2023-01-23T15:56" class="flex-none py-0.5 text-xs leading-5 text-gray-500">Nov 2021</time>
                                             </div>
-                                            <p class="text-sm leading-6 text-gray-500">Minha primeira oportunidade como Desenvolvedor Júnior na empresa LeadsZapp, vaga que ocupo atualmente.</p>
+                                            <p class="text-sm leading-6 text-gray-500">Atualmente, trabalho como Desenvolvedor Júnior na empresa. Minhas principais atividades são: desenvolver soluções de UI Design, criar e manter bases de conhecimento das ferramentas e participar de outros projetos. As tecnologias que utilizamos são: PHP/Laravel, Livewire, Alpine.js, TailwindCSS, MySQL, Docker e ReactJS com Next.js.</p>
                                         </div>
                                     </li>
 
@@ -381,10 +375,42 @@ export default function About() {
                                         <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
                                             <div class="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300"></div>
                                         </div>
-                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900"><a href="https://darlley.github.io/" target="_blank">Mudança de planos</a></span> <a href="https://darlley.github.io/Frontend/Rocketseat/DevFinances/" target="_blank">Abandonei a faculdade por convicções pessoais.</a></p>
-                                        <time datetime="2023-01-24T09:12" class="flex-none py-0.5 text-xs leading-5 text-gray-500">Abril 2022</time>
+                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Cursos</span> conclui diversos cursos relacionados ao ecossitema Laravel.</p>
+                                        <time datetime="2023-01-24T09:12" class="flex-none py-0.5 text-xs leading-5 text-gray-500">2022</time>
                                     </li>
 
+                                    <li class="relative flex gap-x-4">
+                                        <div class="absolute left-0 top-0 flex w-6 justify-center -bottom-6">
+                                            <div class="w-px bg-gray-200"></div>
+                                        </div>
+                                        <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
+                                            <div class="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300"></div>
+                                        </div>
+                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Mudança de planos</span> Abandonei a faculdade por convicções pessoais.</p>
+                                        <time datetime="2023-01-24T09:12" class="flex-none py-0.5 text-xs leading-5 text-gray-500">Abr 2022</time>
+                                    </li>
+                                    
+                                    <li class="relative flex gap-x-4">
+                                        <div class="absolute left-0 top-0 flex w-6 justify-center -bottom-6">
+                                            <div class="w-px bg-gray-200"></div>
+                                        </div>
+                                        <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
+                                            <div class="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300"></div>
+                                        </div>
+                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Cursos</span> Conclui 2 cursos relacionados ao UI Design.</p>
+                                        <time datetime="2023-01-24T09:12" class="flex-none py-0.5 text-xs leading-5 text-gray-500">Jan 2023</time>
+                                    </li>
+                                    
+                                    <li class="relative flex gap-x-4">
+                                        <div class="absolute left-0 top-0 flex w-6 justify-center -bottom-6">
+                                            <div class="w-px bg-gray-200"></div>
+                                        </div>
+                                        <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
+                                            <div class="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300"></div>
+                                        </div>
+                                        <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Foco atual</span> Atualmente meu foco é Arquitetura de Software e AWS Cloud Computing.</p>
+                                        <time datetime="2023-01-24T09:12" class="flex-none py-0.5 text-xs leading-5 text-gray-500">Mar 2023</time>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
