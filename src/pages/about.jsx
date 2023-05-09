@@ -9,7 +9,7 @@ const stats = [
 ]
 
 const metadata = {
-    title: "Darlley - About",
+    title: "Darlley Brito - About",
     description: "Nesta página, você vai descobrir quem eu sou, o que eu faço e como eu posso te ajudar. Veja o meu portfólio de desenvolvimento web e entre em contato comigo.",
     image: "https://darlley.github.io/images/header.jpg"
 }
