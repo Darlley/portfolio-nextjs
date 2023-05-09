@@ -42,7 +42,7 @@ export default function About() {
                                         <use href="#0ef284b8-28c2-426e-9442-8655d393522e" x={86} />
                                     </svg>
                                     <blockquote className="mt-6 text-xl font-semibold leading-8 text-white">
-                                        <p>Interessado em Back-end, Fronte-nd, UI Design, Cloud Computing e Machine Learning. Tenho 2 anos de experiência em Desenvolvimento Web atuando em duas empresas no ramo de Marketing Digital. Além do computador, alguns dos meus hobbies incluem: skate, musculação, estética automotiva, filosofia e cerveja artesanal.</p>
+                                        <p>Interessado em Back-end, Front-end, UI Design, Cloud Computing e Arquitetura de Software. Tenho 2 anos de experiência em Desenvolvimento Web atuando em duas empresas no ramo de Marketing Digital.</p>
                                     </blockquote>
                                     <figcaption className="mt-6 text-sm leading-6 text-gray-300">
                                         <strong className="font-semibold text-white">Darlley Brito,</strong> Desenvolvedor Web Full-Stack Júnior
@@ -55,16 +55,13 @@ export default function About() {
                                 <p className="text-base font-semibold leading-7 text-indigo-600">"A estrada até aqui""</p>
                                 <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Breve resumo</h1>
                                 <div className="max-w-xl">
-                                    <p className="mt-6">Do meu nascimento até o ano de 2013 (um período de 15 anos) tive a vida "modo padrão", isto é: brincar, me sujar, se divertir, dormir até tarde, etc. Assim, começo a descrever minha trajetória a partir de 2013, pois deste ano até o presente momento vivi uma trajetória de fato autoconsciente, embora esta "autoconsciência" ainda seja tenha sido inicialmente de forma primitiva pois, como descreve Jean-Marc Berthoud: <em>"Eu pertencia àquela classe de homens, tão comum hoje, que encontram a justificação de sua existência na intensidade de seus sentimentos."</em></p>
-                                    <br />
-                                    <br />
-                                    <p>De 2013 a 2016 foram o período de meu ensino médio. O período de 4 anos se deve ao fato de ter reprovado no 1°, este foi o fator de minha motivação para começar a estudar seriamente e passar de ano mas, como já dito, estava na reta final e não pude carregar o peso das notas baixas de todo um ano, reprovei em 6 matérias. Fiquei triste por ter reprovado, mas logo nos anos seguintes passei a estudar seriamente desde o início do ano até o final e conseguir a aprovação, além de conseguir uma bolsa universitária.</p>
-                                    <br />
-                                    <br />
-                                    <p>Para contar uma nova linha do tempo, por curiosidade, no ano de 2013 queria me formar em arqueologia ou paleontologia por conta de uma novela que passava na época com esta temática. Em 2014 já estava com uma mentalidade mais empreendedora e de “coaching”: não me interessava em fazer um curso superior, queria ter minha loja de skate. Por conta do meu interesse em trabalhar com o skate, fiquei interessado em ter uma loja virtual e isto acabou me influenciando a me interessar por tecnologia assim, em 2015, queria fazer uma faculdade de design gráfico ou web design.</p>
+                                    <p className="mt-6">No ano de 2013 queria me formar em arqueologia ou paleontologia por conta de uma novela que passava na época com esta temática. Em 2014 já estava com uma mentalidade mais empreendedora e de “coaching”: não me interessava em fazer um curso superior, queria ter minha loja de skate. Por conta do meu interesse em trabalhar com o skate, fiquei interessado em ter uma loja virtual e isto acabou me influenciando a me interessar por tecnologia, queria fazer uma faculdade de design gráfico ou web design.</p>
                                     <br />
                                     <br />
                                     <p>Durante meu Serviço Militar Obrigatório (2017) meu interesse por tecnologia voltou e ao conseguir uma bolsa no Prouni pelo Enem optei pelo curso Tecnologia em Análise e Desenvolvimento de Sistemas na Universidade Católica Dom Bosco (UCDB), iniciei o curso em março de 2018.</p>
+                                    <br />
+                                    <br />
+                                    <p>Além do computador, alguns dos meus hobbies incluem: skate, musculação, estética automotiva, filosofia e cerveja artesanal.</p>
                                 </div>
                             </div>
                             <dl className="mt-6 grid grid-cols-2 gap-8 border-t border-gray-900/10 pt-6 sm:grid-cols-4">
