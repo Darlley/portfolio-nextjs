@@ -42,21 +42,6 @@ export default async function handler(req, res) {
 
         const blockResponse = await fetch(`https://notion-api.splitbee.io/v1/page/${article.id}`).then(res => res.json());
         
-    //     // const content = blockResponse.results
-    //     // .filter((block) => block.type === 'paragraph')
-    //     // .map((block) => block.paragraph.rich_text.map((block) => block.text.content)).join('\n\n')
-    //     // const articleData = {
-    //     //     id: article.id,
-    //     //     thumbnail: article.cover && article.cover.external.url || '',
-    //     //     authors: article.properties.Authors.people[0],
-    //     //     title: article.properties.Page.title[0].plain_text || '',
-    //     //     published: article.properties.Published.checkbox,
-    //     //     date: article.properties.Date.date.start,
-    //     //     url: article.url || '',
-    //     //     content: content,
-    //     // };
-    //     // return res.status(200).json(articleData);
-        
         const articleData = {
             id: article.id,
             thumbnail: article.cover && article.cover.external.url || '',
