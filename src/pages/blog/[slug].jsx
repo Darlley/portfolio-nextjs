@@ -1,6 +1,4 @@
 import HeaderPage from '@/components/molecules/HeaderPage'
-import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
 import "react-notion/src/styles.css";
 import "prismjs/themes/prism-tomorrow.css";
 import { NotionRenderer } from "react-notion"
@@ -125,6 +123,8 @@ export async function getStaticProps({ params }) {
       article: articleData,
       metadata,
     },
+
+    revalidate: 60 
   }
 }
 
