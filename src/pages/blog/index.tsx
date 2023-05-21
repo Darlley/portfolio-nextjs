@@ -11,23 +11,31 @@ const metadata = {
 
 const URL_API = '/api/notion'
 
+interface Article {
+  id: number;
+  slug: string;
+  url: string;
+  date: string;
+  title: string;
+  thumbnail: string;
+}
+
 function Blog () {
   const [loading, setLoading] = useState(false)
-  const [articles, setArticles] = useState([])
+  const [articles, setArticles] = useState<Article[]>([])
 
-  
   useEffect(() => {
     const fetchArticles = async () => {
       try {
         setLoading(true)
-  
+
         const res = await fetch(URL_API)
         const data = await res.json()
-  
+
         if(!data) throw "Missing data..."
-  
+
         setArticles(data)
-  
+
       } catch(error){
         console.log(error)
       } finally {
@@ -36,11 +44,6 @@ function Blog () {
     }
     fetchArticles()
   }, [])
-
-  // const frases = [
-  //   'O problema do mundo de hoje é que as pessoas inteligentes estão cheias de dúvidas, e as pessoas idiotas estão cheias de certezas. — Bertrand Russell',
-  //   'O que eu conheço é uma gota, o que ignoro é um oceano. — Sr. Isaac Newton'
-  // ]
 
   return (
     <>
@@ -63,10 +66,10 @@ function Blog () {
         </div>
 
         <div className="articles__container">
-          {loading || articles.length <= 0 ? 
+          {loading || articles.length <= 0 ?
             <div className="w-full text-center">
               <h4 className="text-lg text-slate-500">Artigos em breve 🔥</h4>
-            </div> : 
+            </div> :
             <ul className="articles">
               {articles.map((article) => (
                 <li className="article" key={article.id}>
@@ -78,7 +81,7 @@ function Blog () {
                           {article.title}
                         </Link>
                       </h3>
-                      {article.thumbnail && 
+                      {article.thumbnail &&
                       <div className="flex flex-col items-end justify-end gap-4 w-max">
                         <div className="w-[60px] h-[60px]">
                           <img src={article.thumbnail} alt="thumbnail" />
