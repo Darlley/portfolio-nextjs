@@ -7,7 +7,7 @@ const cards = [
     {
         imageUrl: "/profile.jpg",
         title: "Darlley Brasil de Brito Furtado",
-        description: "Cursei somente até o 5° semestre (2022) em Análise e Desenvolvimento de Sistemas na Universidade Católica Dom Bosco (UCDB). Pretendo concluir (2024) o curso a distância e tenho interesse pelas areas de UI Design, Cloud Computing e Machine Learning. Tenho 2 anos de experiência em Desenvolvimento Web atuando em duas empresas no ramo de Marketing Digital.\n\nAlém do computador, alguns dos meus hobbies incluem: skate, musculação, estética automotiva, filosofia e cerveja artesanal.",
+        description: "Cursei somente até o 5° semestre (2022) em Análise e Desenvolvimento de Sistemas na Universidade Católica Dom Bosco (UCDB) e pretendo concluir (2024) o curso a distância. Tenho interesse pelas areas de UI Design, Cloud Computing e Cibersegurança. Tenho 2 anos de experiência em Desenvolvimento Web atuando em duas empresas no ramo de Marketing Digital.\n\nAlém do computador, alguns dos meus hobbies incluem: skate, musculação, estética automotiva, filosofia e cerveja artesanal.",
         list: [],
         externalUrl: "https://www.linkedin.com/in/darlleybrito/"
     },
@@ -121,21 +121,50 @@ const cards = [
     },
     {
         imageUrl: "/habilities/AWS.png",
-        title: "AWS Cloud Practitioner",
-        description: "Certificação em andamento 🚧\n\nFiz o deploy deste portfólio feito em Next.js com a Amplify + Route53 e já utilizei os serviço de S3 junto com Laravel para armazenar imagens de uma base de conhecimento.",
+        title: "DevOps",
+        description: `Não sou DevOps mas tenho conhecimentos em tecnologias relacionadas: tenho conhecimentos básicos de Docker (uso bastante o Laravel Sail), e estou estudando para tirar a certificação da AWS Cloud Practitioner.
+\nInicialmente fiz o deploy deste portfólio com a AWS Amplify + AWS Route53 e já utilizei os serviço de AWS S3 junto com Laravel para armazenar imagens de uma base de conhecimento`,
         list: [
+            {
+                title: "Curso Certificação Amazon AWS Cloud Practitioner Foundational 2023",
+                url: "https://www.udemy.com/certificate/UC-6b1a0937-f009-46ec-adeb-3019b2c74845/",
+            },
+            {
+                title: "Docker do 0 à Maestria: Contêineres Desmistificados + EXTRAS",
+                url: "https://www.udemy.com/certificate/UC-544ac24a-5950-4914-9506-8d6bf81ba89b/"
+            },
             {
                 title: "Primeiros Passos com AWS",
                 url: "https://www.dio.me/certificate/1431E9AF/share"
             },
             {
-                title: "CURSO - PRIMEIROS PASSOS EM CLOUD",
-                url: "https://www.youtube.com/playlist?list=PLwlq4XZ8aTmfHJTNreRyqCmXVWhyF5LHo",
+                title: "AWS Official Content - Introdução à Amazon Web Services (AWS)",
+                url: "https://www.dio.me/certificate/AC35AA55/share"
             },
             {
-                title: "Treinamento preparatório para a certificação da AWS",
-                url: "https://youtu.be/VrQVDbgwFDs?t=12598"
-            }
+                title: "Introdução ao Conceito de Cloud",
+                url: "https://www.dio.me/certificate/38F2C42D/share"
+            },
+            {
+                title: "Infraestrutura Global AWS",
+                url: "https://www.dio.me/certificate/498618CF/share"
+            },
+            {
+                title: "Computação em AWS",
+                url: "https://www.dio.me/certificate/46F572D3/share"
+            },
+            {
+                title: "Introdução Prática a Computação em Nuvem Usando AWS",
+                url: "https://www.dio.me/certificate/5D6F0933/share"
+            },
+            {
+                title: "Redes em AWS",
+                url: "https://www.dio.me/certificate/D3E0370D/share"
+            },
+            {
+                title: "Introdução ao Exame de Certificação AWS Cloud Practitioner",
+                url: "https://www.dio.me/certificate/BD38F3AE/share"
+            },
         ],
         externalUrl: ""
     },

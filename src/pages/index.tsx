@@ -107,7 +107,7 @@ export default function Home() {
 
               <div className="flex flex-col items-center justify-center gap-2 text-center text-white">
                 <p>Hi, I'm <span className="font-bold text-secundary-500">Darlley</span></p>
-                <h1 className="text-2xl font-bold">I'm Web Developer Front-end<br />UI Designer, SEO and <br /><span className="text-[#FFB240]">AWS</span> Cloud Pratictioner</h1>
+                <h1 className="text-2xl font-bold">I'm Web Developer Front-end<br />UI Designer, SEO and <br />(future) <span className="text-[#FFB240]">AWS</span> Cloud Pratictioner</h1>
               </div>
 
             </div>
