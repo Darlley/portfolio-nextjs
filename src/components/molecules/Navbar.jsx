@@ -54,6 +54,15 @@ function Navbar() {
                                             </a>
                                         </NavigationMenu.Link>
                                     </li>
+
+                                    <li>
+                                        <NavigationMenu.Link>
+                                            <a className='ListItemLink' href="/products">
+                                                <div className="ListItemHeading">Products</div>
+                                                <p className="ListItemText">Items que uso no dia a dia.</p>
+                                            </a>
+                                        </NavigationMenu.Link>
+                                    </li>
                                 </ul>
                             </NavigationMenu.Content>
                         </NavigationMenu.Item>
