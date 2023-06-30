@@ -166,7 +166,7 @@ const cards = [
                 url: "https://www.dio.me/certificate/BD38F3AE/share"
             },
         ],
-        externalUrl: ""
+        externalUrl: "https://ok.com"
     },
 ]
 
@@ -183,8 +183,8 @@ function CardModal ({isOpen, setModalOpen, content}) {
     }
 
     return (
-        <div id="modal" className="absolute top-0 left-0 flex items-center justify-center w-full h-full transition-all duration-500 bg-opacity-80 bg-primary-500"  onClick={closeModal} >
-            <div className="flex flex-col items-center gap-4 bg-gradient-to-t to-white from-secundary-200 w-[90%] px-4 py-10 rounded-2xl max-w-[400px] shadow-lg">
+        <div id="modal" className="fixed top-0 left-0 z-10 flex items-center justify-center w-full h-full transition-all duration-500 bg-opacity-80 bg-primary-500"  onClick={closeModal} >
+            <div className="flex flex-col items-center gap-4 bg-gradient-to-t to-white from-secundary-200 w-[90%] max-h-[80vh] px-4 py-10 rounded-2xl max-w-[400px] shadow-lg">
                 <Image
                     src={card.imageUrl}
                     alt="Icone"
@@ -194,19 +194,23 @@ function CardModal ({isOpen, setModalOpen, content}) {
                 />
                 <h2 className="text-2xl font-bold text-secundary-500">{card.title}</h2>
 
-                <p className="whitespace-pre-wrap">{card.description}</p>
+                <div className="h-full overflow-auto card__scrollbar">
+                    <p className="whitespace-pre-wrap">{card.description}</p>
+                    {card.list.length > 0 && <ul className="flex flex-col w-full gap-2">
+                        {card.list.map((item, key) => (
+                            <li key={item.url+key} className="flex items-center gap-2 font-mono cursor-pointer hover:text-opacity-100 text-opacity-80">
+                                <span className="flex items-center justify-center min-h-[20px] max-h-[20px] text-white rounded-full min-w-[20px] max-w-[20px] bg-secundary-500">{key+1}</span>
+                                <Link href={item.url} target="_blank">{item.title}</Link>
+                            </li>
+                        ))}
+                    </ul>
+                    }
+                    
+                </div>
 
-                {card.list.length > 0 && <ul className="flex flex-col w-full gap-2">
-                    {card.list.map((item, key) => (
-                        <li key={item.url+key} className="flex items-center gap-2 font-mono cursor-pointer hover:text-secundary-900">
-                            <span className="flex items-center justify-center min-h-[20px] max-h-[20px] text-white rounded-full min-w-[20px] max-w-[20px] bg-secundary-500">{key+1}</span>
-                            <Link href={item.url} target="_blank">{item.title}</Link> 
-                        </li>
-                    ))}
-                </ul>
-                }
-                
-                {!!card.externalUrl ? <Link href={card.externalUrl} className="inline-block mt-4 font-bold transition-colors cursor-pointer text-secundary-500 hover:text-secundary-900" target="_blank">Saber mais</Link> : null}
+                <div className="flex h-max- w-max">
+                    {!!card.externalUrl ? <a href={card.externalUrl} className="z-10 inline-block mt-4 font-bold transition-colors cursor-pointer text-secundary-500 hover:text-opacity-100 text-opacity-80" target="_blank">Saber mais</a> : null}
+                </div>
                 
             </div>
         </div>

@@ -1,0 +1,339 @@
+.curriculo {
+  @apply 
+
+  text-zinc-400
+}
+
+.curriculo__header {
+  @apply 
+
+  flex 
+  flex-col
+}
+
+.curriculo__fixed__top {
+  @apply 
+
+  bg-zinc-200 
+  p-4 
+  md:p-6
+
+  z-[2]
+  w-full
+}
+
+.curriculo__fixed__top--container {
+  @apply 
+
+  w-full
+
+  max-w-4xl 
+  m-auto 
+  flex 
+  flex-col 
+  md:flex-row 
+  gap-4 
+  items-start 
+  justify-between
+}
+
+.curriculo__fixed__top--item {
+  @apply 
+
+  flex 
+  items-center 
+  gap-1 
+  hover:text-zinc-800 
+  transition-colors 
+  hover:animate-pulse
+}
+
+
+
+.curriculo__header__content {
+  @apply 
+
+  pt-20 
+  pb-10 
+  md:px-0 
+  p-4
+  max-w-4xl
+  mx-auto
+  flex
+  flex-col
+  md:flex-row
+  gap-20
+  justify-between
+  items-center
+  mt-10
+
+}
+
+.curriculo__header__content--profile {
+  @apply 
+
+  w-full
+  md:w-5/12
+  flex
+  items-center
+  justify-center
+  drop-shadow-md
+  z-0
+}
+
+.curriculo__header__content--headline {
+  @apply 
+
+  flex-1
+  flex
+  flex-col
+  text-center
+  md:text-left
+  gap-2
+}
+
+.curriculo__header__content--headline h1 {
+  @apply 
+
+  font-light 
+  text-4xl 
+  md:text-6xl
+}
+
+.curriculo__header__content--headline h1 strong {
+  @apply 
+
+  font-bold 
+  text-blue-500
+}
+
+.curriculo__header__content--headline h2 {
+  @apply 
+
+  font-light 
+  text-2xl
+}
+
+.curriculo__app__main {
+  @apply 
+
+  max-w-4xl 
+  m-auto 
+  flex 
+  flex-col 
+  gap-20 
+  px-4 
+  py-10 
+  xl:px-0
+}
+
+.curriculo__app__item {
+  @apply 
+  
+  flex 
+  flex-col 
+  gap-2
+}
+
+.curriculo__app__title {
+  @apply 
+
+  text-xl 
+  font-bold 
+  text-blue-500 
+  uppercase
+}
+
+.curriculo__app__description {
+  @apply 
+  
+  text-base 
+  font-light
+}
+
+.curriculo__row {
+  @apply 
+
+  flex 
+  flex-col 
+  md:flex-row 
+  gap-20
+}
+
+.curriculo__col-5 {
+  @apply 
+
+  w-full 
+  md:w-5/12
+}
+
+.curriculo__col-7 {
+  @apply 
+
+  flex-1
+}
+
+.curriculo__col-5,
+.curriculo__col-5 {
+  @apply 
+
+  flex 
+  flex-col 
+  gap-20
+}
+
+
+.curriculo__app__container {
+  @apply 
+
+  flex 
+  w-full 
+  flex-wrap 
+  justify-start 
+  gap-2
+}
+
+.curriculo__app__tag {
+  @apply 
+
+  flex 
+  items-start 
+  justify-center 
+  px-2 
+  py-1 
+  text-sm 
+  font-bold
+  bg-blue-500 
+  uppercase 
+  rounded-full 
+  w-max 
+  text-blue-50
+}
+
+.curriculo__app__date--timeline {
+  @apply 
+
+  text-base
+}
+
+.curriculo__app__title--timeline {
+  @apply 
+
+  text-lg 
+  font-bold 
+  uppercase
+}
+
+.curriculo__app__description--timeline {
+  @apply 
+
+  text-base 
+  font-light
+}
+
+
+.curriculo__app__timeline {
+  @apply 
+
+  relative 
+  flex 
+  flex-col 
+  gap-2
+}
+
+.curriculo__app__timeline::after {
+  @apply 
+
+  content-[""] 
+  absolute w-1 
+  bg-blue-100 
+  top-6 
+  bottom-0 
+  ml-[10px]
+}
+
+.curriculo__timeline__item {
+  @apply 
+
+  relative 
+  pl-8
+}
+
+.curriculo__timeline__item::after {
+  @apply 
+
+  content-[""] 
+  absolute 
+  left-0 
+  w-6 
+  h-6 
+  top-3 
+  rounded-full 
+  border-4 
+  border-blue-500 
+  bg-blue-600 
+  shadow-md 
+  z-10
+}
+
+.curriculo__left {
+  left: 0;
+}
+
+.curriculo__content {
+  @apply 
+
+  relative 
+  my-3
+}
+
+@media screen and (max-width: 600px) {
+
+  .curriculo__timeline::after {
+    left: 31px;
+  }
+
+  .curriculo__container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  .curriculo__container::before {
+    left: 60px;
+    border: medium solid #ffffff;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #ffffff transparent transparent;
+  }
+
+  .curriculo__left::after,
+  .curriculo__right::after {
+    left: 15px;
+  }
+
+  .curriculo__right {
+    left: 0%;
+  }
+}
+
+.curriculo__footer {
+  @apply 
+  
+  w-full 
+  bg-zinc-200
+}
+
+.curriculo__footer__container {
+  @apply 
+  
+  flex 
+  flex-col 
+  items-end
+  md:items-center
+  md:flex-row
+  max-w-4xl
+
+  m-auto  
+  p-4
+  justify-between
+}

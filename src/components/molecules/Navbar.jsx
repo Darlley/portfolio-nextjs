@@ -39,7 +39,7 @@ function Navbar() {
 
                                     <li>
                                         <NavigationMenu.Link>
-                                            <a className={classNames('ListItemLink')} href="/about">
+                                            <a className='ListItemLink' href="/about">
                                                 <div className="ListItemHeading">About</div>
                                                 <p className="ListItemText">Saiba mais sobre mim, minhas crenças e meus hobbies.</p>
                                             </a>
@@ -48,18 +48,9 @@ function Navbar() {
 
                                     <li>
                                         <NavigationMenu.Link>
-                                            <a className={classNames('ListItemLink')}>
-                                                <div className="ListItemHeading">Certifications</div>
-                                                <p className="ListItemText">Conheça meus minhas habilidades, certificações e experiências profissionais.</p>
-                                            </a>
-                                        </NavigationMenu.Link>
-                                    </li>
-
-                                    <li>
-                                        <NavigationMenu.Link>
-                                            <a className={classNames('ListItemLink')}>
-                                                <div className="ListItemHeading">Contact</div>
-                                                <p className="ListItemText">Fale comigo</p>
+                                            <a className='ListItemLink' href="/curriculo">
+                                                <div className="ListItemHeading">Curriculo</div>
+                                                <p className="ListItemText">Versão online do meu curriculo.</p>
                                             </a>
                                         </NavigationMenu.Link>
                                     </li>

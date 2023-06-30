@@ -4,6 +4,7 @@
 
 @import "./navbar.css";
 @import "./radix-menu.css";
+@import "./curriculo.css";
 
 body, html{
   width: 100%;
@@ -284,3 +285,19 @@ body, html{
   flex-col
   gap-2
 }
+
+
+
+
+.card__scrollbar::-webkit-scrollbar {
+  width: 3px !important;
+  height: 3px !important;
+}
+.card__scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.062);
+}
+.card__scrollbar::-webkit-scrollbar-track {
+  background: rgba(255,255,255,.1);
+}
+
+
