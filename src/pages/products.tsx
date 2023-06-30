@@ -6,7 +6,7 @@ import {products} from "../../products.json";
 import { useCallback, useState } from "react";
 
 const metadata = {
-  title: "Darlley Brito - Products",
+  title: "Darlley Brito - Produtos",
   description: "Nesta página, estarão listados produtos que uso com link meus links de afiliado da Shopee.",
   image: "https://darlley.github.io/images/header.jpg"
 }

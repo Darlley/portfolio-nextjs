@@ -1,17 +1,6 @@
 {
     "products": [
         {
-            "id": 1,
-            "name": "Yamaha Fazer 250 2023",
-            "category": "veiculos",
-            "description": "Sempre peguei busão, e juntei uma grana e dei uma entrada na Fazer 250 como primeira moto. É uma moto intermediaria para as de alta carenegem e não pesa no bolso o consumo de combustivel no dia a dia, além de ser muito ágil.",
-            "site": "Yamaha",
-            "href": "https://www3.yamaha-motor.com.br/fazer-fz25-abs/product/30060/",
-            "price": "R$21.490",
-            "imageSrc": "/products/fz25.jpeg",
-            "imageAlt": "Moto Yamaha Fazer 250 modelo 2023"
-        },
-        {
             "id": 2,
             "name": "Motorola Edge 30",
             "category": "Celular",
@@ -54,6 +43,17 @@
             "price": "R$28",
             "imageSrc": "/products/nivea-men.png",
             "imageAlt": "Creme Hidratante Nivea Men 4 em 1"
+        },
+        {
+            "id": 1,
+            "name": "Yamaha Fazer 250 2023",
+            "category": "veiculos",
+            "description": "Peguei ela 0km como primeira moto, melhor investimento que fiz. É uma moto intermediaria para as de alta cilindrada e não pesa no bolso o consumo de combustivel para o dia a dia, além de ser muito ágil no transito.",
+            "site": "Yamaha",
+            "href": "https://www3.yamaha-motor.com.br/fazer-fz25-abs/product/30060/",
+            "price": "R$21.490",
+            "imageSrc": "/products/fz25.jpeg",
+            "imageAlt": "Moto Yamaha Fazer 250 modelo 2023"
         }
     ]
 }

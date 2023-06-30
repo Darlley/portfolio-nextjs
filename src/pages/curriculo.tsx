@@ -4,7 +4,7 @@ import Metadata from "@/components/molecules/Metadata"
 
 const metadata = {
     title: "Darlley Brito - Curriculo",
-    description: "Esta é a ver~soa online que fiz do meu curriculo.",
+    description: "Esta é a versão online que fiz do meu curriculo.",
     image: "https://darlley.github.io/images/header.jpg"
 }
 

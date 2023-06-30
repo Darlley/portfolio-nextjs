@@ -12,7 +12,7 @@ function Metadata ({metadata}) {
 
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-        <meta name="application-name" content="Darlley Brito - Portfólio" />
+        <meta name="application-name" content={"Darlley Brito - " + metadata.title} />
         <meta name="apple-mobile-web-app-title" content={metadata.description} />
         <meta http-equiv="content-language" content="pt-br" />
         <meta name="author" content="Darlley Brasil de Brito Furtado" />
