@@ -35,12 +35,12 @@
         },
         {
             "id": 4,
-            "name": "Creme Hidratante Nivea Men",
-            "category": "Skin-Care",
+            "name": "Creme Hidratante Nivea Men - 30g",
+            "category": "Skincare",
             "description": "Creme hidratante multifuncional para uso diario: rosto, corpo, mãos e pós barba. Por causa de sua versatilidade uso em minha rotina em todos os períodos.",
-            "site": "BelezaNaWeb",
-            "href": "https://www.belezanaweb.com.br/nivea-men-4-em-1-creme-hidratante-75g",
-            "price": "R$28",
+            "site": "Amazon",
+            "href": "https://www.amazon.com.br/dp/B07Y29XTVQ?linkCode=ur2&ascsubtag=64ac5f58-8a71-4e91-a5cd-20bdf72daddas12&creative=9325&tag=nubank-20&camp=1789&_encoding=UTF8",
+            "price": "R$12",
             "imageSrc": "/products/nivea-men.png",
             "imageAlt": "Creme Hidratante Nivea Men 4 em 1"
         },
