@@ -33,5 +33,7 @@ module.exports = {
       transform: ['active'],
     }
 },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms')
+  ],
 }
