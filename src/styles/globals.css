@@ -57,99 +57,9 @@ body, html{
   w-[200px] h-[200px] p-1 border-8 rounded-full hover:border-secundary-500 cursor-pointer transition-all duration-500 z-0
 }
 
-.profile_item{
-  @apply
-
-  absolute 
-  rounded-full 
-  bg-cover 
-  cursor-pointer 
-  border-2 
-  border-secundary-500
-
-  active:scale-95
-  hover:scale-95
-
-  transition-all
-  duration-500
-  z-[2]
-}
-.profile_item img{
-  @apply
-
-  border
-
-  hover:border-secundary-500
-  transition-all
-  duration-500
-
-  rounded-full
-  p-[1px]
-  z-[2]
-}
-.profile_item:nth-child(1){
-  @apply
-  
-  left-[45px] -top-[4px]
-}
-.profile_item:nth-child(2){
-  @apply
-  
-  right-[45px] -top-[4px]
-}
-.profile_item:nth-child(3){
-  @apply
-  
-  -left-4 top-20
-}
-.profile_item:nth-child(4){
-  @apply
-  
-  -right-4 top-20
-}
-.profile_item:nth-child(5){
-  @apply
-  
-  bottom-8 -left-0
-}
-.profile_item:nth-child(6){
-  @apply
-  
-  bottom-8 -right-0
-}
-.profile_item:nth-child(7){
-  @apply
-  
-  right-[40%] -bottom-4
-}
-
-.profileCard_container{
-  animation: spin_reverse 80s linear infinite;
-}
-
-.profile_item{
-  animation: spin 80s linear infinite;
-}
-
-.profile_card{
-  animation: spin 80s linear infinite;
-}
-
-
-@keyframes spin{
-  from{
-    transform: rotate(0deg);
-  }
-  to{
-    transform: rotate(360deg);
-  }
-}
-@keyframes spin_reverse{
-  to{
-    transform: rotate(0deg);
-  }
-  from{
-    transform: rotate(360deg);
+@layer utilities {
+  .pause {
+    animation-play-state: paused;
   }
 }
 
@@ -286,15 +196,12 @@ body, html{
   gap-2
 }
 
-
-
-
 .card__scrollbar::-webkit-scrollbar {
   width: 3px !important;
   height: 3px !important;
 }
 .card__scrollbar::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.062);
+    background-color: #62dafc;
 }
 .card__scrollbar::-webkit-scrollbar-track {
   background: rgba(255,255,255,.1);

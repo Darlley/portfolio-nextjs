@@ -26,6 +26,20 @@ module.exports = {
           "900": "#224c58",
         },
       },
+      animation: {
+        'rotate': 'spin 80s linear infinite',
+        'rotate-reverse': 'spin 80s linear infinite reverse',
+      }
+    },
+  },
+  keyframes: {
+    spin: {
+      from: {
+        transform: 'rotate(0deg)',
+      },
+      to: {
+        transform: 'rotate(360deg)',
+      },
     },
   },
   variants: {
