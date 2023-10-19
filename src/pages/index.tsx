@@ -27,7 +27,7 @@ export default function Home() {
   return (
     <>
       <Metadata metadata={metadata} />
-      <header>
+      <header className="overflow-hidden">
         <div className="header__background">
           <div className="header__opacity">
             <div className="header__content">
@@ -222,12 +222,13 @@ export default function Home() {
               </div>
             </div>
             
-            {modalOpen &&
-              <CardModal modalOpen={modalOpen} setModalOpen={setModalOpen} content={modalComponent} />
-            }
           </div>
         </div>
+        {modalOpen &&
+          <CardModal modalOpen={modalOpen} setModalOpen={setModalOpen} content={modalComponent} />
+        }
       </header>
+      
     </>
   );
 }

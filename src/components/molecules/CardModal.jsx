@@ -238,7 +238,7 @@ function CardModal({ modalOpen, setModalOpen, content }) {
           <div className="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75" />
         </Transition.Child>
 
-        <div className="fixed inset-0 z-10 w-screen overflow-hidden">
+        <div className="fixed inset-0 z-10 w-full overflow-hidden">
           <div className="flex items-end justify-center min-h-full p-4 text-center sm:items-center sm:p-0">
             <Transition.Child
               as={Fragment}
@@ -249,7 +249,7 @@ function CardModal({ modalOpen, setModalOpen, content }) {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className="relative px-4 pt-5 pb-4 overflow-hidden text-left transition-all transform bg-gray-900 rounded-lg shadow-xl h-max w-96 sm:my-8 sm:p-6">
+              <Dialog.Panel className="relative w-11/12 px-4 pt-5 pb-4 overflow-hidden text-left transition-all transform bg-gray-900 rounded-lg shadow-xl h-max sm:my-8 sm:p-6">
                 <div className={classNames("flex",
                 content === 0 ? " flex-col gap-4" : "justify-between"
                 )}>
