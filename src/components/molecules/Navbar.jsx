@@ -69,7 +69,7 @@ function Navbar() {
 
                         <NavigationMenu.Item>
                             <NavigationMenu.Trigger className="NavigationMenuTrigger">
-                                External Links <CaretDownIcon className="CaretDown" aria-hidden />
+                                External <CaretDownIcon className="CaretDown" aria-hidden />
                             </NavigationMenu.Trigger>
                             <NavigationMenu.Content className="NavigationMenuContent">
                                 <ul className="List two">
