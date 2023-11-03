@@ -54,12 +54,12 @@ function Navbar() {
                                             </a>
                                         </NavigationMenu.Link>
                                     </li>
-
+                                    
                                     <li>
                                         <NavigationMenu.Link>
-                                            <a className='ListItemLink' href="/products">
-                                                <div className="ListItemHeading">Products</div>
-                                                <p className="ListItemText">Items que uso no dia a dia.</p>
+                                            <a className='ListItemLink' href="/projects">
+                                                <div className="ListItemHeading">Projects</div>
+                                                <p className="ListItemText">Projetos que ja fiz ou participei.</p>
                                             </a>
                                         </NavigationMenu.Link>
                                     </li>
@@ -69,7 +69,7 @@ function Navbar() {
 
                         <NavigationMenu.Item>
                             <NavigationMenu.Trigger className="NavigationMenuTrigger">
-                                Projects <CaretDownIcon className="CaretDown" aria-hidden />
+                                External Links <CaretDownIcon className="CaretDown" aria-hidden />
                             </NavigationMenu.Trigger>
                             <NavigationMenu.Content className="NavigationMenuContent">
                                 <ul className="List two">
@@ -81,6 +81,13 @@ function Navbar() {
                                             </a>
                                         </NavigationMenu.Link>
                                     </li>
+
+                                    <NavigationMenu.Link>
+                                            <a className='ListItemLink' href="/products">
+                                                <div className="ListItemHeading">Products</div>
+                                                <p className="ListItemText">Items que uso no dia a dia.</p>
+                                            </a>
+                                        </NavigationMenu.Link>
                                     
                                     <li>
                                         <NavigationMenu.Link>
@@ -90,15 +97,7 @@ function Navbar() {
                                             </a>
                                         </NavigationMenu.Link>
                                     </li>
-                                    <li>
-                                        <NavigationMenu.Link>
-                                            <a className={classNames('ListItemLink')} href="https://www.notion.so/PROGRAMA-O-WEB-FULLSTACK-f2ab9d0f039f4965871c42f32adc9d1b" target="_blank">
-                                                <div className="ListItemHeading">Cursos de Desenvolvimento Web</div>
-                                                <p className="ListItemText">No decorrer do meu aprendizado compilei alguns cursos de desenvolvimento de forma ordenada.</p>
-                                            </a>
-                                        </NavigationMenu.Link>
-                                    </li>
-
+                                    
                                     <li>
                                         <NavigationMenu.Link>
                                             <a className={classNames('ListItemLink')} href="https://www.evernote.com/shard/s513/client/snv?noteGuid=d73e3f67-0a8f-67ae-d2ba-fa74c4e9fd15&noteKey=8bf937abec1186e7380680fb59801cae&sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs513%2Fsh%2Fd73e3f67-0a8f-67ae-d2ba-fa74c4e9fd15%2F8bf937abec1186e7380680fb59801cae&title=META%2BDE%2BLEITURA" target="_blank">

@@ -63,8 +63,9 @@ export default function ProductsPage() {
       <HeaderPage>
         <h1>SHOPPING</h1>
       </HeaderPage>
-      <div className="bg-white">
-        {/* Filters */}
+      {/*FILTER*/}
+      {/* <div className="bg-white">
+        
         <Disclosure
           as="section"
           aria-labelledby="filter-heading"
@@ -226,7 +227,7 @@ export default function ProductsPage() {
             </div>
           </div>
         </Disclosure>
-      </div>
+      </div> */}
 
       <main className="bg-white">
         <div className="max-w-2xl px-4 py-16 mx-auto sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
