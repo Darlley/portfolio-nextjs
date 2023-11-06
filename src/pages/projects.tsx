@@ -1,16 +1,11 @@
-import { useCallback, useState, Fragment } from "react";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { ChevronDownIcon, FunnelIcon } from "@heroicons/react/20/solid";
+'use client'
 
-import { Tag } from "@/components/atoms/Tag";
 import HeaderPage from "@/components/molecules/HeaderPage";
 import Metadata from "@/components/molecules/Metadata";
-import { Product } from "@/components/molecules/products/Product";
-import { products } from "../../products.json";
 
 const metadata = {
   title: "Darlley Brito - Projetos",
-  description: "Nesta página, estarão listados meus projetos.",
+  description: "Nesta página estão listados meus projetos.",
   image: "https://darlley.github.io/images/header.jpg",
 };
 
@@ -31,9 +26,9 @@ export default function ProductsPage() {
             
             <div className="relative group">
               <div className="relative overflow-hidden bg-white border rounded-lg max-h-60">
-                <img
-                  src="https://darlley.github.io/images/Projetos/projeto2.PNG"
-                  alt=""
+                <img 
+                  src="/bikcraft.png"
+                  alt="" 
                   className="object-cover object-center w-full"
                 />
                 <div
@@ -70,7 +65,7 @@ export default function ProductsPage() {
             <div className="relative group">
               <div className="relative overflow-hidden bg-white border rounded-lg max-h-60">
                 <img
-                  src="https://darlley.github.io/images/Projetos/projeto1.png"
+                  src="/animais-fantasticos.png"
                   alt=""
                   className="object-cover object-center w-full"
                 />
@@ -150,7 +145,7 @@ export default function ProductsPage() {
                     Ver projeto
                   </div>
                 </div>
-              </div>
+              </div> 
               <div className="flex items-center justify-between mt-4 space-x-8 text-base font-medium text-gray-900">
                 <h3>
                   <a
@@ -304,6 +299,7 @@ export default function ProductsPage() {
                 Base de conhecimentos para empresa.
               </p>
             </div>
+            
             <div className="relative group">
               <div className="relative overflow-hidden bg-white border rounded-lg max-h-60">
                 <img

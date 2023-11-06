@@ -42,10 +42,10 @@
 
   flex 
   items-center 
-  gap-1 
+  gap-1
   hover:text-zinc-800 
   transition-colors 
-  hover:animate-pulse
+  relative
 }
 
 
