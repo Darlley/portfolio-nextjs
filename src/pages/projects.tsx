@@ -81,7 +81,7 @@ export default function ProductsPage() {
               <div className="flex items-center justify-between mt-4 space-x-8 text-base font-medium text-gray-900">
                 <h3>
                   <a
-                    href="https://darlley.github.io/Frontend/WebDesign-Origamid/"
+                    href="https://darlley.github.io/JavaScript/Cursos/JavaScriptCompletoES6/Parte5/aula02/"
                     target="_blank"
                   >
                     <span aria-hidden="true" className="absolute inset-0" />
@@ -93,6 +93,40 @@ export default function ProductsPage() {
 
               <p className="mt-1 text-sm text-gray-500">
               Este foi um projeto envolvendo diversos conceitos JavaScript e o básico de HTML e CSS desenvolvido no curso JavaScript Completo ES6.
+              </p>
+            </div>
+            
+            <div className="relative group">
+              <div className="relative overflow-hidden bg-white border rounded-lg max-h-60">
+                <img
+                  src="/darlley.github.io_Frontend_Rocketseat_DevFinances_.png"
+                  alt=""
+                  className="object-cover object-center w-full"
+                />
+                <div
+                  className="absolute bottom-0 flex w-full p-4 transition-all duration-100 opacity-0 group-hover:opacity-100"
+                  aria-hidden="true"
+                >
+                  <div className="w-full px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white bg-opacity-75 rounded-md backdrop-blur backdrop-filter">
+                    Ver projeto
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center justify-between mt-4 space-x-8 text-base font-medium text-gray-900">
+                <h3>
+                  <a
+                    href="https://darlley.github.io/Frontend/Rocketseat/DevFinances/"
+                    target="_blank"
+                  >
+                    <span aria-hidden="true" className="absolute inset-0" />
+                    Dev.Finance$
+                  </a>
+                </h3>
+                <p>JavaScript ES6</p>
+              </div>
+
+              <p className="mt-1 text-sm text-gray-500">
+              Este foi um projeto envolvendo diversos conceitos JavaScript e o básico de HTML e CSS desenvolvido na Maratona Discover da Rocketseat.
               </p>
             </div>
             
@@ -334,6 +368,10 @@ export default function ProductsPage() {
               </p>
             </div>
 
+          </div>
+
+          <div className="flex justify-end w-full mt-6">
+            <a target="_blank" href="https://darlley.github.io/experiencias.html" className="text-sky-400 underline-offset-4 hover:underline">Outros →</a>
           </div>
         </div>
       </main>
