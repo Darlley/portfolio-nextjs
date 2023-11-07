@@ -66,7 +66,7 @@ function Navbar() {
 
                   <li>
                     <NavigationMenu.Link>
-                      <a className="ListItemLink" href="https://cvkeep.com/cv/cc6875604249d59be4b770f93fdd19f5" target="_blank">
+                      <a className="ListItemLink" href="/curriculo" target="_blank">
                         <div className="ListItemHeading">Curriculo</div>
                         <p className="ListItemText">
                           Versão online do meu curriculo.

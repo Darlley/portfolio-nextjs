@@ -199,7 +199,7 @@ export default function Home() {
                 </Link>
 
                 <Link
-                  href="/curriculo.pdf"
+                  href="https://cvkeep.com/cv/cc6875604249d59be4b770f93fdd19f5"
                   target="_blank"
                   className="Menu__item"
                 >
