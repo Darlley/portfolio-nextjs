@@ -183,7 +183,7 @@ export default function ProductsPage() {
               <div className="flex items-center justify-between mt-4 space-x-8 text-base font-medium text-gray-900">
                 <h3>
                   <a
-                    href="https://sorteio-woad.vercel.app/"
+                    href="https://privatecode.vercel.app/"
                     target="_blank"
                   >
                     <span aria-hidden="true" className="absolute inset-0" />
