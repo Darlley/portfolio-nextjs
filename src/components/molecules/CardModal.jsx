@@ -249,11 +249,11 @@ function CardModal({ modalOpen, setModalOpen, content }) {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className="relative w-11/12 px-4 pt-5 pb-4 overflow-hidden text-left transition-all transform bg-gray-900 rounded-lg shadow-xl h-max sm:my-8 sm:p-6">
-                <div className={classNames("flex",
-                content === 0 ? " flex-col gap-4" : "justify-between"
+              <Dialog.Panel className="relative max-w-[600px] w-11/12 px-4 pt-5 pb-4 overflow-hidden text-left transition-all transform bg-gray-900 rounded-lg shadow-xl h-max sm:my-8 sm:p-6">
+                <div className={classNames("flex flex-wrap",
+                content === 0 ? "flex-col gap-4" : "  justify-between"
                 )}>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 w-max">
                     <button type="button" onClick={() => setModalOpen(false)}>
                       <span className="inline-block w-3 h-3 bg-blue-500 rounded-full center"></span>
                     </button>
@@ -265,7 +265,7 @@ function CardModal({ modalOpen, setModalOpen, content }) {
                     </button>
                   </div>
 
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 w-max">
                     <Image
                       src={card.imageUrl}
                       alt="Icone"

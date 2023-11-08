@@ -35,9 +35,9 @@ export default function Home() {
 
               <div className="flex flex-col items-center justify-center flex-1 h-[90%]">
                 <div className="relative p-8">
-                  <div className="relative p-10 border-2 border-dashed rounded-full group animate-rotate-reverse hover:pause border-spacing-4 border-gray-400/50">
+                  <div className="relative p-10 border-2 border-dashed rounded-full group animate-rotate-reverse border-spacing-4 border-gray-400/50">
                     <button
-                      className="animate-rotate group-hover:pause left-[45px] top-0 absolute rounded-full bg-cover cursor-pointer border-2 border-gray-400/50 active:scale-95 hover:scale-95 transition-all duration-500"
+                      className="animate-rotate left-[45px] top-0 absolute rounded-full bg-cover cursor-pointer border-2 border-gray-400/50 active:scale-95 hover:scale-95 transition-all duration-500"
                       onClick={() => handleClick(1)}
                     >
                       <Image
@@ -50,7 +50,7 @@ export default function Home() {
                     </button>
 
                     <button
-                      className="animate-rotate group-hover:pause right-[65px] -top-[8px] absolute rounded-full bg-cover cursor-pointer border-2 border-gray-400/50 active:scale-95 hover:scale-95 transition-all duration-500"
+                      className="animate-rotate right-[65px] -top-[8px] absolute rounded-full bg-cover cursor-pointer border-2 border-gray-400/50 active:scale-95 hover:scale-95 transition-all duration-500"
                       onClick={() => handleClick(2)}
                     >
                       <Image
@@ -63,7 +63,7 @@ export default function Home() {
                     </button>
 
                     <button
-                      className="absolute transition-all duration-500 bg-cover border-2 rounded-full cursor-pointer -left-5 top-24 animate-rotate group-hover:pause border-gray-400/50 active:scale-95 hover:scale-95"
+                      className="absolute transition-all duration-500 bg-cover border-2 rounded-full cursor-pointer -left-5 top-24 animate-rotate border-gray-400/50 active:scale-95 hover:scale-95"
                       onClick={() => handleClick(3)}
                     >
                       <Image
@@ -76,7 +76,7 @@ export default function Home() {
                     </button>
 
                     <button
-                      className="absolute transition-all duration-500 bg-cover border-2 rounded-full cursor-pointer animate-rotate group-hover:pause -right-4 top-20 border-gray-400/50 active:scale-95 hover:scale-95"
+                      className="absolute transition-all duration-500 bg-cover border-2 rounded-full cursor-pointer animate-rotate -right-4 top-20 border-gray-400/50 active:scale-95 hover:scale-95"
                       onClick={() => handleClick(4)}
                     >
                       <Image
@@ -89,7 +89,7 @@ export default function Home() {
                     </button>
 
                     <button
-                      className="absolute transition-all duration-500 bg-cover border-2 rounded-full cursor-pointer left-4 bottom-8 animate-rotate group-hover:pause border-gray-400/50 active:scale-95 hover:scale-95"
+                      className="absolute transition-all duration-500 bg-cover border-2 rounded-full cursor-pointer left-4 bottom-8 animate-rotate border-gray-400/50 active:scale-95 hover:scale-95"
                       onClick={() => handleClick(5)}
                     >
                       <Image
@@ -102,7 +102,7 @@ export default function Home() {
                     </button>
 
                     <button
-                      className="absolute transition-all duration-500 bg-cover border-2 rounded-full cursor-pointer right-1 animate-rotate group-hover:pause bottom-10 border-gray-400/50 active:scale-95 hover:scale-95"
+                      className="absolute transition-all duration-500 bg-cover border-2 rounded-full cursor-pointer right-1 animate-rotate bottom-10 border-gray-400/50 active:scale-95 hover:scale-95"
                       onClick={() => handleClick(6)}
                     >
                       <Image
@@ -115,7 +115,7 @@ export default function Home() {
                     </button>
 
                     <button
-                      className="animate-rotate group-hover:pause right-[40%] -bottom-4 absolute rounded-full bg-cover cursor-pointer border-2 border-gray-400/50 active:scale-95 hover:scale-95 transition-all duration-500"
+                      className="animate-rotate right-[40%] -bottom-4 absolute rounded-full bg-cover cursor-pointer border-2 border-gray-400/50 active:scale-95 hover:scale-95 transition-all duration-500"
                       onClick={() => handleClick(7)}
                     >
                       <Image
@@ -128,7 +128,7 @@ export default function Home() {
                     </button>
 
                     <button
-                      className="animate-rotate group-hover:pause w-[200px] h-[200px] p-1 border-4 rounded-full hover:border-gray-400/50 cursor-pointer transition-all duration-500 z-0"
+                      className="animate-rotate w-[200px] h-[200px] p-1 border-4 rounded-full hover:border-gray-400/50 cursor-pointer transition-all duration-500 z-0"
                       onClick={() => handleClick(0)}
                     >
                       <div className="w-full h-full rounded-full active:scale-95 hover:border-gray-400 border-2 bg-[url('/profile.jpg')] bg-cover transition-all duration-500" />

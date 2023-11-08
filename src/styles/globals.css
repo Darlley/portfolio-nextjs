@@ -57,12 +57,6 @@ body, html{
   w-[200px] h-[200px] p-1 border-8 rounded-full hover:border-secundary-500 cursor-pointer transition-all duration-500 z-0
 }
 
-@layer utilities {
-  .pause {
-    animation-play-state: paused;
-  }
-}
-
 .header__page{
   @apply
 
