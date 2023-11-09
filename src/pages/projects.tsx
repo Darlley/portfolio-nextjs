@@ -9,11 +9,7 @@ const metadata = {
   image: "https://darlley.github.io/images/header.jpg",
 };
 
-function classNames(...classes: any) {
-  return classes.filter(Boolean).join(" ");
-}
-
-export default function ProductsPage() {
+export default function ProjectsPage() {
   return (
     <>
       <Metadata metadata={metadata} />
