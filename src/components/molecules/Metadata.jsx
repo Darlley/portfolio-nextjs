@@ -3,7 +3,7 @@ import Head from 'next/head'
 function Metadata ({metadata}) {
     return (
         <Head>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <title>{metadata.title}</title>
@@ -14,7 +14,7 @@ function Metadata ({metadata}) {
 
         <meta name="application-name" content={"Darlley Brito - " + metadata.title} />
         <meta name="apple-mobile-web-app-title" content={metadata.description} />
-        <meta http-equiv="content-language" content="pt-br" />
+        <meta httpEquiv="content-language" content="pt-br" />
         <meta name="author" content="Darlley Brasil de Brito Furtado" />
         <meta name="copyright" content="Darlley Brasil de Brito Furtado" />
         <meta name="creator" content="Darlley Brito Dev" />
@@ -24,7 +24,7 @@ function Metadata ({metadata}) {
         <meta property="og:title" content="Darlley Brito - Portfólio" />
         <meta property="og:description" content={metadata.description} />
         <meta property="og:site_name" content="Darlley Brito - Portfólio" />
-        <meta property="og:image" itemprop="image" content={metadata.image} />
+        <meta property="og:image" itemProp="image" content={metadata.image} />
         <meta property="og:image:width" content="512" />
         <meta property="og:image:height" content="512" />
         <meta property="og:image:alt" content="Darlley Brasil de Brito Furtado" />
@@ -59,7 +59,7 @@ function Metadata ({metadata}) {
         <meta name="theme-color" content="#61dafb" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
 
       </Head>
