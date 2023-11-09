@@ -114,10 +114,10 @@ function Navbar() {
                   </li>
 
                   <NavigationMenu.Link>
-                    <a className="ListItemLink" href="/https://medium.com/@darlleybrito" target="_blank">
+                    <a className="ListItemLink" href="https://medium.com/@darlleybrito" target="_blank">
                       <div className="ListItemHeading">Medium</div>
                       <p className="ListItemText">
-                        Meu blog no Médium
+                        Meu blog no Medium
                       </p>
                     </a>
                   </NavigationMenu.Link>
