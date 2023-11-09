@@ -368,6 +368,278 @@ export default function ProductsPage() {
               </p>
             </div>
 
+            <div className="relative group">
+              <div className="relative overflow-hidden bg-white border rounded-lg max-h-60">
+                <img
+                  src="/figma_wireflame_anytalk.jpg"
+                  alt=""
+                  className="object-cover object-center w-full"
+                />
+                <div
+                  className="absolute bottom-0 flex w-full p-4 transition-all duration-100 opacity-0 group-hover:opacity-100"
+                  aria-hidden="true"
+                >
+                  <div className="w-full px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white bg-opacity-75 rounded-md backdrop-blur backdrop-filter">
+                    Ver projeto
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center justify-between mt-4 space-x-8 text-base font-medium text-gray-900">
+                <h3>
+                  <a
+                    href="https://www.figma.com/proto/5I8d0lfBC2sUNOsYRUrFbU/AnyTalk?node-id=26-22"
+                    target="_blank"
+                  >
+                    <span aria-hidden="true" className="absolute inset-0" />
+                    Wireflame
+                  </a>
+                </h3>
+                <p>Figma</p>
+              </div>
+
+              <p className="mt-1 text-sm text-gray-500">
+                Wireflame no Figma para um CRM para Atendimentos no WhatsApp.
+              </p>
+            </div>
+            
+            <div className="relative group">
+              <div className="relative overflow-hidden bg-white border rounded-lg max-h-60">
+                <img
+                  src="/DesignLP-Marketing-Juridico.jpg"
+                  alt=""
+                  className="object-cover object-center w-full"
+                />
+                <div
+                  className="absolute bottom-0 flex w-full p-4 transition-all duration-100 opacity-0 group-hover:opacity-100"
+                  aria-hidden="true"
+                >
+                  <div className="w-full px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white bg-opacity-75 rounded-md backdrop-blur backdrop-filter">
+                    Ver projeto
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center justify-between mt-4 space-x-8 text-base font-medium text-gray-900">
+                <h3>
+                  <a
+                    href="https://www.figma.com/proto/ruWTV1EuRC10hx6FlVOcdq/Marketing-de-Nichos-LeadsZapp?type=design&node-id=2-2&t=R0ErUOtoPDzZRZOU-0&scaling=min-zoom&page-id=0%3A1&show-proto-sidebar=1&starting-point-node-id=2%3A2/"
+                    target="_blank"
+                  >
+                    <span aria-hidden="true" className="absolute inset-0" />
+                    Design de LP's
+                  </a>
+                </h3>
+                <p>Figma</p>
+              </div>
+
+              <p className="mt-1 text-sm text-gray-500">
+                Design no Figma de Landing Pages no ramo do marketing jurídico.
+              </p>
+            </div>
+            
+            <div className="relative group">
+              <div className="relative overflow-hidden bg-white border rounded-lg max-h-60">
+                <img
+                  src="/bikcraft-wireframe.png"
+                  alt=""
+                  className="object-cover object-center w-full"
+                />
+                <div
+                  className="absolute bottom-0 flex w-full p-4 transition-all duration-100 opacity-0 group-hover:opacity-100"
+                  aria-hidden="true"
+                >
+                  <div className="w-full px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white bg-opacity-75 rounded-md backdrop-blur backdrop-filter">
+                    Ver projeto
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center justify-between mt-4 space-x-8 text-base font-medium text-gray-900">
+                <h3>
+                  <a
+                    href="https://www.figma.com/file/hp6gMbGWkaWdX1khCv5itq/Bikcraft?type=design&node-id=9-2&mode=design&t=6cFqzZdL38Mxb4jT-0"
+                    target="_blank"
+                  >
+                    <span aria-hidden="true" className="absolute inset-0" />
+                    Wireframe
+                  </a>
+                </h3>
+                <p>Figma</p>
+              </div>
+
+              <p className="mt-1 text-sm text-gray-500">
+                Wireframe criado no curso de UI Design da Origamid.
+              </p>
+            </div>
+            
+            <div className="relative group">
+              <div className="relative overflow-hidden bg-white border rounded-lg max-h-60">
+                <img
+                  src="/wireframe-googday.png"
+                  alt=""
+                  className="object-cover object-center w-full"
+                />
+                <div
+                  className="absolute bottom-0 flex w-full p-4 transition-all duration-100 opacity-0 group-hover:opacity-100"
+                  aria-hidden="true"
+                >
+                  <div className="w-full px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white bg-opacity-75 rounded-md backdrop-blur backdrop-filter">
+                    Ver projeto
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center justify-between mt-4 space-x-8 text-base font-medium text-gray-900">
+                <h3>
+                  <a
+                    href="https://www.figma.com/file/v6daHC3YsIuZO8ozjWN4Pa/Googday-FIGMA-PRO?type=design&node-id=102%3A41&mode=design&t=R0ErUOtoPDzZRZOU-1"
+                    target="_blank"
+                  >
+                    <span aria-hidden="true" className="absolute inset-0" />
+                    Wireframe
+                  </a>
+                </h3>
+                <p>Figma</p>
+              </div>
+
+              <p className="mt-1 text-sm text-gray-500">
+                Wireframe criado no curso Figma PRO.
+              </p>
+            </div>
+
+            <div className="relative group">
+              <div className="relative overflow-hidden bg-white border rounded-lg max-h-60">
+                <img
+                  src="/concept-design-growp.jpg"
+                  alt=""
+                  className="object-cover object-center w-full"
+                />
+                <div
+                  className="absolute bottom-0 flex w-full p-4 transition-all duration-100 opacity-0 group-hover:opacity-100"
+                  aria-hidden="true"
+                >
+                  <div className="w-full px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white bg-opacity-75 rounded-md backdrop-blur backdrop-filter">
+                    Ver projeto
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center justify-between mt-4 space-x-8 text-base font-medium text-gray-900">
+                <h3>
+                  <a
+                    href="https://www.figma.com/file/VWf3Y7SPhhiYDyKM7tSpu2/Growp?type=design&node-id=0%3A1&mode=design&t=k69TUnubpGDJHT9j-1"
+                    target="_blank"
+                  >
+                    <span aria-hidden="true" className="absolute inset-0" />
+                    Concept Design Growp
+                  </a>
+                </h3>
+                <p>Figma</p>
+              </div>
+
+              <p className="mt-1 text-sm text-gray-500">
+                Design Conceitural de Landing Page para a ferramenta Growp.
+              </p>
+            </div>
+
+            <div className="relative group">
+              <div className="relative overflow-hidden bg-white border rounded-lg max-h-60">
+                <img
+                  src="/checkout-artlover.png"
+                  alt=""
+                  className="object-cover object-center w-full"
+                />
+                <div
+                  className="absolute bottom-0 flex w-full p-4 transition-all duration-100 opacity-0 group-hover:opacity-100"
+                  aria-hidden="true"
+                >
+                  <div className="w-full px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white bg-opacity-75 rounded-md backdrop-blur backdrop-filter">
+                    Ver projeto
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center justify-between mt-4 space-x-8 text-base font-medium text-gray-900">
+                <h3>
+                  <a
+                    href="https://www.figma.com/file/Qmv2LY6SUjHAoGoNWlEv8R/ArtLover?type=design&node-id=102%3A47&mode=design&t=H9nIvgASbfP0MSxR-1"
+                    target="_blank"
+                  >
+                    <span aria-hidden="true" className="absolute inset-0" />
+                    Concept Design Artlover
+                  </a>
+                </h3>
+                <p>Figma</p>
+              </div>
+
+              <p className="mt-1 text-sm text-gray-500">
+                Design Conceitural de um checkout para o curso TALL Stack TDD do Marco Ávila.
+              </p>
+            </div>
+            
+            <div className="relative group">
+              <div className="relative overflow-hidden bg-white border rounded-lg max-h-60">
+                <img
+                  src="/curriculo-design.png"
+                  alt=""
+                  className="object-cover object-center w-full"
+                />
+                <div
+                  className="absolute bottom-0 flex w-full p-4 transition-all duration-100 opacity-0 group-hover:opacity-100"
+                  aria-hidden="true"
+                >
+                  <div className="w-full px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white bg-opacity-75 rounded-md backdrop-blur backdrop-filter">
+                    Ver projeto
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center justify-between mt-4 space-x-8 text-base font-medium text-gray-900">
+                <h3>
+                  <a
+                    href="https://www.figma.com/file/YfJtjKe8p2J7U7PQ3N5goB/Curriculo?type=design&node-id=0%3A1&mode=design&t=QufXG7MP9Cbd5qqs-1"
+                    target="_blank"
+                  >
+                    <span aria-hidden="true" className="absolute inset-0" />
+                    Design Curriculo
+                  </a>
+                </h3>
+                <p>Figma</p>
+              </div>
+
+              <p className="mt-1 text-sm text-gray-500">
+              Design do meu curriculo página /curriculo.
+              </p>
+            </div>
+            
+            <div className="relative group">
+              <div className="relative overflow-hidden bg-white border rounded-lg max-h-60">
+                <img
+                  src="/portfólio-wireframe.png"
+                  alt=""
+                  className="object-cover object-center w-full"
+                />
+                <div
+                  className="absolute bottom-0 flex w-full p-4 transition-all duration-100 opacity-0 group-hover:opacity-100"
+                  aria-hidden="true"
+                >
+                  <div className="w-full px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white bg-opacity-75 rounded-md backdrop-blur backdrop-filter">
+                    Ver projeto
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center justify-between mt-4 space-x-8 text-base font-medium text-gray-900">
+                <h3>
+                  <a
+                    href="https://www.figma.com/file/988JnV7pqJMKPQXwX2QqWX/Portfolio?type=design&node-id=0%3A1&mode=design&t=sX2c6YDx8IwObdmr-1"
+                    target="_blank"
+                  >
+                    <span aria-hidden="true" className="absolute inset-0" />
+                    Design deste portfólio
+                  </a>
+                </h3>
+                <p>Figma</p>
+              </div>
+
+              <p className="mt-1 text-sm text-gray-500">
+              Design do meu portfólio no Figma
+              </p>
+            </div>
+
           </div>
 
           <div className="flex justify-end w-full mt-6">
