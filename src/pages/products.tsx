@@ -1,13 +1,7 @@
-import { useCallback, useState, Fragment } from "react";
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { ChevronDownIcon, FunnelIcon } from '@heroicons/react/20/solid'
-
-import { Tag } from "@/components/atoms/Tag";
 import HeaderPage from "@/components/molecules/HeaderPage"
 import Metadata from "@/components/molecules/Metadata"
 import { Product } from "@/components/molecules/products/Product";
 import { products } from "../../products.json";
-
 
 const metadata = {
   title: "Darlley Brito - Produtos",

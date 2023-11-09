@@ -66,21 +66,21 @@ function Navbar() {
 
                   <li>
                     <NavigationMenu.Link>
-                      <a className="ListItemLink" href="/curriculo" target="_blank">
-                        <div className="ListItemHeading">Curriculo</div>
-                        <p className="ListItemText">
-                          Versão online do meu curriculo.
-                        </p>
-                      </a>
-                    </NavigationMenu.Link>
-                  </li>
-
-                  <li>
-                    <NavigationMenu.Link>
                       <a className="ListItemLink" href="/projects">
                         <div className="ListItemHeading">Projects</div>
                         <p className="ListItemText">
                           Projetos que ja fiz ou participei.
+                        </p>
+                      </a>
+                    </NavigationMenu.Link>
+                  </li>
+                  
+                  <li>
+                    <NavigationMenu.Link>
+                      <a className="ListItemLink" href="/products">
+                        <div className="ListItemHeading">Products</div>
+                        <p className="ListItemText">
+                          Produtos que uso no meu dia a dia.
                         </p>
                       </a>
                     </NavigationMenu.Link>
@@ -114,10 +114,10 @@ function Navbar() {
                   </li>
 
                   <NavigationMenu.Link>
-                    <a className="ListItemLink" href="/products">
-                      <div className="ListItemHeading">Products</div>
+                    <a className="ListItemLink" href="/https://medium.com/@darlleybrito" target="_blank">
+                      <div className="ListItemHeading">Medium</div>
                       <p className="ListItemText">
-                        Items que uso no dia a dia.
+                        Meu blog no Médium
                       </p>
                     </a>
                   </NavigationMenu.Link>
@@ -254,7 +254,7 @@ function Navbar() {
             <span>Github</span>
           </Link>
 
-          <Link href="https://cvkeep.com/cv/cc6875604249d59be4b770f93fdd19f5" target="_blank" className="Menu__item">
+          <Link href="/curriculo" className="Menu__item">
             <svg
               width="15"
               height="15"
