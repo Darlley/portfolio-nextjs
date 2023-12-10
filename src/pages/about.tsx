@@ -26,7 +26,7 @@ export default function About() {
           <div className="grid items-start max-w-2xl grid-cols-1 mx-auto gap-x-8 gap-y-16 sm:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-2">
             <div className="lg:pr-4">
               <div className="relative px-6 pt-64 overflow-hidden shadow-2xl rounded-3xl bg-secundary-900 pb-9 sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10">
-                <img className="absolute inset-0 object-cover w-full h-full brightness-125 saturate-0" src="/profile.jpg" alt="" />
+                <img className="absolute inset-0 object-cover w-full h-full brightness-125 saturate-0" src="/profile.jpg" alt="Minha foto" />
                 <div className="absolute inset-0 bg-secundary-900 mix-blend-multiply" />
                 <div className="absolute -ml-16 -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 transform-gpu blur-3xl" aria-hidden="true" />
                 <figure className="relative isolate">
@@ -92,7 +92,7 @@ export default function About() {
                     <div className="absolute top-0 left-0 flex justify-center w-6 -bottom-6">
                       <div className="w-px bg-gray-200"></div>
                     </div>
-                    <img src="/profile.jpg" alt="" className="relative flex-none w-6 h-6 mt-3 rounded-full bg-gray-50" />
+                    <img src="/profile.jpg" alt="Minha foto" className="relative flex-none w-6 h-6 mt-3 rounded-full bg-gray-50" />
                     <div className="flex-auto p-3 rounded-md ring-1 ring-inset ring-gray-200">
                       <div className="flex justify-between gap-x-4">
                         <div className="py-0.5 text-xs leading-5 text-gray-500"><span className="font-medium text-gray-900">Crise existencial</span></div>
@@ -106,7 +106,7 @@ export default function About() {
                     <div className="absolute top-0 left-0 flex justify-center w-6 -bottom-6">
                       <div className="w-px bg-gray-200"></div>
                     </div>
-                    <img src="https://yt3.ggpht.com/a/AATXAJyTdVU1t8QdU53fkQWwr6QwAVxL0KfqBhIPTA=s900-c-k-c0xffffffff-no-rj-mo" alt="" className="relative flex-none w-6 h-6 mt-3 rounded-full bg-gray-50" />
+                    <img src="https://yt3.ggpht.com/a/AATXAJyTdVU1t8QdU53fkQWwr6QwAVxL0KfqBhIPTA=s900-c-k-c0xffffffff-no-rj-mo" alt="Logotipo da Rino3" className="relative flex-none w-6 h-6 mt-3 rounded-full bg-gray-50" />
                     <div className="flex-auto p-3 rounded-md ring-1 ring-inset ring-gray-200">
                       <div className="flex justify-between gap-x-4">
                         <div className="py-0.5 text-xs leading-5 text-gray-500"><span className="font-medium text-gray-900"><a href="https://rino3.com.br/novo/" target="_blank">Estagiário na Rino3 (Marketing Jurídico Digital)</a></span></div>
@@ -131,7 +131,7 @@ export default function About() {
                     <div className="absolute top-0 left-0 flex justify-center w-6 -bottom-6">
                       <div className="w-px bg-gray-200"></div>
                     </div>
-                    <img src="/profile.jpg" alt="" className="relative flex-none w-6 h-6 mt-3 rounded-full bg-gray-50" />
+                    <img src="/profile.jpg" alt="Minha foto" className="relative flex-none w-6 h-6 mt-3 rounded-full bg-gray-50" />
                     <div className="flex-auto p-3 rounded-md ring-1 ring-inset ring-gray-200">
                       <div className="flex justify-between gap-x-4">
                         <div className="py-0.5 text-xs leading-5 text-gray-500"><span className="font-medium text-gray-900">Crise existencial</span></div>
@@ -353,7 +353,7 @@ export default function About() {
                     <div className="absolute top-0 left-0 flex justify-center w-6 -bottom-6">
                       <div className="w-px bg-gray-200"></div>
                     </div>
-                    <img src="https://knowledge.leadszapp.com/img/leadszapp.png" alt="" className="relative mt-3 p-[2px] h-6 w-6 flex-none rounded-full bg-gray-50" />
+                    <img src="https://knowledge.leadszapp.com/img/leadszapp.png" alt="Logotipo da LEadsZapp" className="relative mt-3 p-[2px] h-6 w-6 flex-none rounded-full bg-gray-50" />
                     <div className="flex-auto p-3 rounded-md ring-1 ring-inset ring-gray-200">
                       <div className="flex justify-between gap-x-4">
                         <div className="py-0.5 text-xs leading-5 text-gray-500"><span className="font-medium text-gray-900"><a href="https://site-leadszapp.vercel.app/" target="_blank">Des. Web Full-Stack na LeadsZapp (Automação de Marketing)</a></span></div>
