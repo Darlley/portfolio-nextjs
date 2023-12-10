@@ -9,23 +9,9 @@ const metadata = {
   image: "https://darlley.github.io/images/header.jpg",
 };
 
-type ApiData = {
-  firstName: string;
-  lastName: string;
-  title: string;
-  profileImage: string;
-  education: Array<object>;
-  skills: Array<object>;
-  experience: Array<object>;
-  languages: Array<object>;
-  contact: object;
-  social: object;
-  profileText: string;
-  download: string;
-};
 
 export default function Curriculo() {
-  const [api, setApi] = useState<ApiData>({
+  const [api, setApi] = useState({
     firstName: "",
     lastName: "",
     title: "",
@@ -151,7 +137,7 @@ export default function Curriculo() {
 
           <div className="curriculo__header__content">
             <div className="curriculo__header__content--profile">
-              <img src={api.profileImage} alt="Minha imagem" />
+              <img src={api.profileImage || ''} alt="Minha imagem" />
             </div>
 
             <div className="curriculo__header__content--headline">
