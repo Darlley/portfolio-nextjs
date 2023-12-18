@@ -190,7 +190,6 @@ function Navbar() {
                     </NavigationMenu.Link>
                   </li>
                   
-                  {/* a partir daqui */}
                   <li>
                     <NavigationMenu.Link>
                       <a
@@ -199,10 +198,27 @@ function Navbar() {
                         target="_blank"
                       >
                         <div className="ListItemHeading">
-                          Uma análise deste portfólio
+                          🧐 Uma análise deste portfólio
                         </div>
                         <p className="ListItemText">
-                          O professor (da Serliv) Daniel Tapias Morales analisou este portfólio em seu canal no YouTube. 🧐
+                          O professor (da Serliv) Daniel Tapias Morales analisou este portfólio em seu canal no YouTube.
+                        </p>
+                      </a>
+                    </NavigationMenu.Link>
+                  </li>
+                  
+                  <li>
+                    <NavigationMenu.Link>
+                      <a
+                        className={classNames("ListItemLink")}
+                        href="https://hub.docker.com/r/darlleybbf/portfolio"
+                        target="_blank"
+                      >
+                        <div className="ListItemHeading">
+                          💙 Docker Image
+                        </div>
+                        <p className="ListItemText">
+                          Criei uma imagem Docker para este portfólio.
                         </p>
                       </a>
                     </NavigationMenu.Link>
