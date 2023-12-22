@@ -164,6 +164,11 @@ const cards = [
         title: "Descubra a Nuvem AWS - Nexa Resources",
         url: "https://www.dio.me/certificate/54EF551C/share",
         school: "Dio",
+      },
+      {
+        title: "Docker para Desenvolvedores (com Docker Swarm e Kubernetes)",
+        url: "https://www.udemy.com/certificate/UC-126c8419-caeb-472c-8f46-fd1025605bd0/",
+        school: "Udemy",
       }
     ],
     externalUrl: "",
