@@ -1,0 +1,34 @@
+{
+  "articles": [
+    {
+      "id": "c7d8da2e-edd5-4006-a1f1-9469cd8f0f4e",
+      "title": "Artigo-#0",
+      "author": "Darlley Brasil de Brito Furtado",
+      "htmlContent": "<h1>Novo artigo</h1>",
+      "mdContent": "# Novo artigo",
+      "textContent": "Novo artigo",
+      "created_at": "2024-01-07T16:10:21.687Z",
+      "updated_at": "2024-01-07T16:10:21.687Z"
+    },
+    {
+      "id": "7d386116-f45b-4268-a235-5b6801290dcf",
+      "title": "Artigo-#1",
+      "author": "Darlley Brasil de Brito Furtado",
+      "htmlContent": "<h1>Novo artigo</h1>",
+      "mdContent": "# Novo artigo",
+      "textContent": "Novo artigo",
+      "created_at": "2024-01-07T16:10:41.813Z",
+      "updated_at": "2024-01-07T16:10:41.813Z"
+    },
+    {
+      "id": "3470a0f4-cf22-4f7b-a5e7-2fa207e0defd",
+      "title": "Artigo-#2",
+      "author": "Darlley Brasil de Brito Furtado",
+      "htmlContent": "<h1>Novo artigo</h1>",
+      "mdContent": "# Novo artigo",
+      "textContent": "Novo artigo",
+      "created_at": "2024-01-07T16:12:09.576Z",
+      "updated_at": "2024-01-07T16:12:09.576Z"
+    }
+  ]
+}
