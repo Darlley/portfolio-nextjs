@@ -1,3 +1,5 @@
+import { getServerSession } from "next-auth/next"
+
 import { read, create } from "../../../core/crud";
 
 export default async function handler(request, response) {
@@ -31,11 +33,18 @@ export default async function handler(request, response) {
     const output = await get({ page, limit });
 
     return response.status(200).json({
-        total: output.total,
-        pages: output.pages,
-        articles: output.articles,
+      total: output.total,
+      pages: output.pages,
+      articles: output.articles,
     });
+  }
 
+  const session = await getServerSession(request, response );
+
+  if(!session) {
+    return response.status(400).json({
+      message: "Você precisa fazer login.",
+    });
   }
 
   if( request.method === "POST" ) {
@@ -43,13 +52,11 @@ export default async function handler(request, response) {
 
     if (!body.id) {
       return response.status(400).json({
-        message: "You need to provide a content to create a Todo.",
+        message: "You need to provide a content to create a Article.",
       });
     }
 
     const createdArticle = await createArticle(request.body);
-
-    console.log('create')
 
     response.status(201).json({
       article: createdArticle,
