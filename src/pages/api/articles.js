@@ -1,6 +1,6 @@
 import { getServerSession } from "next-auth/next"
 
-import { read, create } from "../../../core/crud";
+import { read, create, deleteById as dbDeleteById } from "../../../core/crud";
 
 export default async function handler(request, response) {
   async function get({page,limit}) {
@@ -23,6 +23,29 @@ export default async function handler(request, response) {
   async function createArticle(content) {
     return create(content);
   }
+
+  async function deleteById(id) {
+    try {
+      const ALL_ARTICLES = read();
+      const article = ALL_ARTICLES.find((article) => article.id === id);
+
+      if (!article) {
+          throw new Error(`Todo with id "${id}" not found!`);
+      }
+
+      dbDeleteById(id);
+
+      response.status(204).end();
+    } catch (error) {
+      return response.status(error.status).json({
+        message: error.message
+      });
+    }
+
+    return response.status(500).json({
+      message: `Internal server error`,
+    });
+}
 
   if( request.method === "GET" ) {
 
@@ -63,6 +86,18 @@ export default async function handler(request, response) {
     });
 
     return;
+  }
+
+  if (request.method === "DELETE") {
+
+    if (!request.body) {
+      return response.status(400).json({
+        message: "You need to provide a id to create a Article.",
+      });
+    }
+    const {id} = request.body;
+
+    await deleteById(id);
   }
 
   const METHOD = request.method;

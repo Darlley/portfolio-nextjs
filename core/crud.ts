@@ -72,21 +72,21 @@ export function read(): Array<Article> {
 //   return updated_todo;
 // }
 
-// export function deleteById(id: UUID) {
-//   const todos = read();
+export function deleteById(id: UUID) {
+  const articles = read();
 
-//   const todosWithoutOne = todos.filter((currentTodo) => {
-//     if (currentTodo.id === id) {
-//       return false;
-//     }
-//     return true;
-//   });
+  const articlesWithoutOne = articles.filter((currentArticle) => {
+    if (currentArticle.id === id) {
+      return false;
+    }
+    return true;
+  });
 
-//   CLEAR_DB();
+  CLEAR_DB();
 
-//   WRITE_FILE(todosWithoutOne);
-// }
+  WRITE_FILE(articlesWithoutOne);
+}
 
-// function CLEAR_DB() {
-//   fs.writeFileSync(DB_FILE_PATH, "");
-// }
+function CLEAR_DB() {
+  fs.writeFileSync(DB_FILE_PATH, "");
+}
