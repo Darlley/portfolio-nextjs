@@ -58,8 +58,8 @@ export default function Dashboard() {
         id: uuidv4(),
         title: "Artigo-#" + articles.length,
         author: "Darlley Brasil de Brito Furtado",
-        htmlContent: "<h1>Novo artigo</h1>",
-        mdContent: "# Novo artigo",
+        htmlContent: "Novo artigo",
+        mdContent: "Novo artigo",
         textContent: "Novo artigo",
         created_at: new Date().toISOString(),
         updated_at: new Date().toISOString(),
@@ -287,7 +287,12 @@ export default function Dashboard() {
                                     : "text-gray-900"
                                 )}
                               >
-                                <a href="" target="_blank">{article.title.slice(0, 30)}</a>
+                                <a
+                                  href={`/dashboard/edit/${article.id}`}
+                                  target="_blank"
+                                >
+                                  {article.title.slice(0, 30)}
+                                </a>
                               </td>
                               <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                                 {article.textContent.slice(0, 20)}...
