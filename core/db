@@ -1,14 +1,3 @@
 {
-  "articles": [
-    {
-      "id": "708cd739-0640-400f-8c2e-79ac728316f5",
-      "title": "Artigo-#0",
-      "author": "Darlley Brasil de Brito Furtado",
-      "htmlContent": "<h1>Novo artigo</h1>",
-      "mdContent": "# Novo artigo",
-      "textContent": "Novo artigo",
-      "created_at": "2024-01-08T00:44:39.963Z",
-      "updated_at": "2024-01-08T00:44:39.963Z"
-    }
-  ]
+  "articles": []
 }

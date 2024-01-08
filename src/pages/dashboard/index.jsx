@@ -5,13 +5,6 @@ import Metadata from "@/components/molecules/Metadata";
 import { useRouter } from "next/navigation";
 import { useRef, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import Link from "next/link";
-
-const metadata = {
-  title: "Darlley - Blog",
-  description: "Um blog de pensamentos sobre tecnologia e filosofia.",
-  image: "https://www.darlley.dev/lotr-1440x522.png",
-};
 
 const URL_API = "/api/articles";
 
@@ -105,8 +98,6 @@ export default function Dashboard() {
   }
 
   async function deleteArticle(articlesFromDelete) {
-    // return console.log(articlesFromDelete)
-
     try {
       articlesFromDelete.map(async (currentArticle) => {
         const response = await fetch(URL_API, {
@@ -137,7 +128,6 @@ export default function Dashboard() {
 
   return (
     <>
-      <Metadata metadata={metadata} />
       <HeaderPage>
         <div className="flex flex-col items-center gap-2">
           <h1>Meu artigos</h1>
