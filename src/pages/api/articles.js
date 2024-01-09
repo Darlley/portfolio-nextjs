@@ -1,6 +1,6 @@
 import { getServerSession } from "next-auth/next"
 
-import { read, create, deleteById as dbDeleteById } from "../../../core/crud";
+import { read, create, deleteById as dbDeleteById, update } from "../../../core/crud";
 
 export default async function handler(request, response) {
   async function get({page,limit}) {
@@ -45,6 +45,33 @@ export default async function handler(request, response) {
     return response.status(500).json({
       message: `Internal server error`,
     });
+}
+
+async function updateArticle(request, response) {
+  const {id} = request.body
+
+  try {
+    const ALL_ARTICLES = read();
+    const article = ALL_ARTICLES.find((article) => article.id === id);
+
+    if (!article) {
+        throw new Error(`Todo with id "${id}" not found!`);
+    }
+
+    const updatedArticle = update(article.id, {
+      ...request.body
+    });
+
+    return response.status(200).json({
+      article: updatedArticle,
+    });
+  } catch (error) {
+      if (error instanceof Error) {
+          return response.status(404).json({
+            message: error.message + " :(",
+          });
+      }
+  }
 }
 
   if( request.method === "GET" ) {
@@ -98,6 +125,20 @@ export default async function handler(request, response) {
     const {id} = request.body;
 
     await deleteById(id);
+  }
+
+  if (request.method === "PUT") {
+    const article_id = request.body.id;
+
+    if (!article_id || typeof article_id !== "string") {
+      response.status(400).json({
+        message: "You must to provide a string ID.",
+      });
+
+      return;
+    }
+
+    await updateArticle(request, response)
   }
 
   const METHOD = request.method;

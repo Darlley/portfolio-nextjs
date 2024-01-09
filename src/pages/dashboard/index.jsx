@@ -58,9 +58,17 @@ export default function Dashboard() {
         id: uuidv4(),
         title: "Artigo-#" + articles.length,
         author: "Darlley Brasil de Brito Furtado",
-        htmlContent: "Novo artigo",
-        mdContent: "Novo artigo",
-        textContent: "Novo artigo",
+        htmlContent: "<p>Hello World!</p>",
+        mdContent: {
+          type: 'doc',
+          content: [
+            {
+              type: 'text',
+              text: 'Hello World!'
+            }
+          ],
+        },
+        textContent: "Hello World",
         created_at: new Date().toISOString(),
         updated_at: new Date().toISOString(),
       };

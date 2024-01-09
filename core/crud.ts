@@ -8,7 +8,7 @@ interface Article {
   id: UUID;
   title: string;
   htmlContent: string;
-  mdContent: string;
+  mdContent: object;
   textContent: string;
   author: string;
   created_at: string;
@@ -50,27 +50,28 @@ export function read(): Array<Article> {
   return data?.articles;
 }
 
-// export function update(id: UUID, partialTodo: Partial<Todo>) {
-//   let updated_todo;
-//   const todos = read();
+export function update(id: UUID, partialArticle: Partial<Article>) {
+  let updated_article;
+  const ALL_ARTICLES = read();
 
-//   todos.forEach((currentTodo) => {
-//     if (currentTodo.id === id) {
-//       updated_todo = Object.assign(currentTodo, {
-//         ...partialTodo,
-//         updated_at: new Date().toISOString(),
-//       });
-//     }
-//   });
+  ALL_ARTICLES.forEach((currentArticle) => {
+    if (currentArticle.id === id) {
+      updated_article = Object.assign(currentArticle, {
+        ...partialArticle,
+        updated_at: new Date().toISOString(),
+      });
+    }
+  });
 
-//   WRITE_FILE(todos);
 
-//   if (!updated_todo) {
-//     throw new Error("Please, provide another ID!");
-//   }
+  WRITE_FILE(ALL_ARTICLES);
 
-//   return updated_todo;
-// }
+  if (!updated_article) {
+    throw new Error("Please, provide another ID!");
+  }
+
+  return updated_article;
+}
 
 export function deleteById(id: UUID) {
   const articles = read();
