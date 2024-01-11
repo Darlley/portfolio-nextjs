@@ -30,16 +30,19 @@ export default function Dashboard() {
     required: true,
     onUnauthenticated() {
       return router.replace("/login");
-    },
+    }
   });
 
-  useEffect(() => {
+  function onIsAdmin(){
     if(session?.user?.email === CREDENTIAL_USER_EMAIL){
       setIsAdmin(true)
     }
+  }
+  useEffect(() => {
+    onIsAdmin()
   }, [session]);
 
-  useEffect(() => {
+  function getArticles(){
     if(isAdmin){
       const fetchArticles = async () => {
         try {
@@ -87,7 +90,10 @@ export default function Dashboard() {
     };
     setArticles([article]);
     localStorage.setItem("articles", JSON.stringify([article]));
-  }, []);
+  }
+  useEffect(() => {
+    getArticles()
+  }, [isAdmin]);
 
   async function postCreateArticleTemplate() {
     if(isAdmin){
