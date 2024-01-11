@@ -29,6 +29,7 @@
     "nprogress": "^0.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.49.3",
     "react-notion": "^0.10.0",
     "react-notion-x": "^6.16.0",
     "uuid": "^9.0.1"

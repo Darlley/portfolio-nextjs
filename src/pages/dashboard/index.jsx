@@ -1,10 +1,12 @@
-'use client'
+"use client";
 import { useSession, signIn, signOut } from "next-auth/react";
 import HeaderPage from "@/components/molecules/HeaderPage";
 import Metadata from "@/components/molecules/Metadata";
 import { useRouter } from "next/navigation";
 import { useRef, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+
+const CREDENTIAL_USER_EMAIL = process.env.NEXT_PUBLIC_CREDENTIAL_USER_EMAIL
 
 const URL_API = "/api/articles";
 
@@ -17,6 +19,7 @@ export default function Dashboard() {
 
   const [loading, setLoading] = useState(false);
   const [articles, setArticles] = useState([]);
+  const [isAdmin, setIsAdmin] = useState(false)
 
   const checkbox = useRef();
   const [checked, setChecked] = useState(false);
@@ -31,70 +34,132 @@ export default function Dashboard() {
   });
 
   useEffect(() => {
-    const fetchArticles = async () => {
-      try {
-        setLoading(true);
+    if(session?.user?.email === CREDENTIAL_USER_EMAIL){
+      setIsAdmin(true)
+    }
+  }, [session]);
 
-        const res = await fetch(URL_API);
-        const data = await res.json();
+  useEffect(() => {
+    if(isAdmin){
+      const fetchArticles = async () => {
+        try {
+          setLoading(true);
 
-        if (!data) throw "Missing data...";
+          const res = await fetch(URL_API);
+          const data = await res.json();
 
-        setArticles(data.articles);
-      } catch (error) {
-        console.log(error);
-      } finally {
-        setLoading(false);
-      }
+          if (!data) throw "Missing data...";
+
+          setArticles(data.articles);
+        } catch (error) {
+          console.log(error);
+        } finally {
+          setLoading(false);
+        }
+      };
+      return fetchArticles();
+    }
+
+    const articles_from_localstorage = JSON.parse(localStorage.getItem("articles"));
+
+    if(articles_from_localstorage && articles_from_localstorage?.length > 0){
+      setArticles(articles_from_localstorage);
+      return
+    }
+
+    const article = {
+      id: uuidv4(),
+      title: `Artigo teste #${articles.length+1}`,
+      author: "Curioso",
+      htmlContent: "<p>Este artigo só é visivel para você.</p>",
+      mdContent: {
+        type: "doc",
+        content: [
+          {
+            type: "text",
+            text: "Este artigo só é visivel para você.",
+          },
+        ],
+      },
+      textContent: "Este artigo só é visivel para você.",
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
     };
-    fetchArticles();
+    setArticles([article]);
+    localStorage.setItem("articles", JSON.stringify([article]));
   }, []);
 
   async function postCreateArticleTemplate() {
-    setLoading(true);
+    if(isAdmin){
+      try {
+        const article = {
+          id: uuidv4(),
+          title: "Artigo-#" + articles.length,
+          author: "Darlley Brasil de Brito Furtado",
+          htmlContent: "<p>Hello World!</p>",
+          mdContent: {
+            type: "doc",
+            content: [
+              {
+                type: "text",
+                text: "Hello World!",
+              },
+            ],
+          },
+          textContent: "Hello World",
+          created_at: new Date().toISOString(),
+          updated_at: new Date().toISOString(),
+        };
 
-    try {
-      const article = {
-        id: uuidv4(),
-        title: "Artigo-#" + articles.length,
-        author: "Darlley Brasil de Brito Furtado",
-        htmlContent: "<p>Hello World!</p>",
-        mdContent: {
-          type: 'doc',
-          content: [
-            {
-              type: 'text',
-              text: 'Hello World!'
-            }
-          ],
-        },
-        textContent: "Hello World",
-        created_at: new Date().toISOString(),
-        updated_at: new Date().toISOString(),
-      };
+        const response = await fetch(URL_API, {
+          method: "POST",
+          body: JSON.stringify(article),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        });
 
-      const response = await fetch(URL_API, {
-        method: "POST",
-        body: JSON.stringify(article),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      });
-
-      if (response.ok) {
-        setArticles((prev) => [article, ...prev]);
+        if (response.ok) {
+          setArticles((prev) => [article, ...prev]);
+        }
+      } catch (error) {
+        console.log(error);
       }
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading(false);
+
+      return
     }
+
+    const article = {
+      id: uuidv4(),
+      title: `Artigo teste #${articles.length+1}`,
+      author: "Curioso",
+      htmlContent: "<p>Este artigo só é visivel para você.</p>",
+      mdContent: {
+        type: "doc",
+        content: [
+          {
+            type: "text",
+            text: "Este artigo só é visivel para você.",
+          },
+        ],
+      },
+      textContent: "Este artigo só é visivel para você.",
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    };
+    setArticles((prev) => [article,...prev]);
+
+    const articles_from_localstorage = JSON.parse(localStorage.getItem("articles"));
+    articles_from_localstorage.push(article)
+    localStorage.setItem("articles", JSON.stringify(articles_from_localstorage));
   }
 
   useEffect(() => {
     const isIndeterminate =
       selectedArticle.length > 0 && selectedArticle.length < articles.length;
-    setChecked(selectedArticle.length === articles.length && articles.length != 0);
+    setChecked(
+      selectedArticle.length === articles.length && articles.length != 0
+    );
     setIndeterminate(isIndeterminate);
     checkbox.current.indeterminate = isIndeterminate;
   }, [selectedArticle]);
@@ -111,7 +176,7 @@ export default function Dashboard() {
         const response = await fetch(URL_API, {
           method: "DELETE",
           body: JSON.stringify({
-            id: currentArticle.id
+            id: currentArticle.id,
           }),
           headers: {
             "Content-type": "application/json; charset=UTF-8",
@@ -119,16 +184,17 @@ export default function Dashboard() {
         });
 
         if (response.ok) {
-          setArticles((prev) => prev.filter((currentPrev) => {
-            if(currentPrev.id === currentArticle.id){
-              return false
-            }
+          setArticles((prev) =>
+            prev.filter((currentPrev) => {
+              if (currentPrev.id === currentArticle.id) {
+                return false;
+              }
 
-            return true
-          }));
+              return true;
+            })
+          );
         }
-      })
-
+      });
     } catch (error) {
       console.log(error);
     }
@@ -137,7 +203,15 @@ export default function Dashboard() {
   return (
     <>
       <HeaderPage>
-        <div className="flex flex-col items-center gap-2">
+        <div className="flex items-center w-full px-10 justify-between gap-2">
+          {session?.user?.image && (
+            <img
+              src={session?.user?.image}
+              alt="Profile image"
+              className="h-14"
+            />
+          )}
+
           <h1>Meu artigos</h1>
 
           <div className="flex gap-2">
@@ -241,7 +315,7 @@ export default function Dashboard() {
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-200 bg-white">
-                      {articles.length <= 0 ? (
+                      {articles?.length <= 0 ? (
                         <tr>
                           <td colSpan={3} className="p-4 gap-4 w-full">
                             Nenhum artigo encontrado
@@ -258,7 +332,7 @@ export default function Dashboard() {
                         </tr>
                       ) : (
                         <>
-                          {articles.map((article) => (
+                          {articles?.map((article) => (
                             <tr
                               key={article.id}
                               className={

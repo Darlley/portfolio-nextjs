@@ -5,10 +5,12 @@ import { useRouter } from "next/router";
 import { Editor } from "novel";
 import { useEffect, useLayoutEffect, useState } from "react";
 
+const CREDENTIAL_USER_EMAIL = process.env.NEXT_PUBLIC_CREDENTIAL_USER_EMAIL
 const URL_API = "/api/articles";
 
 export default function EditArticlePage() {
   const { query } = useRouter();
+  const [isAdmin, setIsAdmin] = useState(false)
 
   const [article, setArticle] = useState(null);
   const [title, setTitle] = useState('Artigo');
@@ -17,21 +19,52 @@ export default function EditArticlePage() {
   const [htmlContent, setHtmlContent] = useState('')
   const [textContent, setTextContent] = useState('')
 
-  useSession({
+  const { data: session } = useSession({
     required: true,
     onUnauthenticated() {
       return router.replace("/login");
     },
   });
 
+  useEffect(() => {
+    if(session?.user?.email === CREDENTIAL_USER_EMAIL){
+      setIsAdmin(true)
+    }
+  }, [session]);
+
   async function fetchArticles () {
-    try {
-      const res = await fetch(URL_API);
-      const data = await res.json();
+    if(isAdmin){
+      try {
+        const res = await fetch(URL_API);
+        const data = await res.json();
 
-      if (!data) throw "Missing data...";
+        if (!data) throw "Missing data...";
 
-      const ALL_ARTICLES = data.articles;
+        const ALL_ARTICLES = data.articles;
+        const find_article = ALL_ARTICLES.filter((currentArticle) => {
+          if(currentArticle.id === query.slug){
+            return true
+          }
+          return false
+        })[0];
+
+        setArticle(find_article);
+        setTitle(find_article.title)
+        setMdContent(find_article.mdContent)
+        setHtmlContent(find_article.htmlContent)
+        setTextContent(find_article.textContent)
+
+      } catch (error) {
+        console.log(error);
+      }
+
+      return
+    }
+
+    const articles_from_localstorage = JSON.parse(localStorage.getItem("articles"));
+
+    if(articles_from_localstorage && articles_from_localstorage?.length > 0){
+      const ALL_ARTICLES = articles_from_localstorage;
       const find_article = ALL_ARTICLES.filter((currentArticle) => {
         if(currentArticle.id === query.slug){
           return true
@@ -40,13 +73,10 @@ export default function EditArticlePage() {
       })[0];
 
       setArticle(find_article);
-      setTitle(find_article.title)
-      setMdContent(find_article.mdContent)
-      setHtmlContent(find_article.htmlContent)
-      setTextContent(find_article.textContent)
-
-    } catch (error) {
-      console.log(error);
+      setTitle(find_article?.title)
+      setMdContent(find_article?.mdContent)
+      setHtmlContent(find_article?.htmlContent)
+      setTextContent(find_article?.textContent)
     }
   };
 
