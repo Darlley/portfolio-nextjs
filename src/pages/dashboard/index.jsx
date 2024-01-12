@@ -7,6 +7,7 @@ import { useRef, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 const CREDENTIAL_USER_EMAIL = process.env.NEXT_PUBLIC_CREDENTIAL_USER_EMAIL
+const CREDENTIAL_USER_PASSWORD = process.env.NEXT_PUBLIC_CREDENTIAL_USER_PASSWORD
 
 const URL_API = "/api/articles";
 
@@ -177,33 +178,48 @@ export default function Dashboard() {
   }
 
   async function deleteArticle(articlesFromDelete) {
-    try {
-      articlesFromDelete.map(async (currentArticle) => {
-        const response = await fetch(URL_API, {
-          method: "DELETE",
-          body: JSON.stringify({
-            id: currentArticle.id,
-          }),
-          headers: {
-            "Content-type": "application/json; charset=UTF-8",
-          },
+    if(isAdmin){
+      try {
+        articlesFromDelete.map(async (currentArticle) => {
+          const response = await fetch(URL_API, {
+            method: "DELETE",
+            body: JSON.stringify({
+              id: currentArticle.id,
+            }),
+            headers: {
+              "Content-type": "application/json; charset=UTF-8",
+            },
+          });
+
+          if (response.ok) {
+            setArticles((prev) =>
+              prev.filter((currentPrev) => {
+                if (currentPrev.id === currentArticle.id) {
+                  return false;
+                }
+
+                return true;
+              })
+            );
+          }
         });
-
-        if (response.ok) {
-          setArticles((prev) =>
-            prev.filter((currentPrev) => {
-              if (currentPrev.id === currentArticle.id) {
-                return false;
-              }
-
-              return true;
-            })
-          );
-        }
-      });
-    } catch (error) {
-      console.log(error);
+      } catch (error) {
+        console.log(error);
+      }
     }
+
+    const articles_from_localstorage = JSON.parse(localStorage.getItem("articles"));
+
+    let setNewArticlesFromLocal = articles_from_localstorage.filter((currentLocal) => {
+      let hasSameId = articlesFromDelete.some((article) => {
+        return article.id === currentLocal.id;
+      });
+      // retorna false se tiver o mesmo id, true se não tiver
+      return !hasSameId;
+    });
+
+    localStorage.setItem("articles", JSON.stringify(setNewArticlesFromLocal));
+    setArticles(setNewArticlesFromLocal || [])
   }
 
   return (
@@ -379,11 +395,11 @@ export default function Dashboard() {
                                   href={`/dashboard/edit/${article.id}`}
                                   target="_blank"
                                 >
-                                  {article.title.slice(0, 30)}
+                                  {article?.title?.slice(0, 30)}
                                 </a>
                               </td>
                               <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                                {article.textContent.slice(0, 20)}...
+                                {article?.textContent?.slice(0, 20)}...
                               </td>
                               <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                                 Publish

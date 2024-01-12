@@ -2,6 +2,8 @@ import { getServerSession } from "next-auth/next"
 
 import { read, create, deleteById as dbDeleteById, update } from "../../../core/crud";
 
+const CREDENTIAL_USER_EMAIL = process.env.NEXT_PUBLIC_CREDENTIAL_USER_EMAIL
+
 export default async function handler(request, response) {
   async function get({page,limit}) {
     const currentPage = page || 1;
@@ -94,6 +96,12 @@ async function updateArticle(request, response) {
   if(!session) {
     return response.status(400).json({
       message: "Você precisa fazer login.",
+    });
+  }
+
+  if(session.user.email !== CREDENTIAL_USER_EMAIL){
+    return response.status(404).json({
+      message: "Você não tem autorização...",
     });
   }
 

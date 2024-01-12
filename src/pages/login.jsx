@@ -11,6 +11,8 @@ const metadata = {
   image: "https://www.darlley.dev/lotr-1440x522.png",
 };
 
+const CREDENTIAL_USER_EMAIL = process.env.NEXT_PUBLIC_CREDENTIAL_USER_EMAIL
+const CREDENTIAL_USER_PASSWORD = process.env.NEXT_PUBLIC_CREDENTIAL_USER_PASSWORD
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -22,8 +24,8 @@ export default function Login() {
 
   const { handleSubmit, register, setFocus, formState,  } = useForm({
     defaultValues: {
-      email: 'darlleybrito@gmail.com',
-      password: '06775682158portfolio'
+      email: CREDENTIAL_USER_EMAIL,
+      password: CREDENTIAL_USER_PASSWORD
     }
   });
   setFocus('email');
