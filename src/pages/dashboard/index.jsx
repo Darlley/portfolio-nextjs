@@ -1,13 +1,9 @@
 "use client";
 import { useSession, signIn, signOut } from "next-auth/react";
 import HeaderPage from "@/components/molecules/HeaderPage";
-import Metadata from "@/components/molecules/Metadata";
 import { useRouter } from "next/navigation";
 import { useRef, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-
-const CREDENTIAL_USER_EMAIL = process.env.NEXT_PUBLIC_CREDENTIAL_USER_EMAIL
-const CREDENTIAL_USER_PASSWORD = process.env.NEXT_PUBLIC_CREDENTIAL_USER_PASSWORD
 
 const URL_API = "/api/articles";
 

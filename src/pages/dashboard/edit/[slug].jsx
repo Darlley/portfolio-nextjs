@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 import { Editor } from "novel";
 import { useEffect, useLayoutEffect, useState } from "react";
 
-const CREDENTIAL_USER_EMAIL = process.env.NEXT_PUBLIC_CREDENTIAL_USER_EMAIL
 const URL_API = "/api/articles";
 
 export default function EditArticlePage() {
@@ -46,17 +45,19 @@ export default function EditArticlePage() {
           return false
         })[0];
 
+        console.log('encontrou!', find_article)
+
         setArticle(find_article);
-        setTitle(find_article.title)
-        setMdContent(find_article.mdContent)
-        setHtmlContent(find_article.htmlContent)
-        setTextContent(find_article.textContent)
+        setTitle(find_article?.title)
+        setMdContent(find_article?.mdContent)
+        setHtmlContent(find_article?.htmlContent)
+        setTextContent(find_article?.textContent)
 
       } catch (error) {
         console.log(error);
       }
 
-      return
+      return;
     }
 
     const articles_from_localstorage = JSON.parse(localStorage.getItem("articles"));
@@ -80,7 +81,7 @@ export default function EditArticlePage() {
 
   useEffect(() => {
     fetchArticles();
-  }, [query.slug]);
+  }, [query.slug, isAdmin]);
 
   function setContent(event){
     console.log('editando')

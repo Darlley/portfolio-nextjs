@@ -10,7 +10,6 @@ namespace NodeJS {
     CREDENTIAL_USER_EMAIL: string;
     CREDENTIAL_USER_PASSWORD: string;
     CREDENTIAL_USER_ROLE: string;
-    CREDENTIAL_USER_ID: string;
     NEXT_PUBLIC_CREDENTIAL_USER_EMAIL: string;
     OPENAI_API_KEY: string;
     BLOB_READ_WRITE_TOKEN: string;
