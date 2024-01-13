@@ -27,9 +27,7 @@ export default function EditArticlePage() {
   });
 
   useEffect(() => {
-    if(session?.user?.email === CREDENTIAL_USER_EMAIL){
-      setIsAdmin(true)
-    }
+    setIsAdmin(session?.user?.role === "admin")
   }, [session]);
 
   async function fetchArticles () {
@@ -85,6 +83,7 @@ export default function EditArticlePage() {
   }, [query.slug]);
 
   function setContent(event){
+    console.log('editando')
     setMdContent(event.getJSON())
     setHtmlContent(event.getHTML())
     setTextContent(event.getHTML().replace (/<.*?>/g, ""))
@@ -99,22 +98,39 @@ export default function EditArticlePage() {
       "textContent": textContent,
     }
 
-    try {
-      const response = await fetch(URL_API, {
-        method: "PUT",
-        body: JSON.stringify(updatedArticle),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
+    if(isAdmin){
+      try {
+        const response = await fetch(URL_API, {
+          method: "PUT",
+          body: JSON.stringify(updatedArticle),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        });
+
+        if (response.ok) {
+          fetchArticles();
+        }
+
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    const articles_from_localstorage = JSON.parse(localStorage.getItem("articles"));
+
+    if(articles_from_localstorage && articles_from_localstorage?.length > 0){
+      const ALL_ARTICLES = articles_from_localstorage;
+      const new_list = ALL_ARTICLES.map((currentArticle) => {
+        if(currentArticle.id === article.id){
+          return updatedArticle
+        }
+
+        return currentArticle
       });
 
-      if (response.ok) {
-        console.log(response)
-        fetchArticles();
-      }
+      localStorage.setItem("articles", JSON.stringify(new_list));
 
-    } catch (error) {
-      console.log(error);
     }
   }
 
@@ -142,7 +158,7 @@ export default function EditArticlePage() {
             <button
               type="button"
               onClick={updateArticle}
-              className="rounded block bg-blue-500 px-2 py-1 text-xs font-semibold text-blue-600 shadow-sm hover:bg-blue-100"
+              className="rounded block bg-blue-300 px-2 py-1 text-xs font-semibold text-blue-600 shadow-sm hover:bg-blue-100"
             >
               Salvar
             </button>

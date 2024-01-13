@@ -1,11 +1,16 @@
-import { getServerSession } from "next-auth/next"
+import { getServerSession } from "next-auth/next";
 
-import { read, create, deleteById as dbDeleteById, update } from "../../../core/crud";
+import {
+  read,
+  create,
+  deleteById as dbDeleteById,
+  update,
+} from "../../../core/crud";
 
-const CREDENTIAL_USER_EMAIL = process.env.NEXT_PUBLIC_CREDENTIAL_USER_EMAIL
+const CREDENTIAL_USER_EMAIL = process.env.NEXT_PUBLIC_CREDENTIAL_USER_EMAIL;
 
 export default async function handler(request, response) {
-  async function get({page,limit}) {
+  async function get({ page, limit }) {
     const currentPage = page || 1;
     const currentLimit = limit || 10;
     const ALL_ARTICLES = read().reverse();
@@ -32,7 +37,7 @@ export default async function handler(request, response) {
       const article = ALL_ARTICLES.find((article) => article.id === id);
 
       if (!article) {
-          throw new Error(`Todo with id "${id}" not found!`);
+        throw new Error(`Todo with id "${id}" not found!`);
       }
 
       dbDeleteById(id);
@@ -40,44 +45,39 @@ export default async function handler(request, response) {
       response.status(204).end();
     } catch (error) {
       return response.status(error.status).json({
-        message: error.message
+        message: error.message,
       });
     }
-
-    return response.status(500).json({
-      message: `Internal server error`,
-    });
-}
-
-async function updateArticle(request, response) {
-  const {id} = request.body
-
-  try {
-    const ALL_ARTICLES = read();
-    const article = ALL_ARTICLES.find((article) => article.id === id);
-
-    if (!article) {
-        throw new Error(`Todo with id "${id}" not found!`);
-    }
-
-    const updatedArticle = update(article.id, {
-      ...request.body
-    });
-
-    return response.status(200).json({
-      article: updatedArticle,
-    });
-  } catch (error) {
-      if (error instanceof Error) {
-          return response.status(404).json({
-            message: error.message + " :(",
-          });
-      }
   }
-}
 
-  if( request.method === "GET" ) {
+  async function updateArticle(request, response) {
+    const { id } = request.body;
 
+    try {
+      const ALL_ARTICLES = read();
+      const article = ALL_ARTICLES.find((article) => article.id === id);
+
+      if (!article) {
+        throw new Error(`Todo with id "${id}" not found!`);
+      }
+
+      const updatedArticle = update(article.id, {
+        ...request.body,
+      });
+
+      return response.status(200).json({
+        article: updatedArticle,
+      });
+    } catch (error) {
+      if (error instanceof Error) {
+        return response.status(404).json({
+          message: `Article with ID "${id}" not found.`,
+        });
+      }
+    }
+  }
+
+  if (request.method === "GET") {
     const query = request.query;
     const page = Number(query.page);
     const limit = Number(query.limit);
@@ -91,26 +91,28 @@ async function updateArticle(request, response) {
     });
   }
 
-  const session = await getServerSession(request, response );
+  const session = await getServerSession(request, response);
 
-  if(!session) {
+  if (!session) {
     return response.status(400).json({
-      message: "Você precisa fazer login.",
+      message: "You need to sign in.",
     });
   }
 
-  if(session.user.email !== CREDENTIAL_USER_EMAIL){
+  console.log(session)
+
+  if (session.user.email !== CREDENTIAL_USER_EMAIL) {
     return response.status(404).json({
-      message: "Você não tem autorização...",
+      message: "You are not authorized…",
     });
   }
 
-  if( request.method === "POST" ) {
+  if (request.method === "POST") {
     const body = request.body;
 
     if (!body.id) {
       return response.status(400).json({
-        message: "You need to provide a content to create a Article.",
+        message: "You must provide content to create an article.",
       });
     }
 
@@ -124,13 +126,12 @@ async function updateArticle(request, response) {
   }
 
   if (request.method === "DELETE") {
-
     if (!request.body) {
       return response.status(400).json({
-        message: "You need to provide a id to create a Article.",
+        message: "You must provide an ID to delete an article.",
       });
     }
-    const {id} = request.body;
+    const { id } = request.body;
 
     await deleteById(id);
   }
@@ -140,16 +141,17 @@ async function updateArticle(request, response) {
 
     if (!article_id || typeof article_id !== "string") {
       response.status(400).json({
-        message: "You must to provide a string ID.",
+        message: 'You must provide a "string" ID.',
       });
 
       return;
     }
 
-    await updateArticle(request, response)
+    await updateArticle(request, response);
   }
 
   const METHOD = request.method;
+  header('Allow: GET, POST, DELETE, PUT');
   return response.status(405).json({
     message: `${METHOD} Method Not Allowed`,
   });

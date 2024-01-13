@@ -2,11 +2,18 @@ import NextAuth from "next-auth/next";
 import GithubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
 
-const username = process.env.CREDENTIAL_USER_NAME;
-const email = process.env.CREDENTIAL_USER_EMAIL;
-const password = process.env.CREDENTIAL_USER_PASSWORD;
-const role = process.env.CREDENTIAL_USER_ROLE;
-const id = process.env.CREDENTIAL_USER_ID;
+const CREDENTIAL_USER_NAME = process.env.CREDENTIAL_USER_NAME;
+const CREDENTIAL_USER_EMAIL = process.env.CREDENTIAL_USER_EMAIL;
+const CREDENTIAL_USER_PASSWORD = process.env.CREDENTIAL_USER_PASSWORD;
+const CREDENTIAL_USER_ROLE = process.env.CREDENTIAL_USER_ROLE;
+const CREDENTIAL_USER_ID = process.env.CREDENTIAL_USER_ID;
+
+const ADMIN_USER = {
+  name: CREDENTIAL_USER_NAME,
+  email: CREDENTIAL_USER_EMAIL,
+  password: CREDENTIAL_USER_PASSWORD,
+  role: CREDENTIAL_USER_ROLE
+}
 
 export const authOptions = {
   // Configure one or more authentication providers
@@ -34,19 +41,12 @@ export const authOptions = {
         },
       },
       async authorize(credentials, req) {
-        const user = {
-          id,
-          name: username,
-          email,
-          role
-        }
-
-        console.log("chamou o user", username)
 
         if (
-          email === credentials?.email && password === credentials?.password
+          credentials?.email === ADMIN_USER.email &&
+          credentials?.password === ADMIN_USER.password
         ) {
-          return user;
+          return ADMIN_USER;
         }
 
         return null;
@@ -56,6 +56,25 @@ export const authOptions = {
   pages: {
     signIn: "/login",
   },
+  callbacks: {
+    jwt({token, user}){
+      if(user){
+        if(
+          user?.email === ADMIN_USER?.email &&
+          user?.password === ADMIN_USER?.password
+        ){
+          token.role = 'admin'
+        }else{
+          token.role = 'default'
+        }
+      }
+      return token;
+    },
+    session({session, token}) {
+      session.user.role = token.role
+      return session
+    }
+  }
 };
 
 export default NextAuth(authOptions);

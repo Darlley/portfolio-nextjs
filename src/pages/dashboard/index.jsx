@@ -34,13 +34,8 @@ export default function Dashboard() {
     }
   });
 
-  function onIsAdmin(){
-    if(session?.user?.email === CREDENTIAL_USER_EMAIL){
-      setIsAdmin(true)
-    }
-  }
   useEffect(() => {
-    onIsAdmin()
+    setIsAdmin(session?.user?.role === "admin")
   }, [session]);
 
   function getArticles(){
@@ -92,6 +87,7 @@ export default function Dashboard() {
     setArticles([article]);
     localStorage.setItem("articles", JSON.stringify([article]));
   }
+
   useEffect(() => {
     getArticles()
   }, [isAdmin]);
@@ -154,6 +150,7 @@ export default function Dashboard() {
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
     };
+
     setArticles((prev) => [article,...prev]);
 
     const articles_from_localstorage = JSON.parse(localStorage.getItem("articles"));
@@ -206,6 +203,8 @@ export default function Dashboard() {
       } catch (error) {
         console.log(error);
       }
+
+      return;
     }
 
     const articles_from_localstorage = JSON.parse(localStorage.getItem("articles"));
@@ -230,20 +229,21 @@ export default function Dashboard() {
             <img
               src={session?.user?.image}
               alt="Profile image"
-              className="h-14"
+              className="h-14 rounded-full"
             />
           )}
 
-          <h1>Meu artigos</h1>
-
-          <div className="flex gap-2">
-            <button
-              type="button"
-              onClick={() => signOut()}
-              className="rounded bg-red-50 px-2 py-1 text-xs font-semibold text-red-600 shadow-sm hover:bg-red-100"
-            >
-              Sair de {session?.user?.email}
-            </button>
+          <div className="flex w-full flex-col md:flex-row justify-center items-center gap-2">
+            <h1 className="md:ml-auto">Meu artigos</h1>
+            <div className="flex gap-2 md:ml-auto">
+              <button
+                type="button"
+                onClick={() => signOut()}
+                className="rounded bg-red-50 px-2 py-1 text-xs font-semibold text-red-600 shadow-sm hover:bg-red-100"
+              >
+                Sair de {session?.user?.email}
+              </button>
+            </div>
           </div>
         </div>
       </HeaderPage>
@@ -274,16 +274,16 @@ export default function Dashboard() {
                 <div className="relative">
                   {selectedArticle.length > 0 && (
                     <div className="absolute left-14 top-0 flex h-12 items-center space-x-3 bg-white sm:left-12">
-                      <button
+                      {/* <button
                         type="button"
                         className="inline-flex items-center rounded bg-white px-2 py-1 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-white"
                       >
                         Editar
-                      </button>
+                      </button> */}
                       <button
                         type="button"
                         onClick={() => deleteArticle(selectedArticle)}
-                        className="inline-flex items-center rounded bg-white px-2 py-1 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-white"
+                        className="inline-flex items-center rounded bg-red-500 px-2 py-1 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-red-300 hover:bg-red-600 disabled:cursor-not-allowed disabled:opacity-30"
                       >
                         Deletar
                       </button>
@@ -393,7 +393,6 @@ export default function Dashboard() {
                               >
                                 <a
                                   href={`/dashboard/edit/${article.id}`}
-                                  target="_blank"
                                 >
                                   {article?.title?.slice(0, 30)}
                                 </a>
@@ -409,10 +408,17 @@ export default function Dashboard() {
                               </td>
                               <td className="whitespace-nowrap gap-2 flex py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-3">
                                 <a
-                                  href="#"
+                                  href={`/dashboard/edit/${article?.id}`}
                                   className="text-blue-500 hover:text-blue-900"
                                 >
                                   Editar
+                                </a>
+                                <a
+                                  href={`/blog/${article?.id}`}
+                                  target="_blank"
+                                  className="text-blue-500 hover:text-blue-900"
+                                >
+                                  Ver
                                 </a>
                               </td>
                             </tr>
