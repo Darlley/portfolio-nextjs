@@ -4,6 +4,7 @@ import HeaderPage from "@/components/molecules/HeaderPage";
 import { useRouter } from "next/navigation";
 import { useRef, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import Link from "next/link";
 
 const URL_API = "/api/articles";
 
@@ -65,6 +66,7 @@ export default function Dashboard() {
     const article = {
       id: uuidv4(),
       title: `Artigo teste #${articles.length+1}`,
+      published: false,
       author: "Curioso",
       htmlContent: "<p>Este artigo só é visivel para você.</p>",
       mdContent: {
@@ -94,6 +96,7 @@ export default function Dashboard() {
         const article = {
           id: uuidv4(),
           title: "Artigo-#" + articles.length,
+          published: false,
           author: "Darlley Brasil de Brito Furtado",
           htmlContent: "<p>Hello World!</p>",
           mdContent: {
@@ -131,6 +134,7 @@ export default function Dashboard() {
     const article = {
       id: uuidv4(),
       title: `Artigo teste #${articles.length+1}`,
+      published: false,
       author: "Curioso",
       htmlContent: "<p>Este artigo só é visivel para você.</p>",
       mdContent: {
@@ -403,19 +407,19 @@ export default function Dashboard() {
                                 16/06/1998 15:20
                               </td>
                               <td className="whitespace-nowrap gap-2 flex py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-3">
-                                <a
+                                <Link
                                   href={`/dashboard/edit/${article?.id}`}
                                   className="text-blue-500 hover:text-blue-900"
                                 >
                                   Editar
-                                </a>
-                                <a
+                                </Link>
+                                <Link
                                   href={`/blog/${article?.id}`}
                                   target="_blank"
                                   className="text-blue-500 hover:text-blue-900"
                                 >
                                   Ver
-                                </a>
+                                </Link>
                               </td>
                             </tr>
                           ))}

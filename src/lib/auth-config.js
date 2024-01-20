@@ -5,6 +5,7 @@ const CREDENTIAL_USER_NAME = process.env.CREDENTIAL_USER_NAME;
 const CREDENTIAL_USER_EMAIL = process.env.CREDENTIAL_USER_EMAIL;
 const CREDENTIAL_USER_PASSWORD = process.env.CREDENTIAL_USER_PASSWORD;
 const CREDENTIAL_USER_ROLE = process.env.CREDENTIAL_USER_ROLE;
+const GITHUB_CREDENTIAL_USER_ID = process.env.NEXT_PUBLIC_GITHUB_CREDENTIAL_USER_ID
 
 const ADMIN_USER = {
   name: CREDENTIAL_USER_NAME,
@@ -58,8 +59,8 @@ const authOptions = {
     jwt({token, user}){
       if(user){
         if(
-          user?.email === ADMIN_USER?.email &&
-          user?.password === ADMIN_USER?.password
+          (!user?.id && (user?.email === ADMIN_USER?.email && user?.password === ADMIN_USER?.password)) || // Form Validation
+          (user?.id === GITHUB_CREDENTIAL_USER_ID && user?.email === ADMIN_USER?.email) // Github validation
         ){
           token.role = 'admin'
         }else{

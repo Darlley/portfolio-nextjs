@@ -9,7 +9,7 @@ function Navbar() {
   return (
     <nav className="flex items-center justify-center md:justify-start md:w-full h-[10%] text-white gap-8 lg:md-0">
       <div className="">
-        <a href="/" className="flex items-center flex-shrink-0 gap-2">
+        <Link href="/" className="flex items-center flex-shrink-0 gap-2">
           <svg
             width="20"
             height="20"
@@ -25,7 +25,7 @@ function Navbar() {
             ></path>
           </svg>
           <h1 className="text-lg font-semibold tracking-tight">Darlley</h1>
-        </a>
+        </Link>
       </div>
 
       <div className="flex flex-col items-center md:justify-between md:w-full md:flex-row">
@@ -45,6 +45,7 @@ function Navbar() {
                       >
                         <Image
                           src="/card.png"
+                          alt="Card Figma"
                           width={400}
                           height={400}
                           className="Callout"
@@ -74,7 +75,7 @@ function Navbar() {
                       </a>
                     </NavigationMenu.Link>
                   </li>
-                  
+
                   <li>
                     <NavigationMenu.Link>
                       <a className="ListItemLink" href="/products">

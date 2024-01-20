@@ -7,6 +7,7 @@ type UUID = string;
 interface Article {
   id: UUID;
   title: string;
+  published: boolean,
   htmlContent: string;
   mdContent: object;
   textContent: string;

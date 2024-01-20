@@ -56,8 +56,6 @@ export default function Login() {
       })
 
       if(!result?.ok) {
-        console.log(result)
-
         return setErrorMessage(result)
       }
 

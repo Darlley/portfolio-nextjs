@@ -151,7 +151,6 @@ export default async function handler(request, response) {
   }
 
   const METHOD = request.method;
-  header('Allow: GET, POST, DELETE, PUT');
   return response.status(405).json({
     message: `${METHOD} Method Not Allowed`,
   });
