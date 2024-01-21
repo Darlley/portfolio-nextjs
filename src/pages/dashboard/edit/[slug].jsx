@@ -3,6 +3,9 @@ import HeaderPage from "@/components/molecules/HeaderPage";
 import { useRouter } from "next/router";
 import { Menu, RadioGroup, Switch, Transition } from "@headlessui/react";
 
+import { CheckCircleIcon } from '@heroicons/react/24/outline'
+import { XMarkIcon } from '@heroicons/react/20/solid'
+
 import { Editor } from "novel";
 import { Fragment, useEffect, useState } from "react";
 import Link from "next/link";
@@ -11,8 +14,8 @@ import { ChevronDownIcon } from "@radix-ui/react-icons";
 const URL_API = "/api/articles";
 
 const settings = [
-  { name: 'Public access', description: 'This project would be available to anyone who has the link', published: true },
-  { name: 'Private to you', description: 'You are the only one able to access this project', 'published': false},
+  { name: 'Acesso público', description: 'Este artigo esta avaliado para todos poderem acessar com o link', published: true },
+  { name: 'Acesso privado', description: 'Somente você e mais ninguém tem acesso a este artigo', 'published': false},
 ]
 
 function classNames(...classes) {
@@ -31,6 +34,7 @@ export default function EditArticlePage() {
   const [htmlContent, setHtmlContent] = useState("");
 
   const [selected, setSelected] = useState(settings[0]);
+  const [isSavedNotificationShow, setIsSavedNotificationShow] = useState(false)
 
   const { data: session } = useSession({
     required: true,
@@ -93,8 +97,13 @@ export default function EditArticlePage() {
       setTitle(find_article?.title);
       setMdContent(find_article?.mdContent);
       setHtmlContent(find_article?.htmlContent);
+      if(find_article?.published){
+        setSelected(settings[0]);
+      }else{
+        setSelected(settings[1]);
+      }
     }
-  } 
+  }
 
   useEffect(() => {
     fetchArticles();
@@ -125,10 +134,15 @@ export default function EditArticlePage() {
         });
 
         if (response.ok) {
+          setIsSavedNotificationShow(true)
           fetchArticles();
         }
       } catch (error) {
         console.log(error);
+      } finally {
+        setTimeout(() => {
+          setIsSavedNotificationShow(false)
+        }, 3000)
       }
     }
 
@@ -147,6 +161,14 @@ export default function EditArticlePage() {
       });
 
       localStorage.setItem("articles", JSON.stringify(new_list));
+
+      setIsSavedNotificationShow((prev) => {
+        setTimeout(() => {
+          setIsSavedNotificationShow(false)
+        }, 3000)
+
+        return true
+      })
     }
   }
 
@@ -210,7 +232,7 @@ export default function EditArticlePage() {
                                   ? "rounded-bl-md rounded-br-md"
                                   : "",
                                 checked
-                                  ? "z-10 border-indigo-200 bg-indigo-50"
+                                  ? "z-10 border-blue-200 bg-blue-50"
                                   : "border-gray-200",
                                 "relative flex cursor-pointer border p-4 focus:outline-none"
                               )
@@ -221,10 +243,10 @@ export default function EditArticlePage() {
                                 <span
                                   className={classNames(
                                     checked
-                                      ? "bg-indigo-600 border-transparent"
+                                      ? "bg-blue-600 border-transparent"
                                       : "bg-white border-gray-300",
                                     active
-                                      ? "ring-2 ring-offset-2 ring-indigo-600"
+                                      ? "ring-2 ring-offset-2 ring-blue-600"
                                       : "",
                                     "mt-0.5 h-4 w-4 shrink-0 cursor-pointer rounded-full border flex items-center justify-center"
                                   )}
@@ -237,7 +259,7 @@ export default function EditArticlePage() {
                                     as="span"
                                     className={classNames(
                                       checked
-                                        ? "text-indigo-900"
+                                        ? "text-blue-900"
                                         : "text-gray-900",
                                       "block text-sm font-medium"
                                     )}
@@ -248,7 +270,7 @@ export default function EditArticlePage() {
                                     as="span"
                                     className={classNames(
                                       checked
-                                        ? "text-indigo-700"
+                                        ? "text-blue-700"
                                         : "text-gray-500",
                                       "block text-sm"
                                     )}
@@ -268,8 +290,9 @@ export default function EditArticlePage() {
             </Menu>
 
             <button
+              disabled={isSavedNotificationShow}
               onClick={updateArticle}
-              className="rounded bg-blue-100 inline-block px-2 py-1 text-xs font-semibold text-blue-600 hover:text-blue-100 shadow-sm hover:bg-blue-500 transition-colors"
+              className="rounded bg-blue-100 inline-block px-2 py-1 text-xs font-semibold text-blue-600 disabled:bg-gray-200 disabled:text-gray-400 hover:text-blue-100 shadow-sm hover:bg-blue-500 transition-colors"
             >
               Salvar
             </button>
@@ -287,6 +310,52 @@ export default function EditArticlePage() {
             />
           )}
       </main>
+
+      {/* notificação ao salvar */}
+      <div
+        aria-live="assertive"
+        className="pointer-events-none fixed inset-0 flex items-end px-4 py-6 sm:items-start sm:p-6"
+      >
+        <div className="flex w-full flex-col items-center space-y-4 sm:items-end">
+          {/* Notification panel, dynamically insert this into the live region when it needs to be displayed */}
+          <Transition
+            show={isSavedNotificationShow}
+            as={Fragment}
+            enter="transform ease-out duration-300 transition"
+            enterFrom="translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2"
+            enterTo="translate-y-0 opacity-100 sm:translate-x-0"
+            leave="transition ease-in duration-100"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+              <div className="p-4">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0">
+                    <CheckCircleIcon className="h-6 w-6 text-green-400" aria-hidden="true" />
+                  </div>
+                  <div className="ml-3 w-0 flex-1 pt-0.5">
+                    <p className="text-sm font-medium text-gray-900">Salvo com sucesso! </p>
+                    <p className="mt-1 text-sm text-gray-500">Seu arquivo foi atualizado.</p>
+                  </div>
+                  <div className="ml-4 flex flex-shrink-0">
+                    <button
+                      type="button"
+                      className="inline-flex rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                      onClick={() => {
+                        setIsSavedNotificationShow(false)
+                      }}
+                    >
+                      <span className="sr-only">Close</span>
+                      <XMarkIcon className="h-5 w-5" aria-hidden="true" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Transition>
+        </div>
+      </div>
     </>
   );
 }

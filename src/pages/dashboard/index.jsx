@@ -2,9 +2,12 @@
 import { useSession, signIn, signOut } from "next-auth/react";
 import HeaderPage from "@/components/molecules/HeaderPage";
 import { useRouter } from "next/navigation";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, Fragment } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Link from "next/link";
+import { Transition } from "@headlessui/react";
+import { CheckCircleIcon } from '@heroicons/react/24/outline'
+import { XMarkIcon } from '@heroicons/react/20/solid'
 
 const URL_API = "/api/articles";
 
@@ -23,6 +26,8 @@ export default function Dashboard() {
   const [checked, setChecked] = useState(false);
   const [indeterminate, setIndeterminate] = useState(false);
   const [selectedArticle, setSelectedArticle] = useState([]);
+  const [isCreatedNotificationShow, setIsCreatedNotificationShow] = useState(false)
+  const [isDeletedNotificationShow, setIsDeletedNotificationShow] = useState(false)
 
   const { data: session } = useSession({
     required: true,
@@ -120,10 +125,15 @@ export default function Dashboard() {
         });
 
         if (response.ok) {
+          setIsCreatedNotificationShow(true)
           setArticles((prev) => [article, ...prev]);
         }
       } catch (error) {
         console.log(error);
+      } finally {
+        setTimeout(() => {
+          setIsCreatedNotificationShow(false)
+        }, 3000)
       }
 
       return
@@ -153,6 +163,10 @@ export default function Dashboard() {
     const articles_from_localstorage = JSON.parse(localStorage.getItem("articles"));
     articles_from_localstorage.push(article)
     localStorage.setItem("articles", JSON.stringify(articles_from_localstorage));
+    setIsCreatedNotificationShow(true)
+    setTimeout(() => {
+      setIsCreatedNotificationShow(false)
+    }, 3000)
   }
 
   useEffect(() => {
@@ -186,6 +200,7 @@ export default function Dashboard() {
           });
 
           if (response.ok) {
+            setIsDeletedNotificationShow(true)
             setArticles((prev) =>
               prev.filter((currentPrev) => {
                 if (currentPrev.id === currentArticle.id) {
@@ -195,24 +210,48 @@ export default function Dashboard() {
                 return true;
               })
             );
+
+            setChecked(false);
+            setIndeterminate(false);
+            setSelectedArticle([]);
           }
         });
       } catch (error) {
         console.log(error);
+      } finally {
+        setTimeout(() => {
+          setIsDeletedNotificationShow(false)
+        }, 3000)
       }
 
       return;
     }
 
+
     const articles_from_localstorage = JSON.parse(localStorage.getItem("articles"));
 
     let setNewArticlesFromLocal = articles_from_localstorage.filter((currentLocal) => {
       let hasSameId = articlesFromDelete.some((article) => {
+
         return article.id === currentLocal.id;
       });
       // retorna false se tiver o mesmo id, true se não tiver
       return !hasSameId;
     });
+
+    if(setNewArticlesFromLocal.length > 0){
+      setChecked(false);
+      setIndeterminate(false);
+      setSelectedArticle([]);
+
+      setIsDeletedNotificationShow((prev) => {
+        setTimeout(() => {
+          setIsDeletedNotificationShow(false)
+        }, 3000)
+
+        return true
+      })
+    }
 
     localStorage.setItem("articles", JSON.stringify(setNewArticlesFromLocal));
     setArticles(setNewArticlesFromLocal || [])
@@ -388,11 +427,11 @@ export default function Dashboard() {
                                     : "text-gray-900"
                                 )}
                               >
-                                <a
+                                <Link
                                   href={`/dashboard/edit/${article.id}`}
                                 >
                                   {article?.title?.slice(0, 30)}
-                                </a>
+                                </Link>
                               </td>
                               <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                                 {article?.htmlContent?.replace(/<.*?>/g, "").slice(0, 20)}...
@@ -435,6 +474,98 @@ export default function Dashboard() {
           </div>
         </div>
       </main>
+
+      {/* notificação ao salvar */}
+      <div
+        aria-live="assertive"
+        className="pointer-events-none fixed inset-0 flex items-end px-4 py-6 sm:items-start sm:p-6"
+      >
+        <div className="flex w-full flex-col items-center space-y-4 sm:items-end">
+          {/* Notification panel, dynamically insert this into the live region when it needs to be displayed */}
+          <Transition
+            show={isCreatedNotificationShow}
+            as={Fragment}
+            enter="transform ease-out duration-300 transition"
+            enterFrom="translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2"
+            enterTo="translate-y-0 opacity-100 sm:translate-x-0"
+            leave="transition ease-in duration-100"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+              <div className="p-4">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0">
+                    <CheckCircleIcon className="h-6 w-6 text-green-400" aria-hidden="true" />
+                  </div>
+                  <div className="ml-3 w-0 flex-1 pt-0.5">
+                    <p className="text-sm font-medium text-gray-900">Novo artigo criado com sucesso! </p>
+                    <p className="mt-1 text-sm text-gray-500">Você criou um novo artigo.</p>
+                  </div>
+                  <div className="ml-4 flex flex-shrink-0">
+                    <button
+                      type="button"
+                      className="inline-flex rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                      onClick={() => {
+                        setIsCreatedNotificationShow(false)
+                      }}
+                    >
+                      <span className="sr-only">Fechar</span>
+                      <XMarkIcon className="h-5 w-5" aria-hidden="true" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Transition>
+        </div>
+      </div>
+
+      {/* notificação ao deletar */}
+      <div
+        aria-live="assertive"
+        className="pointer-events-none fixed inset-0 flex items-end px-4 py-6 sm:items-start sm:p-6"
+      >
+        <div className="flex w-full flex-col items-center space-y-4 sm:items-end">
+          {/* Notification panel, dynamically insert this into the live region when it needs to be displayed */}
+          <Transition
+            show={isDeletedNotificationShow}
+            as={Fragment}
+            enter="transform ease-out duration-300 transition"
+            enterFrom="translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2"
+            enterTo="translate-y-0 opacity-100 sm:translate-x-0"
+            leave="transition ease-in duration-100"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+              <div className="p-4">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0">
+                    <CheckCircleIcon className="h-6 w-6 text-green-400" aria-hidden="true" />
+                  </div>
+                  <div className="ml-3 w-0 flex-1 pt-0.5">
+                    <p className="text-sm font-medium text-gray-900">Artigo deletado! </p>
+                    <p className="mt-1 text-sm text-gray-500">Você deletou um artigo.</p>
+                  </div>
+                  <div className="ml-4 flex flex-shrink-0">
+                    <button
+                      type="button"
+                      className="inline-flex rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                      onClick={() => {
+                        setIsDeletedNotificationShow(false)
+                      }}
+                    >
+                      <span className="sr-only">Fechar</span>
+                      <XMarkIcon className="h-5 w-5" aria-hidden="true" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Transition>
+        </div>
+      </div>
     </>
   );
 }
