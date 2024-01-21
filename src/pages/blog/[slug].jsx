@@ -1,16 +1,89 @@
 import HeaderPage from '@/components/molecules/HeaderPage'
-import "react-notion/src/styles.css";
 import "prismjs/themes/prism-tomorrow.css";
-import { NotionRenderer } from "react-notion"
 import Metadata from '@/components/molecules/Metadata';
 
-import { Client } from '@notionhq/client'
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
-// Inicialize o cliente do Notion com o seu token
-const notion = new Client({ auth: process.env.NOTION_TOKEN })
+import {useEffect, useState } from "react";
+import DOMPurify from 'dompurify';
 
-const ArticlePage = ({article,metadata}) => {
-  
+const URL_API = "/api/articles";
+
+const ArticlePage = () => {
+
+  const { query } = useRouter();
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  const [article, setArticle] = useState(null);
+  const [title, setTitle] = useState("Artigo");
+
+  const [mdContent, setMdContent] = useState({});
+  const [htmlContent, setHtmlContent] = useState("");
+
+  const { data: session } = useSession({
+    required: true,
+    onUnauthenticated() {
+      return router.replace("/login");
+    },
+  });
+
+  useEffect(() => {
+    setIsAdmin(session?.user?.role === "admin");
+  }, [session]);
+
+  async function fetchArticles() {
+    if (isAdmin) {
+      try {
+        const res = await fetch(URL_API);
+        const data = await res.json();
+
+        if (!data) throw "Missing data...";
+
+        const ALL_ARTICLES = data.articles;
+        const find_article = ALL_ARTICLES.filter((currentArticle) => {
+          if (currentArticle.id === query.slug) {
+            return true;
+          }
+          return false;
+        })[0];
+
+        setArticle(find_article);
+        setTitle(find_article?.title);
+        setMdContent(find_article?.mdContent);
+        setHtmlContent(find_article?.htmlContent);
+
+      } catch (error) {
+        console.log(error);
+      }
+
+      return;
+    }
+
+    const articles_from_localstorage = JSON.parse(
+      localStorage.getItem("articles")
+    );
+
+    if (articles_from_localstorage && articles_from_localstorage?.length > 0) {
+      const ALL_ARTICLES = articles_from_localstorage;
+      const find_article = ALL_ARTICLES.filter((currentArticle) => {
+        if (currentArticle.id === query.slug) {
+          return true;
+        }
+        return false;
+      })[0];
+
+      setArticle(find_article);
+      setTitle(find_article?.title);
+      setMdContent(find_article?.mdContent);
+      setHtmlContent(find_article?.htmlContent);
+    }
+  }
+
+  useEffect(() => {
+    fetchArticles();
+  }, [query.slug, isAdmin]);
+
   if (!article) {
     return (
       <>
@@ -29,18 +102,21 @@ const ArticlePage = ({article,metadata}) => {
       </>
     )
   }
-  
+
   return (
     <>
-      <Metadata metadata={metadata} />
-      <HeaderPage thumbnail={article.thumbnail || ""}>
+      <HeaderPage>
         <h1>{article.title}</h1>
       </HeaderPage>
       <main className="app__content">
         <div className="articles__container">
           <div className="articles">
             <div className="article">
-              <NotionRenderer blockMap={article.blocks} />
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(article.htmlContent)
+                }}
+              />
             </div>
           </div>
         </div>
@@ -48,84 +124,4 @@ const ArticlePage = ({article,metadata}) => {
     </>
   )
 }
-
-export async function getStaticPaths() {
-  // Busque todos os artigos na API do Notion usando o id da sua base de dados
-  const result = await notion.databases.query({
-    database_id: process.env.NOTION_DATABASE_ID,
-  })
-
-  // Mapeie os artigos para obter os slugs
-  const paths = result.results.map((article) => ({
-    params: { slug: article.properties.Slug.rich_text[0].text.content || "" },
-  }))
-
-  // Retorne o objeto com os paths
-  return {
-    paths,
-    fallback: false, // ou true ou 'blocking'
-  }
-}
-
-export async function getStaticProps({ params }) {
-  // Obtenha o slug do artigo do parâmetro
-  const { slug } = params
-
-  // Busque os dados do artigo na API do Notion usando o slug como filtro
-  const result = await notion.databases.query({
-    database_id: process.env.NOTION_DATABASE_ID,
-    filter: {
-      property: 'Slug',
-      title: {
-        equals: slug,
-      },
-    },
-  })
-
-  // Verifique se o artigo existe
-  if (result.results.length === 0) {
-    // Você pode retornar um erro ou uma página vazia aqui
-    return {
-      notFound: true,
-    }
-  }
-
-  // Obtenha o primeiro artigo da resposta
-  const article = result.results[0]
-
-  // Busque os blocos do artigo na API do Notion usando o id do artigo
-  const blockResponse = await fetch(
-    `https://notion-api.splitbee.io/v1/page/${article.id}`
-  ).then((res) => res.json())
-
-  // Formate os dados do artigo como um objeto
-  const articleData = {
-    id: article.id,
-    thumbnail: article.cover && article.cover.external.url || '',
-    authors: article.properties.Authors.people[0],
-    title: article.properties.Page.title[0].plain_text || '',
-    published: article.properties.Published.checkbox,
-    date: article.properties.Date.date.start,
-    url: article.url || '',
-    blocks: blockResponse,
-  }
-
-  // Formate os metadados do artigo como um objeto
-  const metadata = {
-    title: 'Darlley Brito - ' + articleData.title,
-    description: '',
-    image: articleData.thumbnail,
-  }
-
-  // Retorne os dados do artigo e os metadados como props para a página
-  return {
-    props: {
-      article: articleData,
-      metadata,
-    },
-
-    revalidate: 60 
-  }
-}
-
 export default ArticlePage

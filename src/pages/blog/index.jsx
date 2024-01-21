@@ -1,7 +1,12 @@
+
 import HeaderPage from "@/components/molecules/HeaderPage";
 import Metadata from "@/components/molecules/Metadata";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
+import { v4 as uuidv4 } from "uuid";
+
 
 const metadata = {
   title: "Darlley - Blog",
@@ -9,41 +14,58 @@ const metadata = {
   image: "https://www.darlley.dev/lotr-1440x522.png"
 }
 
-const URL_API = '/api/notion'
+const URL_API = "/api/articles";
 
-interface Article {
-  id: number;
-  slug: string;
-  url: string;
-  date: string;
-  title: string;
-  thumbnail: string;
-}
 
 function Blog () {
+  const router = useRouter();
+
   const [loading, setLoading] = useState(false)
-  const [articles, setArticles] = useState<Article[]>([])
+  const [articles, setArticles] = useState([])
+
+  const { data: session } = useSession();
+
+  async function getArticles(){
+    try {
+      setLoading(true);
+
+      const res = await fetch(URL_API);
+      const data = await res.json();
+
+      if (!data) throw "Missing data...";
+
+      setArticles(data.articles);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+    
+    if(session){
+      console.log("esta executando quando esta logado")
+
+      const articles_from_localstorage = JSON.parse(localStorage.getItem("articles"));
+
+      if(articles_from_localstorage && articles_from_localstorage?.length > 0){
+        if(articles.length > 0){
+          articles_from_localstorage.map((currentStorageArticle) => {
+            if(!articles.includes(currentStorageArticle)){
+              setArticles((prev) => [currentStorageArticle, ...prev])
+            }
+          })
+        }else{
+          setArticles(articles_from_localstorage);
+        }
+
+        console.log('articles', articles)
+      }
+
+    }
+  }
 
   useEffect(() => {
-    const fetchArticles = async () => {
-      try {
-        setLoading(true)
-
-        const res = await fetch(URL_API)
-        const data = await res.json()
-
-        if(!data) throw "Missing data..."
-
-        setArticles(data)
-
-      } catch(error){
-        console.log(error)
-      } finally {
-        setLoading(false)
-      }
-    }
-    fetchArticles()
-  }, [])
+    getArticles()
+  }, [session]);
 
   return (
     <>
@@ -52,7 +74,7 @@ function Blog () {
         <h1>Artigos</h1>
 
         <div className="citation">
-          <p>"O problema do mundo de hoje é que as pessoas inteligentes estão cheias de dúvidas, e as pessoas idiotas estão cheias de certezas". — Bertrand Russell</p>
+          <p>"O problema do mundo de hoje é que as pessoas inteligentes estão cheias de dúvidas, e as pessoas idiotas estão cheias de certezas".<br />— Bertrand Russell</p>
         </div>
       </HeaderPage>
       <main className="app__content">
@@ -74,22 +96,15 @@ function Blog () {
               {articles.map((article) => (
                 <li className="article" key={article.id}>
                   <div className="flex flex-col w-full ">
-                    <span className="font-mono text-xs text-slate-500">{article.date}</span>
+                    <span className="font-mono text-xs text-slate-500">{article.created_at}</span>
                     <div className="flex items-start justify-between w-full">
                       <h3 className="w-full">
-                        <Link href={`/blog/${article.slug}`} className="flex py-2 text-lg font-bold text-slate-800 hover:text-primary-500">
+                        <Link href={`/blog/${article.id}`} className="flex py-2 text-lg font-bold text-slate-800 hover:text-primary-500">
                           {article.title}
                         </Link>
                       </h3>
-                      {article.thumbnail &&
-                      <div className="flex flex-col items-end justify-end gap-4 w-max">
-                        <div className="w-[60px] h-[60px]">
-                          <img src={article.thumbnail} alt="thumbnail" />
-                        </div>
-                        <span className="font-mono text-xs text-right text-slate-500 w-max"><a href={article.url} target="_blank">Read in Notion</a></span>
-                      </div>
-                      }
                     </div>
+                    <p>{article?.htmlContent?.replace(/<.*?>/g, "").slice(0, 120)}...</p>
                   </div>
                 </li>)
               )}

@@ -26,7 +26,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/pages/testes.jsx", "src/pages/curriculo.jsx"  ],
+, "src/pages/testes.jsx", "src/pages/curriculo.jsx", "src/pages/blog/index.jsx"  ],
   "exclude": [
     "node_modules"
   ]

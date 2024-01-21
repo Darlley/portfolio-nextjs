@@ -78,7 +78,6 @@ export default function Dashboard() {
           },
         ],
       },
-      textContent: "Este artigo só é visivel para você.",
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
     };
@@ -108,7 +107,6 @@ export default function Dashboard() {
               },
             ],
           },
-          textContent: "Hello World",
           created_at: new Date().toISOString(),
           updated_at: new Date().toISOString(),
         };
@@ -146,7 +144,6 @@ export default function Dashboard() {
           },
         ],
       },
-      textContent: "Este artigo só é visivel para você.",
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
     };
@@ -398,7 +395,7 @@ export default function Dashboard() {
                                 </a>
                               </td>
                               <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                                {article?.textContent?.slice(0, 20)}...
+                                {article?.htmlContent?.replace(/<.*?>/g, "").slice(0, 20)}...
                               </td>
                               <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                                 Publish

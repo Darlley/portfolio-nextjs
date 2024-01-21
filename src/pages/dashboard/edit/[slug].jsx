@@ -26,9 +26,9 @@ export default function EditArticlePage() {
   const [article, setArticle] = useState(null);
   const [title, setTitle] = useState("Artigo");
 
+
   const [mdContent, setMdContent] = useState({});
   const [htmlContent, setHtmlContent] = useState("");
-  const [textContent, setTextContent] = useState("");
 
   const [selected, setSelected] = useState(settings[0]);
 
@@ -63,7 +63,6 @@ export default function EditArticlePage() {
         setTitle(find_article?.title);
         setMdContent(find_article?.mdContent);
         setHtmlContent(find_article?.htmlContent);
-        setTextContent(find_article?.textContent);
 
         if(find_article.published){
           setSelected(settings[0]);
@@ -79,7 +78,7 @@ export default function EditArticlePage() {
 
     const articles_from_localstorage = JSON.parse(
       localStorage.getItem("articles")
-    );
+    ) ?? [];
 
     if (articles_from_localstorage && articles_from_localstorage?.length > 0) {
       const ALL_ARTICLES = articles_from_localstorage;
@@ -94,9 +93,8 @@ export default function EditArticlePage() {
       setTitle(find_article?.title);
       setMdContent(find_article?.mdContent);
       setHtmlContent(find_article?.htmlContent);
-      setTextContent(find_article?.textContent);
     }
-  }
+  } 
 
   useEffect(() => {
     fetchArticles();
@@ -105,7 +103,6 @@ export default function EditArticlePage() {
   function setContent(event) {
     setMdContent(event.getJSON());
     setHtmlContent(event.getHTML());
-    setTextContent(event.getHTML().replace(/<.*?>/g, ""));
   }
 
   async function updateArticle(event) {
@@ -115,7 +112,6 @@ export default function EditArticlePage() {
       published: selected.published,
       htmlContent: htmlContent,
       mdContent: mdContent,
-      textContent: textContent,
     };
 
     if (isAdmin) {
