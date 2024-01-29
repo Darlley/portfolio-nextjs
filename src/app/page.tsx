@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,8 +18,6 @@ export default function Home() {
 
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [modalComponent, setModalComponent] = useState<number | null>(null);
-
-  
 
   function handleClick(content: number) {
     setModalOpen(true);
@@ -221,14 +221,14 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            
+
           </div>
         </div>
         {modalOpen &&
           <CardModal modalOpen={modalOpen} setModalOpen={setModalOpen} content={modalComponent} />
         }
       </header>
-      
+
     </>
   );
 }

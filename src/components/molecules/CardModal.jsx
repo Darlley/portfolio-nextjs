@@ -180,7 +180,6 @@ function classNames(...classes) {
 }
 
 function CardModal({ modalOpen, setModalOpen, content }) {
-    console.log(content)
   if (!modalOpen) return null;
   const cancelButtonRef = useRef(null);
 

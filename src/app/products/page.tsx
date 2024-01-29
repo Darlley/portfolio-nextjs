@@ -1,7 +1,9 @@
+'use client'
+
 import HeaderPage from "@/components/molecules/HeaderPage"
 import Metadata from "@/components/molecules/Metadata"
 import { Product } from "@/components/molecules/products/Product";
-import { products } from "../../products.json";
+import { allProducts } from "./products.js";
 
 const metadata = {
   title: "Darlley Brito - Produtos",
@@ -59,7 +61,7 @@ export default function ProductsPage() {
       </HeaderPage>
       {/*FILTER*/}
       {/* <div className="bg-white">
-        
+
         <Disclosure
           as="section"
           aria-labelledby="filter-heading"
@@ -226,7 +228,7 @@ export default function ProductsPage() {
       <main className="bg-white">
         <div className="max-w-2xl px-4 py-16 mx-auto sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
           <div className="grid grid-cols-1 mt-6 gap-x-8 gap-y-8 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
-            {products.map((product) => (
+            {allProducts?.map((product) => (
               <Product product={product} key={product.id} />
             ))}
           </div>

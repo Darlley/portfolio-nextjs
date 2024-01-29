@@ -1,9 +1,13 @@
+'use client'
+
 import HeaderPage from "@/components/molecules/HeaderPage"
 import Metadata from "@/components/molecules/Metadata"
 
 const stats = [
   { label: 'Developer since', value: '2019' },
-  { label: 'Years of XP', value: '2' },
+  {
+    label: 'Years of XP', value: Number(new Date().getFullYear()) - (2020 + 1), // Desde 2020 (exceto 2021))
+  },
   { label: 'Companies', value: '2' },
   { label: 'Home Office', value: '1' },
 ]

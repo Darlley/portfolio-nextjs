@@ -19,12 +19,12 @@ export default function ProjectsPage() {
       <main className="bg-white">
         <div className="max-w-2xl px-4 py-16 mx-auto sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
           <div className="grid grid-cols-1 mt-6 gap-x-8 gap-y-8 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
-            
+
             <div className="relative group">
               <div className="relative overflow-hidden bg-white border rounded-lg max-h-60">
-                <img 
+                <img
                   src="/bikcraft.png"
-                  alt="" 
+                  alt=""
                   className="object-cover object-center w-full"
                 />
                 <div
@@ -57,7 +57,7 @@ export default function ProjectsPage() {
                 cursos Web Design Completo e WordPress Como CMS.
               </p>
             </div>
-            
+
             <div className="relative group">
               <div className="relative overflow-hidden bg-white border rounded-lg max-h-60">
                 <img
@@ -91,7 +91,7 @@ export default function ProjectsPage() {
               Este foi um projeto envolvendo diversos conceitos JavaScript e o básico de HTML e CSS desenvolvido no curso JavaScript Completo ES6.
               </p>
             </div>
-            
+
             <div className="relative group">
               <div className="relative overflow-hidden bg-white border rounded-lg max-h-60">
                 <img
@@ -125,7 +125,7 @@ export default function ProjectsPage() {
               Este foi um projeto envolvendo diversos conceitos JavaScript e o básico de HTML e CSS desenvolvido na Maratona Discover da Rocketseat.
               </p>
             </div>
-            
+
             <div className="relative group">
               <div className="relative overflow-hidden bg-white border rounded-lg max-h-60">
                 <img
@@ -159,7 +159,7 @@ export default function ProjectsPage() {
               Este foi um projeto Protótipo de landing page para desafio de vaga.
               </p>
             </div>
-            
+
             <div className="relative group">
               <div className="relative overflow-hidden bg-white border rounded-lg max-h-60">
                 <img
@@ -175,7 +175,7 @@ export default function ProjectsPage() {
                     Ver projeto
                   </div>
                 </div>
-              </div> 
+              </div>
               <div className="flex items-center justify-between mt-4 space-x-8 text-base font-medium text-gray-900">
                 <h3>
                   <a
@@ -193,7 +193,7 @@ export default function ProjectsPage() {
               Este foi um projeto Protótipo de landing page para desafio de vaga.
               </p>
             </div>
-            
+
             <div className="relative group">
               <div className="relative overflow-hidden bg-white border rounded-lg max-h-60">
                 <img
@@ -227,7 +227,7 @@ export default function ProjectsPage() {
               Projeto da NLW6 (curso/evento).
               </p>
             </div>
-            
+
             <div className="relative group">
               <div className="relative overflow-hidden bg-white border rounded-lg max-h-60">
                 <img
@@ -261,7 +261,7 @@ export default function ProjectsPage() {
               Site para empresa.
               </p>
             </div>
-            
+
             <div className="relative group">
               <div className="relative overflow-hidden bg-white border rounded-lg max-h-60">
                 <img
@@ -295,7 +295,7 @@ export default function ProjectsPage() {
               Site para empresa.
               </p>
             </div>
-            
+
             <div className="relative group">
               <div className="relative overflow-hidden bg-white border rounded-lg max-h-60">
                 <img
@@ -329,7 +329,7 @@ export default function ProjectsPage() {
                 Base de conhecimentos para empresa.
               </p>
             </div>
-            
+
             <div className="relative group">
               <div className="relative overflow-hidden bg-white border rounded-lg max-h-60">
                 <img
@@ -397,7 +397,7 @@ export default function ProjectsPage() {
                 Wireflame no Figma para um CRM para Atendimentos no WhatsApp.
               </p>
             </div>
-            
+
             <div className="relative group">
               <div className="relative overflow-hidden bg-white border rounded-lg max-h-60">
                 <img
@@ -431,7 +431,7 @@ export default function ProjectsPage() {
                 Design no Figma de Landing Pages no ramo do marketing jurídico.
               </p>
             </div>
-            
+
             <div className="relative group">
               <div className="relative overflow-hidden bg-white border rounded-lg max-h-60">
                 <img
@@ -465,7 +465,7 @@ export default function ProjectsPage() {
                 Wireframe criado no curso de UI Design da Origamid.
               </p>
             </div>
-            
+
             <div className="relative group">
               <div className="relative overflow-hidden bg-white border rounded-lg max-h-60">
                 <img
@@ -567,7 +567,7 @@ export default function ProjectsPage() {
                 Design Conceitural de um checkout para o curso TALL Stack TDD do Marco Ávila.
               </p>
             </div>
-            
+
             <div className="relative group">
               <div className="relative overflow-hidden bg-white border rounded-lg max-h-60">
                 <img
@@ -601,7 +601,7 @@ export default function ProjectsPage() {
               Design do meu curriculo página /curriculo.
               </p>
             </div>
-            
+
             <div className="relative group">
               <div className="relative overflow-hidden bg-white border rounded-lg max-h-60">
                 <img
