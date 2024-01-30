@@ -9,7 +9,11 @@ function Navbar() {
   return (
     <nav className="flex items-center justify-center md:justify-start md:w-full h-[10%] text-white gap-8 lg:md-0">
       <div className="">
-        <Link href="/" className="flex items-center flex-shrink-0 gap-2">
+        <Link
+          href="/"
+          alt="Home"
+          className="flex items-center flex-shrink-0 gap-2"
+        >
           <svg
             width="20"
             height="20"
@@ -38,53 +42,58 @@ function Navbar() {
               <NavigationMenu.Content className="NavigationMenuContent">
                 <ul className="List one">
                   <li style={{ gridRow: "span 3" }}>
-                    <NavigationMenu.Link asChild>
-                      <a
-                        href="https://www.udemy.com/certificate/UC-3c8c6d6e-4c1d-4388-ab88-228cda80ed44/"
-                        target="_blank"
-                      >
-                        <Image
-                          src="/card.png"
-                          alt="Card Figma"
-                          width={400}
-                          height={400}
-                          className="Callout"
-                        />
-                      </a>
-                    </NavigationMenu.Link>
+                    <Link
+                      alt="Certificado"
+                      href="https://www.udemy.com/certificate/UC-3c8c6d6e-4c1d-4388-ab88-228cda80ed44/"
+                      target="_blank"
+                    >
+                      <Image
+                        src="/card.png"
+                        width={400}
+                        height={400}
+                        className="Callout"
+                        alt="Meu card"
+                      />
+                    </Link>
                   </li>
 
                   <li>
-                    <NavigationMenu.Link>
-                      <a className="ListItemLink" href="/about">
-                        <div className="ListItemHeading">About</div>
-                        <p className="ListItemText">
-                          Saiba mais sobre mim, minhas crenças e meus hobbies.
-                        </p>
-                      </a>
-                    </NavigationMenu.Link>
+                    <Link
+                      alt="Pagina sobre"
+                      className="ListItemLink"
+                      href="/about"
+                    >
+                      <div className="ListItemHeading">About</div>
+                      <p className="ListItemText">
+                        Saiba mais sobre mim, minhas crenças e meus hobbies.
+                      </p>
+                    </Link>
                   </li>
 
                   <li>
-                    <NavigationMenu.Link>
-                      <a className="ListItemLink" href="/projects">
-                        <div className="ListItemHeading">Projects</div>
-                        <p className="ListItemText">
-                          Projetos que ja fiz ou participei.
-                        </p>
-                      </a>
-                    </NavigationMenu.Link>
+                    <Link
+                      alt="Pagina Projects"
+                      className="ListItemLink"
+                      href="/projects"
+                    >
+                      <div className="ListItemHeading">Projects</div>
+                      <p className="ListItemText">
+                        Projetos que ja fiz ou participei.
+                      </p>
+                    </Link>
                   </li>
 
                   <li>
-                    <NavigationMenu.Link>
-                      <a className="ListItemLink" href="/products">
-                        <div className="ListItemHeading">Products</div>
-                        <p className="ListItemText">
-                          Produtos que uso no meu dia a dia.
-                        </p>
-                      </a>
-                    </NavigationMenu.Link>
+                    <Link
+                      alt="Pagina Products"
+                      className="ListItemLink"
+                      href="/products"
+                    >
+                      <div className="ListItemHeading">Products</div>
+                      <p className="ListItemText">
+                        Produtos que uso no meu dia a dia.
+                      </p>
+                    </Link>
                   </li>
                 </ul>
               </NavigationMenu.Content>
@@ -97,107 +106,130 @@ function Navbar() {
               <NavigationMenu.Content className="NavigationMenuContent">
                 <ul className="List two">
                   <li>
-                    <NavigationMenu.Link>
-                      <a
-                        className={classNames("ListItemLink")}
-                        href="https://www.instagram.com/filosofiawpp/"
-                        target="_blank"
-                      >
-                        <div className="ListItemHeading">
-                          Philosophy & Theology
-                        </div>
-                        <p className="ListItemText">
-                          Tenho uma página sobre filsofia onde compartilho
-                          minhas leituras de livros e artigos.
-                        </p>
-                      </a>
-                    </NavigationMenu.Link>
-                  </li>
-
-                  <NavigationMenu.Link>
-                    <a className="ListItemLink" href="https://medium.com/@darlleybrito" target="_blank">
-                      <div className="ListItemHeading">Medium</div>
+                    <Link
+                      alt="Pagina do Instagram"
+                      className={classNames("ListItemLink")}
+                      href="https://www.instagram.com/filosofiawpp/"
+                      target="_blank"
+                    >
+                      <div className="ListItemHeading">
+                        Philosophy & Theology
+                      </div>
                       <p className="ListItemText">
-                        Meu blog no Medium
+                        Tenho uma página sobre filsofia onde compartilho minhas
+                        leituras de livros e artigos.
                       </p>
-                    </a>
-                  </NavigationMenu.Link>
+                    </Link>
+                  </li>
+
+                  <Link
+                    className="ListItemLink"
+                    href="https://medium.com/@darlleybrito"
+                    target="_blank"
+                    alt="Blog no medium"
+                  >
+                    <div className="ListItemHeading">Medium</div>
+                    <p className="ListItemText">Meu blog no Medium</p>
+                  </Link>
 
                   <li>
-                    <NavigationMenu.Link>
-                      <a
-                        className={classNames("ListItemLink")}
-                        href="https://www.notion.so/DI-LOGOS-PLAT-NICOS-48e947e0c73b4d518145a4b83ab332e3"
-                        target="_blank"
-                      >
-                        <div className="ListItemHeading">
-                          Diálogos Platônicos
-                        </div>
-                        <p className="ListItemText">
-                          Fiz alguns resumos e estudos sobre alguns dos livros
-                          de Platão.
-                        </p>
-                      </a>
-                    </NavigationMenu.Link>
+                    <Link
+                      className={classNames("ListItemLink")}
+                      href="https://www.notion.so/DI-LOGOS-PLAT-NICOS-48e947e0c73b4d518145a4b83ab332e3"
+                      target="_blank"
+                      alt="Resumos dos dialogos platonicos"
+                    >
+                      <div className="ListItemHeading">Diálogos Platônicos</div>
+                      <p className="ListItemText">
+                        Fiz alguns resumos e estudos sobre alguns dos livros de
+                        Platão.
+                      </p>
+                    </Link>
                   </li>
 
                   <li>
-                    <NavigationMenu.Link>
-                      <a
-                        className={classNames("ListItemLink")}
-                        href="https://www.evernote.com/shard/s513/client/snv?noteGuid=d73e3f67-0a8f-67ae-d2ba-fa74c4e9fd15&noteKey=8bf937abec1186e7380680fb59801cae&sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs513%2Fsh%2Fd73e3f67-0a8f-67ae-d2ba-fa74c4e9fd15%2F8bf937abec1186e7380680fb59801cae&title=META%2BDE%2BLEITURA"
-                        target="_blank"
-                      >
-                        <div className="ListItemHeading">Leitura ordenada</div>
-                        <p className="ListItemText">
-                          Lista de livros ordenada sobre filosofia com link de
-                          afiliado.
-                        </p>
-                      </a>
-                    </NavigationMenu.Link>
+                    <Link
+                      className={classNames("ListItemLink")}
+                      href="https://www.evernote.com/shard/s513/client/snv?noteGuid=d73e3f67-0a8f-67ae-d2ba-fa74c4e9fd15&noteKey=8bf937abec1186e7380680fb59801cae&sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs513%2Fsh%2Fd73e3f67-0a8f-67ae-d2ba-fa74c4e9fd15%2F8bf937abec1186e7380680fb59801cae&title=META%2BDE%2BLEITURA"
+                      target="_blank"
+                      alt="Lista de livros no Evernote"
+                    >
+                      <div className="ListItemHeading">Leitura ordenada</div>
+                      <p className="ListItemText">
+                        Lista de livros ordenada sobre filosofia com link de
+                        afiliado.
+                      </p>
+                    </Link>
                   </li>
 
                   <li>
-                    <NavigationMenu.Link>
-                      <a
-                        className={classNames("ListItemLink")}
-                        href="https://anchor.fm/darlley"
-                        target="_blank"
-                      >
-                        <div className="ListItemHeading">Podcast</div>
-                        <p className="ListItemText">
-                          Ja tentei criar um podcast, mas a oratória e outros
-                          fatores me fizeram ver que não isto que eu queria.
-                        </p>
-                      </a>
-                    </NavigationMenu.Link>
+                    <Link
+                      className={classNames("ListItemLink")}
+                      href="https://anchor.fm/darlley"
+                      target="_blank"
+                      alt="Meu portfólio"
+                    >
+                      <div className="ListItemHeading">Podcast</div>
+                      <p className="ListItemText">
+                        Ja tentei criar um podcast, mas a oratória e outros
+                        fatores me fizeram ver que não isto que eu queria.
+                      </p>
+                    </Link>
                   </li>
 
                   <li>
-                    <NavigationMenu.Link>
-                      <a
-                        className={classNames("ListItemLink")}
-                        href="https://github.com/Darlley/portfolio-nextjs"
-                        target="_blank"
-                      >
-                        <div className="ListItemHeading">
-                          Código do portfólio
-                        </div>
-                        <p className="ListItemText">
-                          Quem quiser o código deste portfólio ele pode ser
-                          encontrado no meu Github.
-                        </p>
-                      </a>
-                    </NavigationMenu.Link>
+                    <Link
+                      className={classNames("ListItemLink")}
+                      href="https://github.com/Darlley/portfolio-nextjs"
+                      target="_blank"
+                      alt="Repositório deste portfólio"
+                    >
+                      <div className="ListItemHeading">Código do portfólio</div>
+                      <p className="ListItemText">
+                        Quem quiser o código deste portfólio ele pode ser
+                        encontrado no meu Github.
+                      </p>
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link
+                      className={classNames("ListItemLink")}
+                      href="https://youtu.be/3domkWfU3Lo"
+                      target="_blank"
+                      alt="Video no Youtube"
+                    >
+                      <div className="ListItemHeading">
+                        🧐 Uma análise deste portfólio
+                      </div>
+                      <p className="ListItemText">
+                        O professor (da Serliv) Daniel Tapias Morales analisou
+                        este portfólio em seu canal no YouTube.
+                      </p>
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link
+                      className={classNames("ListItemLink")}
+                      href="https://hub.docker.com/r/darlleybbf/portfolio"
+                      target="_blank"
+                      alt="Docker Image deste portfólio"
+                    >
+                      <div className="ListItemHeading">💙 Docker Image</div>
+                      <p className="ListItemText">
+                        Criei uma imagem Docker para este portfólio.
+                      </p>
+                    </Link>
                   </li>
                 </ul>
               </NavigationMenu.Content>
             </NavigationMenu.Item>
 
             <NavigationMenu.Item>
-              <NavigationMenu.Link className="NavigationMenuLink" href="/blog">
+              <Link className="NavigationMenuLink" href="/blog">
                 Blog
-              </NavigationMenu.Link>
+              </Link>
             </NavigationMenu.Item>
 
             <NavigationMenu.Indicator className="NavigationMenuIndicator">
@@ -212,6 +244,7 @@ function Navbar() {
 
         <div className="hidden gap-2 md:flex md:h-max md:w-max md:items-center md:text-white">
           <Link
+            alt="Linkedin"
             href="https://www.linkedin.com/in/darlleybrito/"
             target="_blank"
             className="Menu__item"
@@ -234,6 +267,7 @@ function Navbar() {
           </Link>
 
           <Link
+            alt="Github"
             href="https://github.com/Darlley"
             target="_blank"
             className="Menu__item"
@@ -255,7 +289,7 @@ function Navbar() {
             <span>Github</span>
           </Link>
 
-          <Link href="/curriculo" className="Menu__item">
+          <Link href="/curriculo" className="Menu__item" alt="curriculo">
             <svg
               width="15"
               height="15"

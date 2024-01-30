@@ -57,6 +57,11 @@ const cards = [
         url: "https://www.origamid.com/certificate/f6676778",
         school: "Origamid",
       },
+      {
+        title: "Curso de UI Design (ui Start)",
+        url: "https://uistart.club.hotmart.com/public/user-certificate/7ff0280a-0990-412e-9dc2-7d16303e54f5/_",
+        school: "Hotmart",
+      },
     ],
     externalUrl: "",
   },
@@ -145,55 +150,25 @@ const cards = [
 \nInicialmente fiz o deploy deste portfólio com a AWS Amplify + AWS Route53 e já utilizei os serviço de AWS S3 junto com Laravel para armazenar imagens de uma base de conhecimento`,
     list: [
       {
+        title: "Docker do 0 à Maestria: Contêineres Desmistificados + EXTRAS",
+        url: "https://www.udemy.com/certificate/UC-544ac24a-5950-4914-9506-8d6bf81ba89b/",
+        school: "Udemy",
+      },
+      {
         title:
           "Curso Certificação Amazon AWS Cloud Practitioner Foundational 2023",
         url: "https://www.udemy.com/certificate/UC-6b1a0937-f009-46ec-adeb-3019b2c74845/",
         school: "Udemy",
       },
       {
-        title: "Docker do 0 à Maestria: Contêineres Desmistificados + EXTRAS",
-        url: "https://www.udemy.com/certificate/UC-544ac24a-5950-4914-9506-8d6bf81ba89b/",
+        title: "Descubra a Nuvem AWS - Nexa Resources",
+        url: "https://www.dio.me/certificate/54EF551C/share",
+        school: "Dio",
+      },
+      {
+        title: "Docker para Desenvolvedores (com Docker Swarm e Kubernetes)",
+        url: "https://www.udemy.com/certificate/UC-126c8419-caeb-472c-8f46-fd1025605bd0/",
         school: "Udemy",
-      },
-      {
-        title: "Primeiros Passos com AWS",
-        url: "https://www.dio.me/certificate/1431E9AF/share",
-        school: "Dio",
-      },
-      {
-        title: "AWS Official Content - Introdução à Amazon Web Services (AWS)",
-        url: "https://www.dio.me/certificate/AC35AA55/share",
-        school: "Dio",
-      },
-      {
-        title: "Introdução ao Conceito de Cloud",
-        url: "https://www.dio.me/certificate/38F2C42D/share",
-        school: "Dio",
-      },
-      {
-        title: "Infraestrutura Global AWS",
-        url: "https://www.dio.me/certificate/498618CF/share",
-        school: "Dio",
-      },
-      {
-        title: "Computação em AWS",
-        url: "https://www.dio.me/certificate/46F572D3/share",
-        school: "Dio",
-      },
-      {
-        title: "Introdução Prática a Computação em Nuvem Usando AWS",
-        url: "https://www.dio.me/certificate/5D6F0933/share",
-        school: "Dio",
-      },
-      {
-        title: "Redes em AWS",
-        url: "https://www.dio.me/certificate/D3E0370D/share",
-        school: "Dio",
-      },
-      {
-        title: "Introdução ao Exame de Certificação AWS Cloud Practitioner",
-        url: "https://www.dio.me/certificate/BD38F3AE/share",
-        school: "Dio",
       }
     ],
     externalUrl: "",
@@ -205,7 +180,6 @@ function classNames(...classes) {
 }
 
 function CardModal({ modalOpen, setModalOpen, content }) {
-    console.log(content)
   if (!modalOpen) return null;
   const cancelButtonRef = useRef(null);
 

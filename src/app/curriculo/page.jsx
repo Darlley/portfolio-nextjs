@@ -1,3 +1,5 @@
+'use client'
+
 import Link from "next/link";
 import HeaderPage from "@/components/molecules/HeaderPage";
 import Metadata from "@/components/molecules/Metadata";
@@ -58,6 +60,7 @@ export default function Curriculo() {
                 target="_blank"
                 title="Solicite via e-mail"
                 className="curriculo__fixed__top--item"
+                alt="Curriculo"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -81,6 +84,7 @@ export default function Curriculo() {
                 href="mailto:darlleybrito@gmail.com"
                 target="_blank"
                 className="curriculo__fixed__top--item"
+                alt="Email"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -102,6 +106,7 @@ export default function Curriculo() {
               <Link
                 href="/api"
                 className="curriculo__fixed__top--item"
+                alt="API"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
@@ -109,11 +114,12 @@ export default function Curriculo() {
 
                 <span>API</span>
               </Link>
-              
+
               <Link
                 href="/curriculo.pdf"
                 target="_blank"
                 className="curriculo__fixed__top--item"
+                alt="PDF"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -174,7 +180,7 @@ export default function Curriculo() {
                             current.details.split(" ").map((frase,index) => {
                               if (index >= 3 && index <= 9){
                                 return (
-                                  <strong>
+                                  <strong key={index}>
                                   {frase + " "}
                                   </strong>
                                 )
@@ -194,8 +200,8 @@ export default function Curriculo() {
                 <h3 className="curriculo__app__title">Skills</h3>
                 <div className="curriculo__app__container">
                   {
-                    api.skills.map((skill) => (
-                      <span className="curriculo__app__tag">{skill}</span>
+                    api.skills.map((skill,index) => (
+                      <span className="curriculo__app__tag" key={index}>{skill}</span>
                     ))
                   }
                 </div>
@@ -207,8 +213,8 @@ export default function Curriculo() {
                 <h3 className="curriculo__app__title">Experience</h3>
                 <div className="curriculo__app__timeline">
                   <div className="curriculo__timeline__item">
-                    {api.experience.map((current) => (
-                      <div className="curriculo__content">
+                    {api.experience.map((current, index) => (
+                      <div className="curriculo__content" key={index}>
                         <span className="curriculo__app__date--timeline">
                           {current.period}
                         </span>
@@ -227,8 +233,8 @@ export default function Curriculo() {
               <div className="mt-20 md:mt-4 curriculo__app__item">
                 <h3 className="curriculo__app__title">Languages</h3>
                 <div className="curriculo__app__container">
-                  {api.languages.map((language) => (
-                    <span className="curriculo__app__tag">{language}</span>
+                  {api.languages.map((language, index) => (
+                    <span className="curriculo__app__tag" key={index}>{language}</span>
                   ))}
                 </div>
               </div>
@@ -253,6 +259,7 @@ export default function Curriculo() {
               <Link
                 href="https://www.figma.com/file/YfJtjKe8p2J7U7PQ3N5goB/Curriculo?node-id=1%3A3&t=TvRfslRgIRxZpogt-1"
                 target="_blank"
+                alt="Figma"
               >
                 <svg
                   className="h-8 curriculo__w-8"
@@ -296,6 +303,7 @@ export default function Curriculo() {
               <Link
                 href="https://www.linkedin.com/in/darlleybrito/"
                 target="_blank"
+                alt="Linkedin"
               >
                 <svg
                   className="h-8 curriculo__w-8"

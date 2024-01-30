@@ -1,3 +1,5 @@
+'use client'
+
 import { useSession, signIn, signOut } from "next-auth/react";
 import HeaderPage from "@/components/molecules/HeaderPage";
 import Metadata from "@/components/molecules/Metadata";
@@ -11,8 +13,8 @@ const metadata = {
   image: "https://www.darlley.dev/lotr-1440x522.png",
 };
 
-const CREDENTIAL_USER_EMAIL = process.env.NEXT_PUBLIC_CREDENTIAL_USER_EMAIL
-const CREDENTIAL_USER_PASSWORD = process.env.NEXT_PUBLIC_CREDENTIAL_USER_PASSWORD
+const CREDENTIAL_USER_EMAIL = process.env.NEXT_PUBLIC_CREDENTIAL_USER_EMAIL;
+const CREDENTIAL_USER_PASSWORD = process.env.NEXT_PUBLIC_CREDENTIAL_USER_PASSWORD;
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -48,6 +50,7 @@ export default function Login() {
 
   const handleSubmitForm = async (data) => {
 
+
     if(data?.email && data?.password){
       const result = await signIn('credentials', {
         email: data.email,
@@ -59,7 +62,7 @@ export default function Login() {
         return setErrorMessage(result)
       }
 
-      return router.replace('/dashboard')
+      return router.push('/dashboard')
     }
 
   }

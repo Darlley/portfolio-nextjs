@@ -14,6 +14,12 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+Or, [pull image Docker](https://hub.docker.com/r/darlleybbf/portfolio): 
+
+```bash 
+docker pull darlleybbf/portfolio
+```
+
 ## Project on Notion
 > Link: https://foil-billboard-062.notion.site/Novo-portf-lio-42768bb158de4d23842e8efefb2f0841?pvs=4
 

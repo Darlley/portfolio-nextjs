@@ -1,4 +1,5 @@
 "use client";
+
 import { useSession, signIn, signOut } from "next-auth/react";
 import HeaderPage from "@/components/molecules/HeaderPage";
 import { useRouter } from "next/navigation";
@@ -32,7 +33,7 @@ export default function Dashboard() {
   const { data: session } = useSession({
     required: true,
     onUnauthenticated() {
-      return router.replace("/login");
+      return router.push("/login");
     }
   });
 

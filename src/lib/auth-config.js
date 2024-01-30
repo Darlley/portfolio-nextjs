@@ -5,7 +5,7 @@ const CREDENTIAL_USER_NAME = process.env.CREDENTIAL_USER_NAME;
 const CREDENTIAL_USER_EMAIL = process.env.CREDENTIAL_USER_EMAIL;
 const CREDENTIAL_USER_PASSWORD = process.env.CREDENTIAL_USER_PASSWORD;
 const CREDENTIAL_USER_ROLE = process.env.CREDENTIAL_USER_ROLE;
-const GITHUB_CREDENTIAL_USER_ID = process.env.NEXT_PUBLIC_GITHUB_CREDENTIAL_USER_ID
+const GITHUB_CREDENTIAL_USER_ID = process.env.GITHUB_CREDENTIAL_USER_ID
 
 const ADMIN_USER = {
   name: CREDENTIAL_USER_NAME,
@@ -40,7 +40,6 @@ const authOptions = {
         },
       },
       async authorize(credentials, req) {
-
         if (
           credentials?.email === ADMIN_USER.email &&
           credentials?.password === ADMIN_USER.password

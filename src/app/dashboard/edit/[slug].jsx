@@ -1,3 +1,5 @@
+'use client'
+
 import { useSession } from "next-auth/react";
 import HeaderPage from "@/components/molecules/HeaderPage";
 import { useRouter } from "next/router";
