@@ -1,5 +1,9 @@
-import GithubProvider from "next-auth/providers/github";
+import { PrismaAdapter } from "@auth/prisma-adapter"
+import { PrismaClient } from "@prisma/client"
 import CredentialsProvider from "next-auth/providers/credentials";
+import GithubProvider from "next-auth/providers/github";
+
+const prisma = new PrismaClient()
 
 const CREDENTIAL_USER_NAME = process.env.CREDENTIAL_USER_NAME;
 const CREDENTIAL_USER_EMAIL = process.env.CREDENTIAL_USER_EMAIL;
@@ -15,7 +19,7 @@ const ADMIN_USER = {
 }
 
 const authOptions = {
-  // Configure one or more authentication providers
+  adapter: PrismaAdapter(prisma),
   providers: [
     GithubProvider({
       clientId: process.env.GITHUB_ID,
@@ -71,6 +75,31 @@ const authOptions = {
     session({session, token}) {
       session.user.role = token.role
       return session
+    },
+    async signIn({ user, account, profile, email, credentials }){
+      console.log('signIn({ user, account, profile, email, credentials })')
+
+      console.log(user?.email)
+
+      if(user){
+        console.log('entrou no if')
+        const findUser = await prisma.user.findUnique({
+          where: {
+            email: user?.email,
+          },
+        })
+        console.log('findUser')
+        console.log(findUser)
+
+        // const user = await prisma.user.create({
+        //   data: {
+        //     email: 'elsa@prisma.io',
+        //     name: 'Elsa Prisma',
+        //   },
+        // })
+      }
+
+      return { user, account, profile, email, credentials }
     }
   }
 };
