@@ -24,8 +24,8 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function EditArticlePage() {
-  const { query } = useRouter();
+export default function EditArticlePage({params}) {
+  const { slug } = params;
   const [isAdmin, setIsAdmin] = useState(false);
 
   const [article, setArticle] = useState(null);
@@ -59,7 +59,7 @@ export default function EditArticlePage() {
 
         const ALL_ARTICLES = data.articles;
         const find_article = ALL_ARTICLES.filter((currentArticle) => {
-          if (currentArticle.id === query.slug) {
+          if (currentArticle.id === slug) {
             return true;
           }
           return false;
@@ -89,7 +89,7 @@ export default function EditArticlePage() {
     if (articles_from_localstorage && articles_from_localstorage?.length > 0) {
       const ALL_ARTICLES = articles_from_localstorage;
       const find_article = ALL_ARTICLES.filter((currentArticle) => {
-        if (currentArticle.id === query.slug) {
+        if (currentArticle.id === slug) {
           return true;
         }
         return false;
@@ -109,7 +109,7 @@ export default function EditArticlePage() {
 
   useEffect(() => {
     fetchArticles();
-  }, [query.slug, isAdmin]);
+  }, [slug, isAdmin]);
 
   function setContent(event) {
     setMdContent(event.getJSON());
