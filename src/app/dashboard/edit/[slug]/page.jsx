@@ -2,7 +2,7 @@
 
 import { useSession } from "next-auth/react";
 import HeaderPage from "@/components/molecules/HeaderPage";
-import { useRouter } from "next/router";
+import { useRouter } from 'next/navigation'
 import { Menu, RadioGroup, Switch, Transition } from "@headlessui/react";
 
 import { CheckCircleIcon } from '@heroicons/react/24/outline'
@@ -26,6 +26,8 @@ function classNames(...classes) {
 
 export default function EditArticlePage({params}) {
   const { slug } = params;
+  const router = useRouter()
+
   const [isAdmin, setIsAdmin] = useState(false);
 
   const [article, setArticle] = useState(null);
