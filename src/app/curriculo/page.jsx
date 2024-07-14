@@ -42,7 +42,7 @@ export default function Curriculo() {
     } catch (error) {
       console.log(error);
     }
-  }, [api]);
+  }, []);
 
   return (
     <>
