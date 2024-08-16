@@ -1,12 +1,15 @@
+import { nextui } from "@nextui-org/react";
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
- 
+
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -27,27 +30,25 @@ module.exports = {
         },
       },
       animation: {
-        'rotate': 'spin 80s linear infinite',
-        'rotate-reverse': 'spin 80s linear infinite reverse',
-      }
+        rotate: "spin 80s linear infinite",
+        "rotate-reverse": "spin 80s linear infinite reverse",
+      },
     },
   },
   keyframes: {
     spin: {
       from: {
-        transform: 'rotate(0deg)',
+        transform: "rotate(0deg)",
       },
       to: {
-        transform: 'rotate(360deg)',
+        transform: "rotate(360deg)",
       },
     },
   },
   variants: {
     extend: {
-      transform: ['active'],
-    }
-},
-  plugins: [
-    require('@tailwindcss/forms')
-  ],
-}
+      transform: ["active"],
+    },
+  },
+  plugins: [require("@tailwindcss/forms"), nextui()],
+};
