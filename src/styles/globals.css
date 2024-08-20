@@ -63,7 +63,7 @@ body, html{
   bg-black
   bg-cover
   bg-center
-  
+
   relative
   flex
   flex-col
@@ -200,5 +200,4 @@ body, html{
 .card__scrollbar::-webkit-scrollbar-track {
   background: rgba(255,255,255,.1);
 }
-
 
