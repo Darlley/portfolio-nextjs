@@ -9,12 +9,7 @@ import Navbar from "@/components/molecules/Navbar";
 import CardModal from "@/components/molecules/CardModal";
 
 export default function HomeView() {
-  const metadata = {
-    title: "Darlley Brito - Portfólio",
-    description:
-      "Desenvolvedor Web Full Stack and UI Designer.",
-    image: "/perfil.jpg",
-  };
+  
 
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [modalComponent, setModalComponent] = useState<number | null>(null);
@@ -26,7 +21,6 @@ export default function HomeView() {
 
   return (
     <>
-      <Metadata metadata={metadata} />
       <header className="overflow-hidden">
         <div className="header__background">
           <div className="header__opacity">

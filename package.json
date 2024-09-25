@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "make:component": "plop --plopfile generators/plopfile.js"
+    "plop": "plop --plopfile generators/plopfile.js"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",

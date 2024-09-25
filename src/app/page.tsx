@@ -1,7 +1,5 @@
-"use client";
-
-import HomeView from "@/components/HomeView";
+import PageHome from "@/components/PageHome";
 
 export default function Home() {
-  return <HomeView />;
+  return <PageHome />;
 }
