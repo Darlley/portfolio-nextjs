@@ -14,14 +14,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: {
+        "custom-primary": {
           "100": "#e6e7e9",
           "200": "#dadbde",
           "300": "#b3b4ba",
           "500": "#090e20",
           "900": "#070b18",
         },
-        secundary: {
+        "custom-secundary": {
           "100": "#effbff",
           "200": "#e7f9ff",
           "300": "#cef4fe",

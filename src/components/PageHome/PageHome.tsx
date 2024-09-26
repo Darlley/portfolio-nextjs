@@ -4,10 +4,29 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
+import AICustomIcon from "@/icons/AICustomIcon";
+import AWSCustomIcon from "@/icons/AWSCustomIcon";
+import BackEndCustomIcon from "@/icons/BackEndCustomIcon";
+import FigmaCustomIcon from "@/icons/FigmaCustomIcon";
+import LaravelCustomIcon from "@/icons/LaravelCustomIcon";
+import LinkedinCustomIcon from "@/icons/LinkedinCustomIcon";
+import MongoCustomIcon from "@/icons/MongoCustomIcon";
+import N8NCustomIcon from "@/icons/N8NCustomIcon";
+import ReactCustomIcon from "@/icons/ReactCustomIcon";
+import TailwindCustomIcon from "@/icons/TailwindCustomIcon";
+import WordpressCustomIcon from "@/icons/WordpressCustomIcon";
+import {
+  Button,
+  ButtonGroup,
+  Card,
+  CardBody,
+  CardHeader,
+  Tooltip,
+} from "@nextui-org/react";
+import { Mouse } from "lucide-react";
 import Link from "next/link";
 import Navbar from "../Navbar";
 import { PageHomeProps } from "./PageHome.types";
-import { Card, CardBody, CardHeader } from "@nextui-org/react";
 export default function PageHome(props: PageHomeProps) {
   return (
     <div className="h-svh relative overflow-y-auto bg-zinc-950 flex flex-col">
@@ -21,50 +40,105 @@ export default function PageHome(props: PageHomeProps) {
         <section className="flex flex-col items-center justify-center h-svh">
           <div className="relative p-4 sm:p-8">
             <div className="relative w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] flex items-center justify-center">
-              <button
-                className="absolute w-[140px] h-[140px] sm:w-[200px] sm:h-[200px] p-1 border-4 rounded-full hover:border-gray-400/50 cursor-pointer transition-all duration-500 z-10"
-                onClick={() => onOpenModal("me")}
-              >
-                <div className="w-full h-full rounded-full hover:border-gray-400 border-2 bg-[url('/profile.jpg')] bg-cover transition-all duration-500" />
-              </button>
+              <Tooltip content="Sobre mim" color="primary">
+                <button
+                  className="absolute size-[140px] sm:size-[200px] p-1 border-4 rounded-full hover:border-gray-400/50 cursor-pointer transition-all duration-500 z-10"
+                  onClick={() => onOpenModal("me")}
+                >
+                  <div className="w-full h-full rounded-full hover:border-gray-400 border-2 bg-[url('/profile.jpg')] bg-cover transition-all duration-500" />
+                </button>
+              </Tooltip>
 
               <div className="absolute w-full h-full animate-rotate-reverse">
                 {[
-                  { name: "react", top: "0%", left: "50%", delay: "0s" },
-                  { name: "figma", top: "14.64%", left: "85.36%", delay: "1s" },
-                  { name: "tailwind", top: "50%", left: "100%", delay: "2s" },
                   {
-                    name: "wordpress",
-                    top: "85.36%",
-                    left: "85.36%",
-                    delay: "3s",
+                    name: "Design",
+                    top: "9.55%",
+                    left: "79.39%",
+                    delay: "1s",
+                    icon: FigmaCustomIcon,
                   },
-                  { name: "laravel", top: "100%", left: "50%", delay: "4s" },
-                  { name: "sql", top: "85.36%", left: "14.64%", delay: "5s" },
-                  { name: "aws", top: "50%", left: "0%", delay: "6s" },
-                  { name: "novo", top: "14.64%", left: "14.64%", delay: "7s" },
+                  {
+                    name: "CSS",
+                    top: "34.55%",
+                    left: "97.55%",
+                    delay: "2s",
+                    icon: TailwindCustomIcon,
+                  },
+                  {
+                    name: "WordPress",
+                    top: "65.45%",
+                    left: "97.55%",
+                    delay: "3s",
+                    icon: WordpressCustomIcon,
+                  },
+                  {
+                    name: "Banco de Dados",
+                    top: "100%",
+                    left: "50%",
+                    delay: "5s",
+                    icon: MongoCustomIcon,
+                  },
+                  {
+                    name: "Laravel",
+                    top: "90.45%",
+                    left: "79.39%",
+                    delay: "4s",
+                    icon: LaravelCustomIcon,
+                  },
+                  {
+                    name: "Frontend",
+                    top: "0%",
+                    left: "50%",
+                    delay: "0s",
+                    icon: ReactCustomIcon,
+                  },
+                  {
+                    name: "Backend",
+                    top: "9.55%",
+                    left: "20.61%",
+                    delay: "9s",
+                    icon: BackEndCustomIcon,
+                  },
+                  {
+                    name: "AI",
+                    top: "65.45%",
+                    left: "2.45%",
+                    delay: "7s",
+                    icon: AICustomIcon,
+                  },
+                  {
+                    name: "Low-Code/No-Code",
+                    top: "34.55%",
+                    left: "2.45%",
+                    delay: "8s",
+                    icon: N8NCustomIcon,
+                  },
+                  {
+                    name: "AWS",
+                    top: "90.45%",
+                    left: "20.61%",
+                    delay: "6s",
+                    icon: AWSCustomIcon,
+                  },
                 ].map((item, index) => (
-                  <button
-                    key={index}
-                    className="absolute w-[30px] h-[30px] sm:w-[40px] sm:h-[40px] rounded-full bg-cover cursor-pointer border-2 border-gray-400/50 hover:scale-110 transition-all duration-500"
-                    style={{
-                      top: item.top,
-                      left: item.left,
-                      transform: "translate(-50%, -50%)",
-                      animation: `orbit 20s linear infinite ${item.delay}`,
-                    }}
-                    onClick={() => onOpenModal(item.name)}
-                  >
-                    <Image
-                      className="w-full h-full border hover:border-gray-400/50 transition-all duration-500 rounded-full p-[1px] z-[2] animate-rotate"
-                      src={`/habilities/${
-                        item.name.charAt(0).toUpperCase() + item.name.slice(1)
-                      }.png`}
-                      alt={`Ícone de ${item.name}`}
-                      width={40}
-                      height={40}
-                    />
-                  </button>
+                  <Tooltip content={item.name}>
+                    <button
+                      key={index}
+                      style={{
+                        top: item.top,
+                        left: item.left,
+                        transform: "translate(-50%, -50%)",
+                        animation: `orbit 20s linear infinite ${item.delay}`,
+                      }}
+                      className="inline-flex absolute"
+                      onClick={() => onOpenModal(item.name)}
+                    >
+                      <div className="bg-gray-900 border border-gray-700 rounded-full p-0.5 hover:scale-105 flex items-center jsutify-center">
+                        <item.icon className="size-7 md:size-8 animate-rotate" />
+                      </div>
+                    </button>
+                  </Tooltip>
                 ))}
               </div>
             </div>
@@ -73,7 +147,9 @@ export default function PageHome(props: PageHomeProps) {
           <div className="text-center text-white mt-4">
             <p className="text-sm sm:text-base">
               Olá, eu sou{" "}
-              <span className="font-bold text-secundary-500">Darlley</span>
+              <span className="font-bold text-primary inline-block">
+                Darlley
+              </span>
             </p>
             <h1 className="text-xl sm:text-2xl font-bold mt-2">
               Sou Desenvolvedor Web Front-end
@@ -81,147 +157,59 @@ export default function PageHome(props: PageHomeProps) {
             </h1>
           </div>
 
-        <div className="mt-8 text-center">
-          <Link href="/projetos" className="inline-flex items-center gap-2 text-white bg-primary-500 hover:bg-primary-600 transition-colors duration-300 px-6 py-3 rounded-full text-lg font-semibold">
-            Ver mais
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z" fill="currentColor"/>
-            </svg>
-          </Link>
-        </div>
+          <div className="mt-8 text-center">
+            <Button as={Link} href="#projects" color="primary">
+              Ver mais
+              <Mouse />
+            </Button>
+          </div>
         </section>
 
-        <section className="flex flex-col items-center justify-center">
-          <h2 className="text-2xl font-bold mb-4">Meus Projetos</h2>
-          <div className="grid grid-cols-3 gap-4">
-            <Card className="py-4">
+        <section
+          className="flex flex-col items-center justify-center px-4 xl:px-0 h-svh"
+          id="projects"
+        >
+          <div className="text-center mb-10">
+            <span className="text-4xl animate-pulse">✨</span>
+            <h2 className="text-4xl font-bold">Favoritos </h2>
+            <Link
+              href="/projects"
+              className="text-primary font-light hover:underline"
+            >
+              Veja todos
+            </Link>
+          </div>
+          <div className="flex flex-wrap gap-4 justify-center md:justify-between">
+            <Card className="p-2 w-full max-w-sm">
               <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
                 <p className="text-tiny uppercase font-bold">Blog Pessoal</p>
-                <small className="text-default-500">Next.js e Tailwind CSS</small>
+                <small className="text-default-500">
+                  Next.js e Tailwind CSS
+                </small>
                 <h4 className="font-bold text-large">Meu Blog</h4>
               </CardHeader>
               <CardBody className="overflow-visible py-2">
                 <Image
                   alt="Imagem do Blog Pessoal"
-                  className="object-cover rounded-xl"
+                  className="object-cover rounded-xl w-full"
                   src="https://nextui.org/images/hero-card-complete.jpeg"
                   width={270}
                   height={180}
                 />
               </CardBody>
             </Card>
-
-            <Card className="py-4">
-              <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                <p className="text-tiny uppercase font-bold">E-commerce</p>
-                <small className="text-default-500">React e Node.js</small>
-                <h4 className="font-bold text-large">Loja Online</h4>
-              </CardHeader>
-              <CardBody className="overflow-visible py-2">
-                <Image
-                  alt="Imagem do E-commerce"
-                  className="object-cover rounded-xl"
-                  src="https://nextui.org/images/hero-card-complete.jpeg"
-                  width={270}
-                  height={180}
-                />
-              </CardBody>
-            </Card>
-
-            <Card className="py-4">
-              <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                <p className="text-tiny uppercase font-bold">App de Tarefas</p>
-                <small className="text-default-500">Vue.js</small>
-                <h4 className="font-bold text-large">Gerenciador de Tarefas</h4>
-              </CardHeader>
-              <CardBody className="overflow-visible py-2">
-                <Image
-                  alt="Imagem do App de Tarefas"
-                  className="object-cover rounded-xl"
-                  src="https://nextui.org/images/hero-card-complete.jpeg"
-                  width={270}
-                  height={180}
-                />
-              </CardBody>
-            </Card>
-
-            <Card className="py-4">
-              <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                <p className="text-tiny uppercase font-bold">Dashboard</p>
-                <small className="text-default-500">Angular e Material UI</small>
-                <h4 className="font-bold text-large">Painel Administrativo</h4>
-              </CardHeader>
-              <CardBody className="overflow-visible py-2">
-                <Image
-                  alt="Imagem do Dashboard"
-                  className="object-cover rounded-xl"
-                  src="https://nextui.org/images/hero-card-complete.jpeg"
-                  width={270}
-                  height={180}
-                />
-              </CardBody>
-            </Card>
-            <Card className="py-4">
+            <Card className="p-2 w-full max-w-sm">
               <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
                 <p className="text-tiny uppercase font-bold">Blog Pessoal</p>
-                <small className="text-default-500">Next.js e Tailwind CSS</small>
+                <small className="text-default-500">
+                  Next.js e Tailwind CSS
+                </small>
                 <h4 className="font-bold text-large">Meu Blog</h4>
               </CardHeader>
               <CardBody className="overflow-visible py-2">
                 <Image
                   alt="Imagem do Blog Pessoal"
-                  className="object-cover rounded-xl"
-                  src="https://nextui.org/images/hero-card-complete.jpeg"
-                  width={270}
-                  height={180}
-                />
-              </CardBody>
-            </Card>
-
-            <Card className="py-4">
-              <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                <p className="text-tiny uppercase font-bold">E-commerce</p>
-                <small className="text-default-500">React e Node.js</small>
-                <h4 className="font-bold text-large">Loja Online</h4>
-              </CardHeader>
-              <CardBody className="overflow-visible py-2">
-                <Image
-                  alt="Imagem do E-commerce"
-                  className="object-cover rounded-xl"
-                  src="https://nextui.org/images/hero-card-complete.jpeg"
-                  width={270}
-                  height={180}
-                />
-              </CardBody>
-            </Card>
-
-            <Card className="py-4">
-              <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                <p className="text-tiny uppercase font-bold">App de Tarefas</p>
-                <small className="text-default-500">Vue.js</small>
-                <h4 className="font-bold text-large">Gerenciador de Tarefas</h4>
-              </CardHeader>
-              <CardBody className="overflow-visible py-2">
-                <Image
-                  alt="Imagem do App de Tarefas"
-                  className="object-cover rounded-xl"
-                  src="https://nextui.org/images/hero-card-complete.jpeg"
-                  width={270}
-                  height={180}
-                />
-              </CardBody>
-            </Card>
-
-            <Card className="py-4">
-              <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                <p className="text-tiny uppercase font-bold">Dashboard</p>
-                <small className="text-default-500">Angular e Material UI</small>
-                <h4 className="font-bold text-large">Painel Administrativo</h4>
-              </CardHeader>
-              <CardBody className="overflow-visible py-2">
-                <Image
-                  alt="Imagem do Dashboard"
-                  className="object-cover rounded-xl"
+                  className="object-cover rounded-xl w-full"
                   src="https://nextui.org/images/hero-card-complete.jpeg"
                   width={270}
                   height={180}
@@ -232,35 +220,20 @@ export default function PageHome(props: PageHomeProps) {
         </section>
       </main>
 
-      <nav className="fixed flex justify-center w-full gap-2 md:hidden left-0 bottom-2 z-50">
-        <div className="bg-black/90 p-2 rounded-lg flex items-center gap-2 border border-gray-900">
-          <Link
+      <nav className="fixed flex justify-center w-full gap-2 md:hidden left-0 bottom-4 z-50">
+        <ButtonGroup>
+          <Button as={Link} href="/#projects" isIconOnly={true}>
+            <Mouse className="stroke-1 size-5" />
+          </Button>
+          <Button
+            as={Link}
             href="https://www.linkedin.com/in/darlleybrito/"
             target="_blank"
-            className="Menu__item"
           >
-            <svg
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M2 1C1.44772 1 1 1.44772 1 2V13C1 13.5523 1.44772 14 2 14H13C13.5523 14 14 13.5523 14 13V2C14 1.44772 13.5523 1 13 1H2ZM3.05 6H4.95V12H3.05V6ZM5.075 4.005C5.075 4.59871 4.59371 5.08 4 5.08C3.4063 5.08 2.925 4.59871 2.925 4.005C2.925 3.41129 3.4063 2.93 4 2.93C4.59371 2.93 5.075 3.41129 5.075 4.005ZM12 8.35713C12 6.55208 10.8334 5.85033 9.67449 5.85033C9.29502 5.83163 8.91721 5.91119 8.57874 6.08107C8.32172 6.21007 8.05265 6.50523 7.84516 7.01853H7.79179V6.00044H6V12.0047H7.90616V8.8112C7.8786 8.48413 7.98327 8.06142 8.19741 7.80987C8.41156 7.55832 8.71789 7.49825 8.95015 7.46774H9.02258C9.62874 7.46774 10.0786 7.84301 10.0786 8.78868V12.0047H11.9847L12 8.35713Z"
-                fill="currentColor"
-                fillRule="evenodd"
-                clipRule="evenodd"
-              ></path>
-            </svg>
+            <LinkedinCustomIcon />
             <span>Linkedin</span>
-          </Link>
-
-          <Link
-            href="https://github.com/Darlley"
-            target="_blank"
-            className="Menu__item"
-          >
+          </Button>
+          <Button as={Link} href="https://github.com/Darlley" target="_blank">
             <svg
               width="15"
               height="15"
@@ -276,9 +249,8 @@ export default function PageHome(props: PageHomeProps) {
               ></path>
             </svg>
             <span>Github</span>
-          </Link>
-
-          <Link href="/curriculo" target="_blank" className="Menu__item">
+          </Button>
+          <Button as={Link} href="/curriculo" target="_blank">
             <svg
               width="15"
               height="15"
@@ -294,8 +266,8 @@ export default function PageHome(props: PageHomeProps) {
               ></path>
             </svg>
             <span>Curriculo</span>
-          </Link>
-        </div>
+          </Button>
+        </ButtonGroup>
       </nav>
 
       <Beams />

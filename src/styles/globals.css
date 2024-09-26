@@ -6,97 +6,75 @@
 @import "./radix-menu.css";
 @import "./curriculo.css";
 
-body, html{
-  width: 100%;
-  height: 100%;
-  margin: 0;
+body,
+html {
+  @apply w-full
+  h-full
+  m-0
+  scroll-smooth
+
+  selection:bg-primary/20
+  selection:text-primary;
 }
 
 .header__background {
-  @apply
-
-  bg-[url("https://darlley.github.io/images/header.jpg")]
+  @apply bg-[url("https://darlley.github.io/images/header.jpg")]
   bg-fixed
-  bg-cover
+  bg-cover;
 }
-.header__opacity{
-  @apply
-
-  bg-primary-500
+.header__opacity {
+  @apply bg-primary-500
   bg-opacity-50
   w-full
-  h-full
+  h-full;
 }
 
 .header__content {
-  @apply
-
-  h-screen
+  @apply h-screen
   m-auto
   max-w-6xl
-  relative
+  relative;
 }
-.header__container{
-  @apply
-
-  m-auto
+.header__container {
+  @apply m-auto
   max-w-6xl
-  p-8
+  p-8;
 }
 
-
-.profileCard_container{
-  @apply
-
-  relative p-6 border-2 border-dashed rounded-full border-spacing-4 border-primary-100
+.profileCard_container {
+  @apply relative p-6 border-2 border-dashed rounded-full border-spacing-4 border-primary-100;
 }
 
-.profile_card{
-  @apply
-
-  w-[200px] h-[200px] p-1 border-8 rounded-full hover:border-secundary-500 cursor-pointer transition-all duration-500 z-0
-}
-
-.header__page{
-  @apply
-
-  bg-black
+.header__page {
+  @apply bg-black
   bg-cover
   bg-center
 
   relative
   flex
   flex-col
-  gap-8
+  gap-8;
 }
-.page__title{
-  @apply
-
-  h-[15vh]
+.page__title {
+  @apply h-[15vh]
 
   flex
   w-full
   items-center
   justify-center
 
-  relative
+  relative;
 }
-.page__title.thumbnail{
-  @apply
-
-  h-[40vh]
+.page__title.thumbnail {
+  @apply h-[40vh];
 }
-.page__title h1{
-  @apply
-
-  text-4xl
+.page__title h1 {
+  @apply text-4xl
   text-white
-  font-bold
+  font-bold;
 }
-.citation{
-  @apply
-
-  w-11/12
+.citation {
+  @apply w-11/12
   md:w-6/12
   text-center
   absolute
@@ -104,19 +82,15 @@ body, html{
   flex
   text-white
   text-xs
-  italic
+  italic;
 }
 
-.app__content{
-  @apply
-
-  flex
-  flex-col
+.app__content {
+  @apply flex
+  flex-col;
 }
-.content__about{
-  @apply
-
-  m-auto
+.content__about {
+  @apply m-auto
   max-w-6xl
   w-full
 
@@ -125,49 +99,39 @@ body, html{
   items-center
   py-8
   px-4
-  2xl:px-0
+  2xl:px-0;
 }
-.content__about h3{
-  @apply
-
-  text-xl
+.content__about h3 {
+  @apply text-xl;
 }
-.content__about button{
-  @apply
-
-  text-sky-400
+.content__about button {
+  @apply text-sky-400
   hover:bg-slate-100
   p-2
-  rounded-full
+  rounded-full;
 }
 
-.articles__container{
-  @apply
-
-  m-auto
+.articles__container {
+  @apply m-auto
   max-w-6xl
   w-full
 
   flex
   flex-col
 
-  px-4
+  px-4;
 }
-.articles{
-  @apply
-
-  flex
+.articles {
+  @apply flex
   flex-col
 
   justify-between
   box-content
 
-  gap-2
+  gap-2;
 }
-.article{
-  @apply
-
-  relative
+.article {
+  @apply relative
   box-content
 
   before:w-full
@@ -179,15 +143,13 @@ body, html{
   before:top-0
   before:box-content
 
-  py-4
+  py-4;
 }
 
-.notion{
-  @apply
-
-  flex
+.notion {
+  @apply flex
   flex-col
-  gap-2
+  gap-2;
 }
 
 .card__scrollbar::-webkit-scrollbar {
@@ -195,9 +157,8 @@ body, html{
   height: 3px !important;
 }
 .card__scrollbar::-webkit-scrollbar-thumb {
-    background-color: #62dafc;
+  background-color: #62dafc;
 }
 .card__scrollbar::-webkit-scrollbar-track {
-  background: rgba(255,255,255,.1);
+  background: rgba(255, 255, 255, 0.1);
 }
-
