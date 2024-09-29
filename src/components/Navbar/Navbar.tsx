@@ -10,8 +10,8 @@ import { File } from "lucide-react";
 import { NavbarProps } from "./Navbar.types";
 export default function Navbar(props: NavbarProps) {
   return (
-    <nav className="flex items-center justify-center md:w-full h-[10%] text-white gap-8 px-4 xl:px-0">
-      <div className="bg-gray-950/80 border border-gray-800 rounded-xl w-full flex items-center gap-8 justify-between px-4 backdrop-blur-sm relative">
+    <nav className="flex items-center justify-center w-full px-4 xl:px-0">
+      <div className="bg-gray-950/80 border border-gray-800 rounded-lg w-full flex items-center gap-8 justify-between px-4 py-2 backdrop-blur-sm relative">
         <div className="">
           <Link href="/" className="flex items-center flex-shrink-0 gap-2">
             <svg

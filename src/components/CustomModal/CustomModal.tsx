@@ -1,4 +1,4 @@
-import { Modal, ModalBody, ModalContent, ModalHeader } from "@nextui-org/react";
+import { Chip, Modal, ModalBody, ModalContent, ModalHeader } from "@nextui-org/react";
 
 import AICustomIcon from "@/icons/AICustomIcon";
 import AWSCustomIcon from "@/icons/AWSCustomIcon";
@@ -238,10 +238,17 @@ O que sei fazer:
 ☑️ Sei criar mockups, telas e componentes usando o v0 da vercel e o claude da antropic
 ☑️ Sei criar modelagem de banco de dados com o https://postgres.new/ 
     `,
-    list: [],
+    list: [
+      {
+        title: 'Learn LangChain.js - Build LLM apps with JavaScript and OpenAI',
+        school: 'freeCodeCamp.org',
+        url: 'https://youtu.be/HSZ_uaif57o',
+        certified: false
+      }
+    ],
   },
   Nestjs: {
-    title: "Desenolvimento Backend",
+    title: "NestJS",
     description: `No ecossistema Node utilizo e tenho experiência profissional com o framework Nestjs e ja fiz uso pessoal do express e fastify.`,
     list: [],
   },
@@ -263,6 +270,9 @@ export default function CustomModal({
       scrollBehavior="outside"
       size="lg"
       backdrop="opaque"
+      classNames={{
+        body: ''
+      }}
     >
       <ModalContent>
         <ModalHeader>
@@ -301,23 +311,22 @@ export default function CustomModal({
           </div>
         </ModalHeader>
         <ModalBody>
-          <div className="flex flex-col text-white">
-            <div className="h-full">
+            <div className="h-full w-full">
               <p className="whitespace-pre-wrap">
                 {skills?.[content]?.description}
               </p>
               {skills?.[content]?.list &&
                 skills?.[content]?.list?.length > 0 && (
-                  <ul role="list" className="mt-2 divide-y divide-white/5">
+                  <ul role="list" className="mt-2 divide-y divide-white/5 w-full overflow-hidden">
                     {skills?.[content]?.list.map((item, key) => {
                       return (
-                        <li key={item.url + key}>
+                        <li key={item.url + key} className="w-full max-w-full"> 
                           <Link
                             href={item.url}
                             target="_blank"
-                            className="flex items-center p-2 space-x-4 relative"
+                            className="flex items-center w-full"
                           >
-                            <div className="flex-auto min-w-0">
+                            <div className="flex flex-col w-full py-2">
                               <div className="flex items-center gap-x-3">
                                 <div
                                   className={clsx(
@@ -342,13 +351,11 @@ export default function CustomModal({
                                   )}
                                 </h2>
                               </div>
-                              <div className="flex items-center gap-x-2.5 text-xs leading-5 text-gray-400">
-                                <p className="truncate">{item.title}</p>
+                              <div className="flex items-between gap-x-2.5 text-xs leading-5 text-gray-400 max-w-full">
+                                <span className="flex-1 truncate">{item.title} Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias aliquam rerum quia omnis, sapiente veritatis mollitia nihil sed? Optio reprehenderit consequuntur aperiam amet perspiciatis cumque earum explicabo ex suscipit laborum.</span> • <span className="flex-1 truncate text-primary">github.com</span>
                               </div>
                             </div>
-                            <div className="flex-none px-2 py-1 text-xs font-medium rounded-full ring-1 ring-inset">
-                              Ver
-                            </div>
+                            <Chip variant="bordered" size="sm">Ver</Chip>
                           </Link>
                         </li>
                       );
@@ -368,7 +375,6 @@ export default function CustomModal({
                 </Link>
               </div>
             )}
-          </div>
         </ModalBody>
       </ModalContent>
     </Modal>
