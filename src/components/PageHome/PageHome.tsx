@@ -122,9 +122,8 @@ export default function PageHome(props: PageHomeProps) {
                     icon: AWSCustomIcon,
                   },
                 ].map((item, index) => (
-                  <Tooltip content={item.name}>
+                  <Tooltip content={item.name} key={index}>
                     <button
-                      key={index}
                       style={{
                         top: item.top,
                         left: item.left,
