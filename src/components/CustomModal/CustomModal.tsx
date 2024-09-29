@@ -1,5 +1,18 @@
 import { Modal, ModalBody, ModalContent, ModalHeader } from "@nextui-org/react";
 
+import AICustomIcon from "@/icons/AICustomIcon";
+import AWSCustomIcon from "@/icons/AWSCustomIcon";
+import BackEndCustomIcon from "@/icons/BackEndCustomIcon";
+import FigmaCustomIcon from "@/icons/FigmaCustomIcon";
+import LaravelCustomIcon from "@/icons/LaravelCustomIcon";
+import MongoCustomIcon from "@/icons/MongoCustomIcon";
+import N8NCustomIcon from "@/icons/N8NCustomIcon";
+import ReactCustomIcon from "@/icons/ReactCustomIcon";
+import TailwindCustomIcon from "@/icons/TailwindCustomIcon";
+import WordpressCustomIcon from "@/icons/WordpressCustomIcon";
+import clsx from "clsx";
+
+import { TypeContent } from "../PageHome/PageHome";
 const skills: {
   [key in TypeContent]: null | {
     title: string;
@@ -8,6 +21,7 @@ const skills: {
       title: string;
       url: string;
       school?: string;
+      certified: boolean,
     }[];
     externalUrl?: string;
   };
@@ -16,7 +30,8 @@ const skills: {
     title: "Darlley Brasil de Brito Furtado",
     description:
       "Cursei somente até o 5° semestre (2022) em Análise e Desenvolvimento de Sistemas na Universidade Católica Dom Bosco (UCDB) e pretendo concluir (2024) o curso a distância. Tenho interesse pelas areas de UI Design, Cloud Computing e Cibersegurança. Tenho 2 anos de experiência em Desenvolvimento Web atuando em duas empresas no ramo de Marketing Digital.\n\nAlém do computador, alguns dos meus hobbies incluem: skate, musculação, estética automotiva, filosofia e cerveja artesanal.",
-    list: [],
+    
+      list: [],
     externalUrl: "https://www.linkedin.com/in/darlleybrito/",
   },
   Frontend: {
@@ -28,19 +43,23 @@ const skills: {
         title: "Curso React.js Ninja: Módulo React + Webpack",
         url: "https://www.udemy.com/course/reactjs-ninja-modulo-react-webpack/",
         school: "Udemy",
+        certified: true
       },
       {
         title: "Next Level Week 6 da Rocketseat",
         url: "https://github.com/Darlley/letmeask-vite",
         school: "Rocketseat",
+        certified: false
       },
       {
         title: "(Desafio vaga) Privatecode",
         url: "https://github.com/Darlley/desafio-privatecode",
+        certified: false
       },
       {
         title: "(Desafio vaga) Sorteio.com",
         url: "https://sorteio-woad.vercel.app/",
+        certified: false
       },
     ],
     externalUrl: "",
@@ -55,16 +74,19 @@ const skills: {
           "PRO FIGMA | Design de interface do Iniciante ao especialista (Udemy)",
         url: "https://www.udemy.com/certificate/UC-3c8c6d6e-4c1d-4388-ab88-228cda80ed44/",
         school: "Udemy",
+        certified: true
       },
       {
         title: "UI Design para Iniciantes (Origamid)",
         url: "https://www.origamid.com/certificate/f6676778",
         school: "Origamid",
+        certified: true
       },
       {
         title: "Curso de UI Design (ui Start)",
         url: "https://uistart.club.hotmart.com/public/user-certificate/7ff0280a-0990-412e-9dc2-7d16303e54f5/_",
         school: "Hotmart",
+        certified: true
       },
     ],
     externalUrl: "",
@@ -78,16 +100,19 @@ const skills: {
         title: "Bootcamp HTML Web Developer",
         url: "https://www.dio.me/certificate/93688C17/share",
         school: "Dio",
+        certified: true
       },
       {
         title: "CSS Flexbox",
         url: "https://www.origamid.com/certificate/b8a51b7f",
         school: "Origamid",
+        certified: true
       },
       {
         title: "Curso Ferramentas Front-end: GIT, NPM, Webpack, Gulp e Sass",
         url: "https://www.udemy.com/certificate/UC-7371743e-804d-441e-b12f-fb61350c2a7d/",
         school: "Udemy",
+        certified: true
       },
     ],
     externalUrl: "",
@@ -101,6 +126,7 @@ const skills: {
         title: "WordPress Como CMS",
         url: "https://www.origamid.com/curso/wordpress-como-cms/",
         school: "Origamid",
+        certified: true
       },
     ],
     externalUrl: "",
@@ -113,25 +139,30 @@ const skills: {
       {
         title: "Curso de Laravel",
         url: "https://github.com/Darlley/projeto",
+        certified: false
       },
       {
         title: "Laravel para iniciantes",
         url: "https://www.udemy.com/certificate/UC-30a1c71c-2b63-4e16-93e2-6197164612be/",
         school: "Udemy",
+        certified: true
       },
       {
         title: "(Em andamento) Formação de Laravel Básico",
         url: "https://hotmart.com/pt-br/marketplace/produtos/formacao-laravel-basico/K69708135M",
         school: "Hotmart",
+        certified: false
       },
       {
         title: "(Em andamento) TDD com TALL Stack",
         url: "https://github.com/Darlley/artlover",
         school: "Youtube",
+        certified: false
       },
       {
         title: "(Em andamento) Laravel na vida real - TALL STACK",
         url: "https://github.com/Darlley/adoteumdev",
+        certified: false
       },
     ],
     externalUrl: "",
@@ -152,22 +183,26 @@ const skills: {
         title: "Docker do 0 à Maestria: Contêineres Desmistificados + EXTRAS",
         url: "https://www.udemy.com/certificate/UC-544ac24a-5950-4914-9506-8d6bf81ba89b/",
         school: "Udemy",
+        certified: true
       },
       {
         title:
           "Curso Certificação Amazon AWS Cloud Practitioner Foundational 2023",
         url: "https://www.udemy.com/certificate/UC-6b1a0937-f009-46ec-adeb-3019b2c74845/",
         school: "Udemy",
+        certified: true
       },
       {
         title: "Descubra a Nuvem AWS - Nexa Resources",
         url: "https://www.dio.me/certificate/54EF551C/share",
         school: "Dio",
+        certified: true
       },
       {
         title: "Docker para Desenvolvedores (com Docker Swarm e Kubernetes)",
         url: "https://www.udemy.com/certificate/UC-126c8419-caeb-472c-8f46-fd1025605bd0/",
         school: "Udemy",
+        certified: true
       },
     ],
     externalUrl: "",
@@ -206,24 +241,13 @@ O que sei fazer:
     list: [],
   },
   Nestjs: {
-    title: 'Desenolvimento Backend',
+    title: "Desenolvimento Backend",
     description: `No ecossistema Node utilizo e tenho experiência profissional com o framework Nestjs e ja fiz uso pessoal do express e fastify.`,
-    list: []
+    list: [],
   },
 };
 
-import AICustomIcon from "@/icons/AICustomIcon";
-import AWSCustomIcon from "@/icons/AWSCustomIcon";
-import BackEndCustomIcon from "@/icons/BackEndCustomIcon";
-import FigmaCustomIcon from "@/icons/FigmaCustomIcon";
-import LaravelCustomIcon from "@/icons/LaravelCustomIcon";
-import MongoCustomIcon from "@/icons/MongoCustomIcon";
-import N8NCustomIcon from "@/icons/N8NCustomIcon";
-import ReactCustomIcon from "@/icons/ReactCustomIcon";
-import TailwindCustomIcon from "@/icons/TailwindCustomIcon";
-import WordpressCustomIcon from "@/icons/WordpressCustomIcon";
-import clsx from "clsx";
-import { TypeContent } from "../PageHome/PageHome";
+import Link from "next/link";
 import { CustomModalProps } from "./CustomModal.types";
 export default function CustomModal({
   isOpen,
@@ -235,10 +259,10 @@ export default function CustomModal({
       isOpen={isOpen}
       onOpenChange={setIsOpen}
       radius="lg"
-      placement="auto"
+      placement="center"
       scrollBehavior="outside"
       size="lg"
-      backdrop={"opaque"}
+      backdrop="opaque"
     >
       <ModalContent>
         <ModalHeader>
@@ -284,27 +308,28 @@ export default function CustomModal({
               </p>
               {skills?.[content]?.list &&
                 skills?.[content]?.list?.length > 0 && (
-                  <ul role="list" className="mt-4 divide-y divide-white/5">
+                  <ul role="list" className="mt-2 divide-y divide-white/5">
                     {skills?.[content]?.list.map((item, key) => {
                       return (
-                        <li
-                          key={item.url + key}
-                          className="relative flex items-center p-2 space-x-4"
-                        >
-                          <div className="flex-auto min-w-0">
-                            <div className="flex items-center gap-x-3">
-                              <div
-                                className={clsx(
-                                  " rounded-full p-1 bg-green-400/10",
-                                  item.url !== "" && item.url.length > 0
-                                    ? "flex-none text-green-400 animate-pulse"
-                                    : "text-rose-400 bg-rose-400/10"
-                                )}
-                              >
-                                <div className="w-2 h-2 bg-current rounded-full" />
-                              </div>
-                              <h2 className="min-w-0 text-sm font-semibold leading-6 text-white">
-                                <a href={item.url} className="flex gap-x-2">
+                        <li key={item.url + key}>
+                          <Link
+                            href={item.url}
+                            target="_blank"
+                            className="flex items-center p-2 space-x-4 relative"
+                          >
+                            <div className="flex-auto min-w-0">
+                              <div className="flex items-center gap-x-3">
+                                <div
+                                  className={clsx(
+                                    " rounded-full p-1 bg-green-400/10",
+                                    item.certified
+                                      ? "flex-none text-green-400 animate-pulse"
+                                      : "text-rose-400 bg-rose-400/10"
+                                  )}
+                                >
+                                  <div className="w-2 h-2 bg-current rounded-full" />
+                                </div>
+                                <h2 className="min-w-0 text-sm font-semibold leading-6 text-white flex gap-x-2">
                                   <span className="truncate">Certificado</span>
                                   {item?.school && item?.school?.length > 0 && (
                                     <div>
@@ -315,16 +340,16 @@ export default function CustomModal({
                                       <span className="absolute inset-0" />
                                     </div>
                                   )}
-                                </a>
-                              </h2>
+                                </h2>
+                              </div>
+                              <div className="flex items-center gap-x-2.5 text-xs leading-5 text-gray-400">
+                                <p className="truncate">{item.title}</p>
+                              </div>
                             </div>
-                            <div className="mt-3 flex items-center gap-x-2.5 text-xs leading-5 text-gray-400">
-                              <p className="truncate">{item.title}</p>
+                            <div className="flex-none px-2 py-1 text-xs font-medium rounded-full ring-1 ring-inset">
+                              Ver
                             </div>
-                          </div>
-                          <div className="flex-none px-2 py-1 text-xs font-medium rounded-full ring-1 ring-inset">
-                            Ver
-                          </div>
+                          </Link>
                         </li>
                       );
                     })}
@@ -334,13 +359,13 @@ export default function CustomModal({
 
             {!!skills?.[content]?.externalUrl && (
               <div className="flex h-max- w-max">
-                <a
+                <Link
                   href={skills?.[content]?.externalUrl}
                   className="z-10 inline-block mt-4 text-sm font-bold text-white transition-colors cursor-pointer hover:text-secundary-500"
                   target="_blank"
                 >
                   Saber mais
-                </a>
+                </Link>
               </div>
             )}
           </div>
