@@ -1,7 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import Image from 'next/image';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Autoplay, Pagination, Scrollbar } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import React, { ReactNode, SVGProps, useEffect, useState } from "react";
 
 import AICustomIcon from "@/icons/AICustomIcon";
@@ -134,12 +138,12 @@ export default function PageHome(props: PageHomeProps) {
     <>
       <div className="h-svh relative overflow-y-auto bg-zinc-950 flex flex-col">
         <header className="z-50 fixed w-full px-4 py-6 md:px-0">
-          <div className="max-w-7xl w-full mx-auto">
+          <div className="container w-full mx-auto">
             <Navbar />
           </div>
         </header>
 
-        <main className="max-w-7xl relative z-20 mx-auto w-full flex-grow px-4 md:px-0 py-6 flex flex-col">
+        <main className="container relative z-20 mx-auto w-full flex-grow px-4 md:px-0 py-6 flex flex-col">
           <section className="flex flex-col items-center justify-center h-svh">
             <div className="relative p-4 sm:p-8">
               <div className="relative w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] flex items-center justify-center">
@@ -197,7 +201,7 @@ export default function PageHome(props: PageHomeProps) {
           </section>
 
           <section
-            className="flex flex-col items-center justify-center px-4 xl:px-0 h-svh"
+            className="flex flex-col items-center justify-center px-4 xl:px-0 h-svh w-full"
             id="projects"
           >
             <div className="text-center mb-10">
@@ -210,43 +214,106 @@ export default function PageHome(props: PageHomeProps) {
                 Veja todos
               </Link>
             </div>
-            <div className="flex flex-wrap gap-4 justify-center md:justify-between">
-              <Card className="p-2 w-full max-w-sm">
-                <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                  <p className="text-tiny uppercase font-bold">Blog Pessoal</p>
-                  <small className="text-default-500">
-                    Next.js e Tailwind CSS
-                  </small>
-                  <h4 className="font-bold text-large">Meu Blog</h4>
-                </CardHeader>
-                <CardBody className="overflow-visible py-2">
-                  <Image
-                    alt="Imagem do Blog Pessoal"
-                    className="object-cover rounded-xl w-full"
-                    src="https://nextui.org/images/hero-card-complete.jpeg"
-                    width={270}
-                    height={180}
-                  />
-                </CardBody>
-              </Card>
-              <Card className="p-2 w-full max-w-sm">
-                <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                  <p className="text-tiny uppercase font-bold">Blog Pessoal</p>
-                  <small className="text-default-500">
-                    Next.js e Tailwind CSS
-                  </small>
-                  <h4 className="font-bold text-large">Meu Blog</h4>
-                </CardHeader>
-                <CardBody className="overflow-visible py-2">
-                  <Image
-                    alt="Imagem do Blog Pessoal"
-                    className="object-cover rounded-xl w-full"
-                    src="https://nextui.org/images/hero-card-complete.jpeg"
-                    width={270}
-                    height={180}
-                  />
-                </CardBody>
-              </Card>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full p-4 2xl:p-0">
+              <Link href="https://letmeask-c49ed.web.app/" target="_blank">
+                <Card className="p-2 w-full">
+                  <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+                    <p className="text-tiny uppercase font-bold">Salas Q&A</p>
+                    <small className="text-default-500">
+                      Vitejs, Firebase
+                    </small>
+                    <h4 className="font-bold text-large text-primary">LetmeAsk</h4>
+                  </CardHeader>
+                  <CardBody className="overflow-visible py-2">
+                    <div className="h-96"> {/* Adicionando altura fixa */}
+                      <Swiper
+                        spaceBetween={50}
+                        watchSlidesProgress
+                        modules={[Pagination, Scrollbar, Autoplay]}
+                        slidesPerView={1}
+                        onSlideChange={() => console.log('slide change')}
+                        onSwiper={(swiper) => console.log(swiper)}
+                        autoplay={{
+                          delay: 5000,
+                          disableOnInteraction: false,
+                        }}
+                        pagination={{
+                          clickable: true,
+                        }}
+                      >
+                        <SwiperSlide>
+                          <Image
+                            alt="Preview do letmeask 1"
+                            src="/home/projects/letmeask-1.png"
+                            width={800}
+                            height={800}
+                            className="object-cover rounded-xl w-full h-96"
+                          />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                          <Image
+                            alt="Preview do letmeask 2"
+                            src="/home/projects/letmeask-2.png"
+                            width={800}
+                            height={800}
+                            className="object-cover rounded-xl w-full h-96"
+                          />
+                        </SwiperSlide>
+                      </Swiper>
+                    </div>
+                  </CardBody>
+                </Card>
+              </Link>
+              
+              <Link href="https://github.com/Darlley/knowledge-builder" target="_blank">
+                <Card className="p-2 w-full">
+                  <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+                    <p className="text-tiny uppercase font-bold">Editor</p>
+                    <small className="text-default-500">
+                      Next.js, NextUI, Stripe, Supabase
+                    </small>
+                    <h4 className="font-bold text-large text-primary">Knowledge Builder</h4>
+                  </CardHeader>
+                  <CardBody className="overflow-visible py-2">
+                    <div className="h-96"> {/* Adicionando altura fixa */}
+                      <Swiper
+                        spaceBetween={50}
+                        watchSlidesProgress
+                        modules={[Pagination, Scrollbar, Autoplay]}
+                        slidesPerView={1}
+                        onSlideChange={() => console.log('slide change')}
+                        onSwiper={(swiper) => console.log(swiper)}
+                        autoplay={{
+                          delay: 5000,
+                          disableOnInteraction: false,
+                        }}
+                        pagination={{
+                          clickable: true,
+                        }}
+                      >
+                        <SwiperSlide>
+                          <Image
+                            alt="Preview do Editor 1"
+                            src="/home/projects/knowledge-builder-1.png"
+                            width={800}
+                            height={800}
+                            className="object-cover rounded-xl w-full h-96"
+                          />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                          <Image
+                            alt="Preview do Editor 2"
+                            src="/home/projects/knowledge-builder-2.png"
+                            width={800}
+                            height={800}
+                            className="object-cover rounded-xl w-full h-96"
+                          />
+                        </SwiperSlide>
+                      </Swiper>
+                    </div>
+                  </CardBody>
+                </Card>
+              </Link>
             </div>
           </section>
         </main>
