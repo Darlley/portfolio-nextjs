@@ -220,7 +220,7 @@ export default function PageHome(props: PageHomeProps) {
                   <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
                     <p className="text-tiny uppercase font-bold">Salas Q&A</p>
                     <small className="text-default-500">
-                      Vitejs, Firebase
+                      Vitejs, Firebase, SASS
                     </small>
                     <h4 className="font-bold text-large text-primary">LetmeAsk</h4>
                   </CardHeader>
